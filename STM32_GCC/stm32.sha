@@ -1,56 +1,61 @@
 Make(delphi)
 ver(4.04 build 185)
-Add(Application,530636,308,154)
+Add(Console,2953706,56,105)
+{
+ link(onStart,729717:doSplit,[])
+}
+Add(Application,530636,301,154)
 {
 }
-Add(LineBreakEx,8679669,210,154)
+Add(LineBreakEx,8679669,203,154)
 {
  Caption="hipath"
  Type=3
  link(_Data,1944346:Result,[])
 }
-Add(StrCat,1944346,210,105)
+Add(StrCat,1944346,203,105)
 {
  Str2="\\"
  link(onStrCat,16369028:doEvent1,[])
 }
-Add(Hub,8033518,427,252)
+Add(Hub,8033518,420,252)
 {
  OutCount=6
  link(onEvent1,16131785:doWork,[])
- link(onEvent2,2254389:doWork,[(488,265)(488,328)])
- link(onEvent3,10409242:doWork,[(478,272)(478,377)])
- link(onEvent4,3344318:doWork1,[(469,279)(469,447)])
- link(onEvent5,10133648:doWork,[(462,286)(462,489)])
+ link(onEvent2,12763468:doSearch,[(480,265)(480,202)])
+ link(onEvent3,2254389:doWork,[(483,272)(483,328)])
+ link(onEvent4,10409242:doWork,[(477,279)(477,377)])
+ link(onEvent5,11405771:doWork,[(466,286)(466,447)])
+ link(onEvent6,10133648:doWork,[(447,293)(447,496)])
 }
-Add(StrList,3385030,364,77)
+Add(StrList,3385030,357,77)
 {
  link(onChange,6772426:doSearch,[])
 }
-Add(BlockFind,6772426,413,77)
+Add(BlockFind,6772426,406,77)
 {
  IncludeBlock=1
  StartBlock="<compiler>\r\n"
  EndBlock="\r\n</compiler>"
  link(onSearch,12857757:doValue,[])
- link(Text,516882:Var1,[(419,61)])
+ link(Text,516882:Var1,[(412,61)])
 }
-Add(Memory,12857757,462,77)
+Add(Memory,12857757,455,77)
 {
  link(onData,15097659:doSearch,[])
 }
-Add(StrCat,15280203,308,105)
+Add(StrCat,15280203,301,105)
 {
  Str2="Elements\\STM32\\code\\result\\config.conf"
  link(onStrCat,3385030:doLoad,[])
  link(Str1,2193779:getVar,[])
 }
-Add(LineBreakEx,2193779,308,70)
+Add(LineBreakEx,2193779,301,70)
 {
  Caption="hipath"
  Type=2
 }
-Add(BlockFind,15097659,511,77)
+Add(BlockFind,15097659,504,77)
 {
  IncludeBlock=1
  StartBlock="<linker>\r\n"
@@ -58,10 +63,10 @@ Add(BlockFind,15097659,511,77)
  link(onSearch,8246433:doValue,[])
  link(Text,516882:Var2,[])
 }
-Add(MultiElement,4723543,693,252)
+Add(MultiElement,4723543,686,252)
 {
  @Hint=#10:Компиляция|
- link(onEvent1,12737680:doWork2,[(777,258)(777,216)])
+ link(onEvent1,12737680:doWork2,[(770,258)(770,216)])
  link(Data1,14794726:Var,[])
  link(Data2,13323281:getVar,[])
  link(Data3,8104652:getVar,[])
@@ -119,7 +124,7 @@ BEGIN_SDK
    RunEvent=1
    link(Params,5528749:FString,[(671,328)(704,328)(704,388)(594,388)])
   }
-  Add(LineBreak,11460002,63,42)
+  Add(LineBreak,5511346,63,42)
   {
    Caption="prm"
    Type=1
@@ -252,7 +257,7 @@ BEGIN_SDK
    Type=3
    link(_Data,15512286:Data2,[])
   }
-  Add(LineBreak,14675841,154,42)
+  Add(LineBreak,7040436,154,42)
   {
    Caption="lib"
    Type=1
@@ -265,19 +270,19 @@ BEGIN_SDK
    link(onEvent2,1831534:doExec,[])
   }
 END_SDK
-Add(LineBreakEx,13323281,700,203)
+Add(LineBreakEx,13323281,693,203)
 {
  Caption="hipath"
  Type=2
 }
-Add(MultiElement,969681,784,322)
+Add(MultiElement,969681,777,322)
 {
  @Hint=#14:Линкинг файлов|
- link(onEvent1,3815852:doWork2,[])
+ link(onEvent1,12737680:doWork3,[(879,328)])
  link(Data1,12688375:getVar,[])
  link(Data2,2181712:Var,[])
  link(Data3,16332831:getVar,[])
- AddHint(118,21,99,13,@Hint)
+ AddHint(65,2,99,13,@Hint)
 }
 BEGIN_SDK
   Add(EditMulti,2306478,21,21)
@@ -285,7 +290,7 @@ BEGIN_SDK
    EventCount=1
    WorkCount=1
    DataCount=3
-   Width=510
+   Width=503
    VOffset=56
    HOffset=70
    link(doWork1,10639514:doEvent1,[])
@@ -315,7 +320,7 @@ BEGIN_SDK
   Add(FormatStr,2068990,203,77)
   {
    DataCount=3
-   Mask="%2 -mthumb -g -nostartfiles -Wl,-Map=Test.map -O0 -Wl,--gc-sections -L%1compiler\STM32_GCC\ -Wl,-T%3.ld -g -o Test.elf"
+   Mask="%2 -mthumb -g -nostartfiles -Wl,-Map=Test.map -O0 -Wl,--gc-sections -L%1compiler\STM32_GCC\ -Wl,-T%3.ld -g -o %3.elf"
    link(onFString,5640356:doWork2,[])
    link(Str1,8705428:Var3,[(209,61)])
    link(Str2,2306478:Data2,[(216,54)(104,54)])
@@ -336,18 +341,24 @@ BEGIN_SDK
   {
    link(onEvent,13037860:doAdd,[])
   }
-  Add(WinExec,11031195,434,168)
+  Add(WinExec,11031195,420,168)
   {
    FileName="bin\\arm-none-eabi-gcc.exe"
    RunEvent=1
+   Point(doConsoleExec)
+   Point(onConsoleResult)
+   Point(onConsoleError)
+   Point(onConsoleTerminate)
+   link(onExec,11724318:doWork2,[])
+   link(onConsoleError,11724318:doWork3,[(466,188)])
   }
   Add(FilePartElm,14055007,203,119)
   {
    link(onPart,5640356:doWork3,[(270,125)])
   }
-  Add(Hub,2297820,406,161)
+  Add(Hub,2297820,392,161)
   {
-   link(onEvent1,2306478:onEvent1,[(426,167)(426,83)])
+   link(onEvent1,2306478:onEvent1,[(412,167)(412,83)])
    link(onEvent2,11031195:doExec,[])
   }
   Add(StrCat,11846397,350,161)
@@ -355,53 +366,58 @@ BEGIN_SDK
    Str2=" -lm -lgcc -lc"
    link(onStrCat,2297820:doEvent1,[])
   }
+  Add(Message,10717601,490,168)
+  {
+  }
+  Add(HubEx,11724318,462,168)
+  {
+  }
 END_SDK
-Add(Memory,8246433,560,77)
+Add(Memory,8246433,553,77)
 {
  link(onData,11069348:doSearch,[])
 }
-Add(LineBreakEx,12688375,784,252)
+Add(LineBreakEx,12688375,777,252)
 {
  Caption="hipath"
  Type=2
 }
-Add(LineBreakEx,14355597,364,154)
+Add(LineBreakEx,14355597,357,154)
 {
  Caption="conf"
  Type=3
  link(_Data,3385030:Text,[])
 }
-Add(LineBreakEx,3578724,511,35)
+Add(LineBreakEx,3578724,504,35)
 {
  Caption="conf"
  Type=2
 }
-Add(LineBreakEx,8104652,707,224)
+Add(LineBreakEx,8104652,700,224)
 {
  Caption="conf"
  Type=2
 }
-Add(BlockFind,11069348,609,77)
+Add(BlockFind,11069348,602,77)
 {
  IncludeBlock=1
  StartBlock="<model>\r\n"
  EndBlock="\r\n</model>"
  link(onSearch,16258820:doValue,[])
- link(Text,516882:Var3,[(615,61)])
+ link(Text,516882:Var3,[(608,61)])
 }
-Add(Memory,16258820,658,77)
+Add(Memory,16258820,651,77)
 {
 }
-Add(GetDataEx,516882,511,56)
+Add(GetDataEx,516882,504,56)
 {
  link(Data,3578724:getVar,[])
 }
-Add(MultiElement,3344318,784,441)
+Add(MultiElement,3344318,777,441)
 {
- @Hint=#16:Программирование|
- link(onEvent1,3815852:doWork3,[(886,447)])
- link(Data1,14332519:getVar,[])
- AddHint(59,1,116,13,@Hint)
+ @Hint=#26:Программирование (отладка)|
+ link(Data1,2499047:getVar,[])
+ AddHint(59,1,166,13,@Hint)
 }
 BEGIN_SDK
   Add(EditMulti,7142890,21,21)
@@ -409,97 +425,93 @@ BEGIN_SDK
    EventCount=1
    WorkCount=1
    DataCount=1
-   Width=314
-   Height=130
+   Width=503
+   Height=249
    VOffset=56
    HOffset=56
-   link(doWork1,9952685:doString,[])
+   link(doWork1,8565000:doEvent1,[(53,83)(53,202)])
   }
   Add(FormatStr,9952685,77,77)
   {
    DataCount=1
-   Mask="program %1 "Test.elf" --adapter-name=ST-Link --port=SWD --adapter-clk=1000000 --erase=affected --driver="flash\\%1.elf" "
+   Mask="program %1 "%1.elf" --adapter-name=ST-Link --port=SWD --adapter-clk=1000000 --erase=affected --driver="flash\\%1.elf" "
    Point(FString)
-   link(onFString,6638239:doEvent1,[])
+   link(onFString,7363411:doPack,[(135,83)(135,153)])
    link(Str1,7142890:Data1,[])
   }
-  Add(WinExec,7222583,154,70)
-  {
-   FileName="coflash_bin\\coflash.exe"
-   RunEvent=1
-   Point(doConsoleExec)
-   Point(doConsoleInput)
-   Point(onConsoleResult)
-   Point(onConsoleError)
-   Point(onConsoleTerminate)
-   link(onExec,2357569:doWork2,[])
-   link(onConsoleResult,11427261:doWork2,[])
-   link(onConsoleError,14568079:doWork2,[])
-   link(onConsoleTerminate,14568079:doWork3,[(207,97)])
-  }
-  Add(Message,6650668,294,70)
+  Add(Message,6650668,434,189)
   {
   }
-  Add(HubEx,2357569,203,70)
-  {
-   link(onEvent,6447115:doValue,[])
-  }
-  Add(HubEx,11427261,203,77)
-  {
-   Angle=3
-   link(onEvent,2357569:doWork3,[])
-  }
-  Add(HubEx,14568079,203,84)
-  {
-   Angle=3
-   link(onEvent,11427261:doWork3,[])
-  }
-  Add(Hub,6638239,126,77)
-  {
-   OutCount=3
-   link(onEvent1,7142890:onEvent1,[])
-   link(onEvent2,7222583:doConsoleExec,[])
-   link(onEvent3,7222583:doConsoleInput,[])
-  }
-  Add(Memory,6447115,245,70)
+  Add(Memory,6447115,371,189)
   {
    link(onData,6650668:doMessage,[])
   }
-  Add(Clipboard,13119864,154,112)
+  Add(TCP_Client,8577946,252,189)
   {
+   Port=7771
+   IP="127.0.0.1"
+   link(onRead,13821384:doEvent1,[(306,195)(306,146)])
+  }
+  Add(StreamPack,7363411,161,147)
+  {
+   DataCount=#3:Тип|10:Идификатор|6:Данные|
+   link(onPack,8577946:doSend,[(215,153)(215,209)])
+   link(Тип,9285266:Value,[])
+   link(Идификатор,9952685:FString,[(174,138)(83,138)])
+  }
+  Add(Memory,9285266,161,98)
+  {
+   Default=Real(0)
+  }
+  Add(Hub,8565000,84,196)
+  {
+   link(onEvent1,8577946:doOpen,[(175,202)(175,195)])
+   link(onEvent2,9952685:doString,[(110,209)(110,146)(65,146)(65,83)])
+  }
+  Add(Hub,13821384,329,140)
+  {
+   link(onEvent1,7142890:onEvent1,[(433,146)(433,83)])
+   link(onEvent2,6447115:doValue,[(357,153)(357,195)])
   }
 END_SDK
-Add(Check,16131785,539,252)
+Add(Check,16131785,532,252)
 {
  Caption=" Compile"
  link(onEvent,4723543:doWork1,[])
 }
-Add(Check,2254389,539,322)
+Add(Check,2254389,532,322)
 {
  Caption=" Linking"
  link(onEvent,969681:doWork1,[])
 }
-Add(MultiElement,3824334,784,371)
+Add(MultiElement,3824334,777,371)
 {
- @Hint=#20:Копирование прошивки|
- AddHint(79,12,135,13,@Hint)
+ @Hint=#16:Программирование|
+ AddHint(79,12,116,13,@Hint)
 }
 BEGIN_SDK
   Add(EditMulti,12765322,21,21)
   {
    WorkCount=1
-   DataCount=1
    Width=433
    Height=270
+   link(doWork1,11031195:doExec,[(151,27)(151,167)])
+  }
+  Add(WinExec,11031195,280,161)
+  {
+   FileName="stmprg.exe"
+   Point(doConsoleExec)
+   Point(onConsoleResult)
+   Point(onConsoleError)
+   Point(onConsoleTerminate)
   }
 END_SDK
-Add(Check,10409242,546,371)
+Add(Check,10409242,532,371)
 {
- Check=1
- Caption=" Copy"
+ Caption=" Program"
  link(onEvent,3824334:doWork1,[])
 }
-Add(MultiElement,9571336,784,483)
+Add(MultiElement,9571336,777,490)
 {
  @Hint=#13:Очистка папки|
  AddHint(74,12,90,13,@Hint)
@@ -524,15 +536,15 @@ BEGIN_SDK
   {
   }
 END_SDK
-Add(Check,10133648,542,483)
+Add(Check,10133648,532,490)
 {
  Caption=" Clear"
  link(onEvent,9571336:doWork1,[])
 }
-Add(Dir,15220545,161,56)
+Add(Dir,15220545,154,56)
 {
 }
-Add(MultiStrPart,729717,161,105)
+Add(MultiStrPart,729717,154,105)
 {
  Char="\\"
  Count=3
@@ -540,62 +552,72 @@ Add(MultiStrPart,729717,161,105)
  link(onSplit,1944346:doStrCat,[])
  link(Str,15220545:CurrentDir,[])
 }
-Add(LineBreak,12870797,462,126)
+Add(LineBreak,6529719,455,126)
 {
  Caption="compiler"
  Type=1
  link(Data,12857757:Value,[])
  Primary=[14794726,231,56]
 }
-Add(LineBreak,5468961,560,126)
+Add(LineBreak,7347525,553,126)
 {
  Caption="linker"
  Type=1
  link(Data,8246433:Value,[])
  Primary=[2181712,231,147]
 }
-Add(LineBreakEx,9836209,658,126)
+Add(LineBreakEx,9836209,651,126)
 {
  Caption="model"
  Type=3
  link(_Data,16258820:Value,[])
 }
-Add(LineBreakEx,16332831,798,294)
+Add(LineBreakEx,16332831,791,294)
 {
  Caption="model"
  Type=2
 }
-Add(LineBreakEx,14332519,784,413)
-{
- Caption="model"
- Type=2
-}
-Add(Hub,16369028,259,105)
+Add(Hub,16369028,252,105)
 {
  link(onEvent1,15280203:doStrCat,[])
- link(onEvent2,1505970:doRead,[(294,118)(294,209)])
+ link(onEvent2,1505970:doRead,[(287,118)(287,209)])
 }
-Add(ArrayRW,1505970,315,203)
+Add(ArrayRW,1505970,308,203)
 {
  Index=Integer(0)
- link(onRead,8033518:doEvent1,[(387,209)(387,258)])
+ link(onRead,8033518:doEvent1,[(380,209)(380,258)])
  link(Array,530636:Params,[])
 }
-Add(HubEx,12737680,882,210)
+Add(LineBreak,13965645,14,105)
+{
+ link(Out,2953706:doWrite,[])
+ Primary=[1365908,896,105]
+}
+Add(HubEx,12737680,875,210)
 {
  link(onEvent,1365908:In,[])
 }
-Add(HubEx,3815852,882,322)
+Add(FileSearch,12763468,525,196)
 {
- Angle=3
- link(onEvent,12737680:doWork3,[])
+ Ext="*.elf"
+ SubDir=1
+ link(onSearch,4395408:doDelete,[])
+ link(Dir,1038169:CurrentDir,[])
 }
-Add(LineBreak,5129739,56,105)
+Add(Dir,1038169,532,154)
 {
- link(Out,12433307:doWrite,[])
- Primary=[1365908,861,105]
 }
-Add(Console,12433307,105,105)
+Add(FileTools,4395408,581,182)
 {
- link(onStart,729717:doSplit,[])
+}
+Add(Check,11405771,532,441)
+{
+ Check=1
+ Caption=" Program (debug)"
+ link(onEvent,3344318:doWork1,[])
+}
+Add(LineBreakEx,2499047,777,413)
+{
+ Caption="model"
+ Type=2
 }
