@@ -1,0 +1,37 @@
+include("General")
+
+func init()
+  fvar(tmp, old)
+  old = block.select(BLK_INIT)
+    println('Hi_UART_Init(Hi_',Port,', ',Mode,', ',Echo,', ',Speed,');')
+  
+  if(linked(onByteData))
+    block.select(BLK_LOC)
+    println('void ',vUARTListener,'(uint8_t ',c,') {')
+      block.inclvl()
+        event(onByteData, ('Hi_CharToStr(' && c && ')')@str)
+      block.declvl()
+    println('}')
+    
+    block.select(BLK_INIT)
+    println('Hi_UART_AddListener(Hi_',Port,', ',vUARTListener,');')
+  end
+  
+  if(linked(onData))
+    block.select(BLK_LOC)
+    println('void ',vUARTEntListener,'(uint8_t* ',s,') {')
+      block.inclvl()
+        event(onData, s@str)
+      block.declvl()
+    println('}')
+    
+    block.select(BLK_INIT)
+    println('Hi_UART_AddEntListener(Hi_',Port,', ',vUARTEntListener,');')
+  end
+  
+  block.select(old)
+end
+
+func doSendData(_data)
+  println('Hi_UART_SendStr(Hi_',Port,', ',read_str(linked(Data)?Data:_data),');')
+end

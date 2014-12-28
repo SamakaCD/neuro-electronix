@@ -1,0 +1,25 @@
+include("General")
+
+func init()
+  fvar(old)
+  old = block.select(BLK_INIT)
+    enable_supp(Port)
+    println('Hi_GPIO_InitOut(',Port,'_PORT, ',Port,'_PIN, GPIO_Speed_2MHz);')
+  block.select(old)
+end
+
+func doOn(_data)
+  println('Hi_GPIO_On(',Port,'_PORT, ',Port,'_PIN);')
+end
+
+func doOff(_data)
+  println('Hi_GPIO_Off(',Port,'_PORT, ',Port,'_PIN);')
+end
+
+func doInvert(_data)
+  println('Hi_GPIO_Invert(',Port,'_PORT, ',Port,'_PIN);')
+end
+
+func Status()
+  return(to_type(('Hi_GPIO_ReadOutputDataBit(' + Port + '_PORT, ' + Port + '_PIN)'), DT_CHAR))
+end

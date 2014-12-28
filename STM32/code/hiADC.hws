@@ -1,0 +1,42 @@
+include("General")
+
+func init()
+  fvar(tmp, old)
+  decl_var_val(val, 'int', 0)
+  old = block.select(BLK_INIT)
+    println('Hi_ADC_Init(CPORT_',Port,'_PORT, CPORT_',Port,'_PIN);')
+  
+  decl_var_val(tim_cnt, 'int', Interval)
+  decl_var_val(tim_drt, 'int', Interval) 
+  timer_enable()
+  tmp = block.reggen()
+  block.select(tmp)
+    println('// ================== ADC_Timer_',code(_id_),' ==================')
+    println('if(',tim_drt,' > 0 & ',tim_cnt,' != 0) {')
+      block.inclvl()
+        println(tim_cnt,'--;')
+      block.declvl()
+    println('} else {')
+      block.inclvl()
+        println(tim_cnt,' = ',tim_drt,';')
+        println(val,' = Hi_ADC_Read(ADC_CH_',Port,');')
+        event(onGetValue, val)
+      block.declvl()
+    println('}')
+    println('// ================================================================')
+  move_block_to(BLK_TIMER)
+  block.select(old)
+end
+
+func doGetValue(_data)
+  println(val,' = Hi_ADC_Read(ADC_CH_',Port,');')
+  event(onGetValue, val)
+end
+
+func doInterval(_data)
+  println(tim_drt,' = ',read_int(_data),';')
+end
+
+func ADCValue()
+  return(val)
+end

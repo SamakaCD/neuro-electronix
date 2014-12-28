@@ -1,0 +1,22 @@
+func Init()
+  var (cur_event, cur_work)
+end
+
+func doEvent(_data, _idx):any
+  fvar(i)
+  
+  if (cur_event > 0)
+    trace('Компонент Hub (doEvent' && cur_work && '): внимание - бесконечная рекурсия. Вызов doEvent' && (_idx + 1) && ' из события onEvent' && cur_event && ' пропущен!')
+    return(0)
+  end
+  
+  cur_event = 0
+  cur_work = _idx + 1
+  for(i = 1; i <= _event_count_; i++)
+    cur_event = i
+    event("onEvent" + i, _data)
+  end
+  cur_work = 0
+  cur_event = 0
+  
+end

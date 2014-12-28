@@ -1,0 +1,291 @@
+// Включает библиотеку в проект
+// name   -   имя библиотеки
+func include_library(name)
+  fvar(old)
+  
+  old = block.select(BLK_LIBS)
+    if(not block.intext(name))
+      println(name)
+	end
+  block.select(old)
+end
+
+// Включает файл в код
+// f   -   имя файла
+func include_file(f)
+  fvar(old)
+  old = block.select(BLK_INCLUDE)
+    if(not block.intext('#include "' && f && '"'))
+      println('#include "' + f + '"')
+	end
+  block.select(old)
+end
+
+// Делает дефайн
+// w   -   выражение для замены/дефайна
+// d   -   дефайн
+func define(w, d)
+  fvar(old)
+  old = block.select(BLK_INCLUDE)
+    if(not block.intext('#define ' && code(w) && ' ' && code(d)))
+      println('#define ' + code(w) + ' ' + code(d))
+	end
+  block.select(old)  
+end
+
+// Добавляет переменную
+// name   -   имя переменной
+// type   -   тип переменной
+func decl_var(name, type)
+  fvar(old)
+  old = block.select(BLK_LOC)
+    if(not block.intext(code(type) && ' ' && code(name) && ';'))
+      println(code(type),' ',code(name),';')
+	end
+  block.select(old)
+end
+
+// Добавляет переменную со значением по-умолчанию
+// name   -   имя переменной
+// type   -   тип переменной
+// val    -   значение по-умолчанию
+func decl_var_val(name, type, val)
+  fvar(old)
+  old = block.select(BLK_LOC)
+    if(not block.intext(code(type) && ' ' && code(name) && ' = ' && val && ';'))
+      println(code(type),' ',code(name), ' = ',val,';')
+	end
+  block.select(old)
+end
+
+// Перемещает текущий блок в блок BLK и УДАЛЯЕТ его (текущий блок)
+// blk   -   блок, куда надо переместить текущий блок
+func move_block_to(blk)
+  fvar(old)
+  old = block.cur()
+  block.copyto(blk)
+  block.select(blk)
+  block.delete(old)
+end
+
+// Возвращает выражение 'e' с указанным подтипом (expof) tp
+// e    -   выражение для установки типа
+// tp   -   тип для установки
+func to_type(e, tp)
+  fvar(r)
+  r = e
+  sub(r, tp)
+  return(r)
+end
+
+// Сообщает проекту о включении таймера
+func timer_enable()
+  if(HAS_TIMER == 0)
+    HAS_TIMER = 1
+  end
+end
+
+// Замена функции _arr.count(), возвращающей 1 для пустого массива.
+// ar   -   массив для вычисления количества элементов в нём
+func array_count(ar) 
+  fvar(c)
+  c = _arr.count(ar)
+  if ((c = 1) and (ar[0] = 'undefined'))
+    return (0)
+  else
+    return (c)
+  end
+end
+
+// Выдаёт индекс элемента v в массиве ar ("-1", если элемент не найден)
+// ar   -   массив, в котором будет выполнятся поиск
+// v    -   значение для поиска в массиве
+func array_find(ar, v)
+  fvar(c, i)
+  c = array_count(ar)
+  for(i = 0; i < c; i++)
+    if(ar[i] == v)
+	  return(i)
+	end
+  end
+  return(-1)
+end
+
+// Делает принт содержимого массива в окно отладки
+// ar   -   массив для вывода содержимого в окно отладки
+func array_trace(ar)
+  fvar(c, i)
+  trace('===========')
+  c = array_count(ar)
+  for(i = 0; i < c; i++)
+    trace(ar[i])
+  end
+  trace('===========')
+end
+
+// Добавляет метод с заголовком header и телом body_blk
+// header     -   заголовок метода (напр. "void method(int a)")
+// body_blk   -   блок с кодом метода
+// ret        -   код, который должен прописываться в конце метода (не обязательно)
+func decl_method(header, body_blk, ret)
+  fvar(i, c, new_arr)
+
+  c = -1
+  for(i = 0; i < array_count(ARR_METHODS); i++)
+    if(ARR_METHODS[i][0] == header)
+	  c = i
+	end
+  end
+  
+  if(c == -1)
+    new_arr &= header
+	new_arr &= ret
+	new_arr &= body_blk
+	ARR_METHODS &= ''
+	ARR_METHODS[array_count(ARR_METHODS) - 1] = new_arr
+  else
+    new_arr = ARR_METHODS[c]
+	new_arr &= body_blk
+	ARR_METHODS[c] = new_arr
+  end
+end
+
+// Разделяет строку на две части
+// s     -   строка для разделения
+// spl   -   разделитель строки
+func str_split(s, spl)
+  fvar(splpos)
+  splpos = pos(spl, s)
+  if(splpos != -1)
+    return(copy(s, 1, splpos-1) & copy(s, splpos+1, lng.strlen(s)))
+  else
+    return(s)
+  end
+end
+
+func _id()
+  return(code(_id_))
+end
+
+func enable_supp(port)
+  if(pos("UNB", port))
+    println('Hi_QGPIO_Out2(GPIOC, GPIO_Pin_9);')
+  end
+end
+
+// =================== ФУНКЦИИ КОНВЕРТАЦИИ ===================
+//
+// Номера типов:
+//     1   -   int
+//     2   -   String
+//     7   -   double
+//   112   -   long
+//   114   -   float
+//   115   -   char
+//
+
+// Делает проверку данных на тип
+// d   -   данные
+// t   -   тип данных
+func chktp(d, t)
+  return((typeof(d) == t) or (expof(d) == t))
+end
+
+// Конвертирует выражение v в тип int
+// v   -   выражение для конвертации
+func read_int(v)
+  if(chktp(v, DT_INT))
+    return(v)
+  end
+  if(chktp(v, DT_DOUBLE) or chktp(v, DT_LONG) or chktp(v, DT_FLOAT) or chktp(v, DT_CHAR))
+    return(to_type(('((int) ' && v && ')'), DT_INT))
+  end
+  if(chktp(v, DT_STR))
+    return(to_type(('Hi_StrToInt(' && v && ')'), DT_INT))
+  end
+  return(to_type(0, DT_INT))
+end
+
+// Конвертирует выражение v в тип double
+// v   -   выражение для конвертации
+func read_double(v)
+  if(chktp(v, DT_DOUBLE))
+    return(v)
+  end
+  if(chktp(v, DT_INT) or chktp(v, DT_LONG) or chktp(v, DT_FLOAT) or chktp(v, DT_CHAR))
+    return(to_type(('((double) ' && v && ')'), DT_DOUBLE))
+  end
+  if(chktp(v, DT_STR))
+    return(to_type(('Hi_StrToDouble(' && v && ')'), DT_DOUBLE))
+  end
+  return(to_type(0, DT_DOUBLE))
+end
+
+// Конвертирует выражение v в тип char
+// v   -   выражение для конвертации
+func read_char(v)
+  if(chktp(v, DT_CHAR))
+    return(v)
+  end
+  if(chktp(v, DT_DOUBLE) or chktp(v, DT_LONG) or chktp(v, DT_FLOAT) or chktp(v, DT_INT))
+    return(to_type(('((char) ' && v && ')'), DT_CHAR))
+  end
+  if(chktp(v, DT_STR))
+    return(to_type(('Hi_StrToChar(' && v && ')'), DT_CHAR))
+  end
+  return(to_type(code("''"), DT_CHAR))
+end
+
+// Конвертирует выражение v в тип long
+// v   -   выражение для конвертации
+func read_long(v)
+  if(chktp(v, DT_LONG))
+    return(v)
+  end
+  if(chktp(v, DT_DOUBLE) or chktp(v, DT_INT) or chktp(v, DT_FLOAT) or chktp(v, DT_CHAR))
+    return(to_type(('((long) ' && v && ')'), DT_LONG))
+  end
+  if(chktp(v, DT_STR))
+    return(to_type(('Hi_StrToLong(' && v && ')'), DT_LONG))
+  end
+  return(to_type(0, DT_LONG))
+end
+
+// Конвертирует выражение v в тип float
+// v   -   выражение для конвертации
+func read_float(v)
+  if(chktp(v, DT_FLOAT))
+    return(v)
+  end
+  if(chktp(v, DT_DOUBLE) or chktp(v, DT_LONG) or chktp(v, DT_INT) or chktp(v, DT_CHAR))
+    return(to_type(('((float) ' && v && ')'), DT_FLOAT))
+  end
+  if(chktp(v, DT_STR))
+    return(to_type(('Hi_StrToFloat(' && v && ')'), DT_FLOAT))
+  end
+  return(to_type(0, DT_FLOAT))
+end
+
+// Конвертирует выражение v в тип String
+// v   -   выражение для конвертации
+func read_str(v)
+  if(chktp(v, DT_STR))
+    return(v)
+  end
+  if(chktp(v, DT_INT))
+    return(to_type(('Hi_IntToStr(' && v && ')'), DT_STR))
+  end
+  if(chktp(v, DT_LONG))
+    return(to_type(('Hi_LongToStr(' && v && ')'), DT_STR))
+  end
+  if(chktp(v, DT_CHAR))
+    return(to_type(('Hi_CharToStr(' && v && ')'), DT_STR))
+  end
+  if(chktp(v, DT_DOUBLE))
+    return(to_type(('Hi_DoubleToStr(' && v && ')'), DT_STR))
+  end
+  if(chktp(v, DT_FLOAT))
+    return(to_type(('Hi_FloatToStr(' && v && ')'), DT_STR))
+  end
+  return(to_type("", DT_STR))
+end

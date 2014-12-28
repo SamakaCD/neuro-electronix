@@ -1,0 +1,37 @@
+include("General")
+
+func init()
+  var(prt, p)
+  fvar(old)
+   
+  if(PRJ_NAME == 'stm32f407')
+    include_file('stm32f4xx_gpio.h')
+    include_file('stm32f4xx_rcc.h')
+  elseif(PRJ_NAME == 'stm32f103')
+    include_file('stm32f10x_gpio.h')
+    include_file('stm32f10x_rcc.h') 
+  end
+  
+  prt = code(Port)
+  p = code(PinNumber)
+  
+  old = block.select(BLK_INIT)
+    println('Hi_GPIO_InitOut(GPIO',prt,', GPIO_Pin_',p,', GPIO_Speed_',code(Speed),'MHz);')
+  block.select(old)
+end
+
+func doEnable(_data)
+  println('Hi_GPIO_On(GPIO',prt,', GPIO_Pin_',p,');')
+end
+
+func doDisable(_data)
+  println('Hi_GPIO_Off(GPIO',prt,', GPIO_Pin_',p,');')
+end
+
+func doInvert(_data)
+  println('Hi_GPIO_Invert(GPIO',prt,', GPIO_Pin_',p,');')
+end
+
+func Status()
+  return(to_type(('Hi_GPIO_ReadOutputDataBit(GPIO' && prt && ', GPIO_Pin_' && p && ')'), DT_CHAR))
+end

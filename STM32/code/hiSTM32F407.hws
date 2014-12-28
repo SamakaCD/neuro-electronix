@@ -1,0 +1,11 @@
+include("EntryPoint")
+include("General")
+
+func doStart()
+   entry_point_init('stm32f407')
+   include_library('stm32f407')
+   include_file('stm32f4xx.h')
+   include_file('hi_stm32f407.c')
+   sys.initall()
+   entry_point_post_init('-mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__', '-mcpu=cortex-m4', 'STM32F407VG')
+end

@@ -1,0 +1,19 @@
+include("General")
+
+func doSetTime(_data)
+  println('Hi_RTC_Init();')
+  println('Hi_RTC_SetTime(',read_int(nHour),', ',read_int(nMin),', ',read_int(nSec),');')
+end
+
+func Hour()
+  return()
+end
+
+func Min()
+  return()
+end
+
+func Sec()
+  return()
+end
+
