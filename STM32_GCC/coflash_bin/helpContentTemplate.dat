@@ -1,0 +1,30 @@
+<h2><span style="color:#337fe5;">Introduction</span>&nbsp;</h2>
+<p>What the code snippet does, why it's useful, the problem it solves etc.<br />
+</p>
+<h2><span style="color:#337fe5;">Background</span>&nbsp;&nbsp;</h2>
+<p>(Optional) Is there any background to this code that may be useful<br />
+such as an introduction to the basic ideas presented?<br />
+</p>
+<h2><span style="color:#337fe5;">Using the code</span>&nbsp;</h2>
+<p>A brief description of how to use the code. The<br />
+class names, the methods and properties, any tricks or tips.<br />
+</p>
+<p>Blocks of code should be set as style "Formatted"<br />
+like this:<br />
+</p>
+<pre lang="C++">//
+// Any source code blocks look like this
+//</pre> <p></p>
+<p>Remember to set the Language of your code snippet using the<br />
+Language dropdown.<br />
+</p>
+<p>Use the "var" button to to wrap Variable or class names in<br />
+&lt;code&gt; tags like <code>this</code>.<br />
+</p>
+<h2><span style="color:#337fe5;">Points of Interest</span></h2>
+<p>Did you learn anything interesting/fun/annoying while writing<br />
+the code? Did you do anything particularly clever or wild or zany?<br />
+</p>
+<h2><span style="color:#337fe5;">History</span></h2>
+<p>Keep a running update of any changes or improvements you've<br />
+made here.</p>

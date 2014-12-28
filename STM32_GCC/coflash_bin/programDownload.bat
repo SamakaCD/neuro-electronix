@@ -1,0 +1,1 @@
+"C:/CoIDE/bin\coflash.exe" program STM32F407VG "C:/CoIDE/workspace/Test/Test/Debug/bin/Test.elf" --adapter-name=ST-Link --port=SWD --adapter-clk=1000000 --erase=affected --driver="C:/CoIDE/flash/STM32F4xx_1024.elf" 

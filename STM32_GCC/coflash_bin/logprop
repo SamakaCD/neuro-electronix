@@ -1,0 +1,9 @@
+log4cplus.rootLogger=OFF, COFLAH_RELEASE
+log4cplus.appender.COFLAH_RELEASE=log4cplus::RollingFileAppender
+log4cplus.appender.COFLAH_RELEASE.Schedule=DAILY
+log4cplus.appender.COFLAH_RELEASE.DatePattern = yyyy-MM-dd
+log4cplus.appender.COFLAH_RELEASE.File=C:\\coflash.log
+log4cplus.appender.COFLAH_RELEASE.MaxFileSize=10MB
+log4cplus.appender.COFLAH_RELEASE.MaxBackupIndex=10
+log4cplus.appender.COFLAH_RELEASE.layout=log4cplus::PatternLayout
+log4cplus.appender.COFLAH_RELEASE.layout.ConversionPattern=%d{%Y-%m-%d %H:%M:%S:%q} [%t] %-5p %m %n

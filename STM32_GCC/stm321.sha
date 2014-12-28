@@ -1,0 +1,524 @@
+Make(delphi)
+ver(4.04 build 185)
+Add(Console,2953706,42,196)
+{
+ link(onStart,729717:doSplit,[])
+}
+Add(LineBreakEx,8679669,189,245)
+{
+ Caption="hipath"
+ Type=3
+ link(_Data,1944346:Result,[])
+}
+Add(StrCat,1944346,189,196)
+{
+ Str2="\\"
+ link(onStrCat,8033518:doEvent1,[])
+}
+Add(Hub,8033518,259,196)
+{
+ OutCount=6
+ link(onEvent1,15280203:doStrCat,[(418,202)(418,181)(352,181)(352,104)])
+ link(onEvent2,16131785:doWork,[(455,209)(455,258)])
+ link(onEvent3,2254389:doWork,[(455,216)(455,328)])
+ link(onEvent4,10409242:doWork,[(436,223)(436,377)])
+ link(onEvent5,11383923:doWork,[(367,230)(367,412)])
+ link(onEvent6,9243888:doEvent1,[(353,237)(353,503)])
+}
+Add(StrList,3385030,420,70)
+{
+ link(onChange,6772426:doSearch,[])
+}
+Add(BlockFind,6772426,469,70)
+{
+ IncludeBlock=1
+ StartBlock="<compiler>\r\n"
+ EndBlock="\r\n</compiler>"
+ link(onSearch,12857757:doValue,[])
+ link(Text,516882:Var1,[(475,54)])
+}
+Add(Memory,12857757,518,70)
+{
+ link(onData,15097659:doSearch,[])
+}
+Add(StrCat,15280203,364,98)
+{
+ Str2="Elements\\STM32\\code\\result\\config.conf"
+ link(onStrCat,3385030:doLoad,[])
+ link(Str1,2193779:getVar,[])
+}
+Add(LineBreakEx,2193779,364,63)
+{
+ Caption="hipath"
+ Type=2
+}
+Add(BlockFind,15097659,567,70)
+{
+ IncludeBlock=1
+ StartBlock="<linker>\r\n"
+ EndBlock="\r\n</linker>"
+ link(onSearch,8246433:doValue,[])
+ link(Text,516882:Var2,[])
+}
+Add(MultiElement,4723543,658,252)
+{
+ @Hint=#10:Компиляция|
+ link(Data1,14794726:Var,[])
+ link(Data2,13323281:getVar,[])
+ link(Data3,8104652:getVar,[])
+ AddHint(-6,46,78,13,@Hint)
+}
+BEGIN_SDK
+  Add(EditMulti,15512286,21,21)
+  {
+   WorkCount=1
+   DataCount=3
+   Width=706
+   Height=389
+   VOffset=140
+   HOffset=70
+   link(doWork1,16304686:doEvent1,[])
+  }
+  Add(BlockFind,9417823,77,168)
+  {
+   IncludeBlock=1
+   StartBlock="<libs>\r\n"
+   EndBlock="\r\n</libs>"
+   link(onSearch,10532346:doString,[])
+   link(Text,10290136:Var,[])
+  }
+  Add(StrList,11839349,175,140)
+  {
+   link(onChange,14444717:doEnum,[(231,146)(231,196)(177,196)(177,209)])
+  }
+  Add(FormatStr,10532346,126,168)
+  {
+   Mask="%2Elements\\STM32\\libs\\%1.slib"
+   link(onFString,11839349:doLoad,[])
+   link(Str2,4183986:getVar,[])
+  }
+  Add(ArrayEnum,14444717,189,203)
+  {
+   Point(onBreak)
+   link(onItem,3119244:doCopy,[])
+   link(Array,11839349:Array,[])
+  }
+  Add(StrList,16134470,539,280)
+  {
+  }
+  Add(Replace,14599196,539,343)
+  {
+   SubStr="\r\n"
+   DestStr=" "
+   link(onReplace,5528749:doString,[])
+   link(Str,16134470:Text,[])
+  }
+  Add(WinExec,1831534,644,343)
+  {
+   FileName="bin\\arm-none-eabi-gcc.exe"
+   RunEvent=1
+   link(Params,5528749:FString,[(657,328)(704,328)(704,388)(594,388)])
+  }
+  Add(LineBreak,14483758,63,42)
+  {
+   Caption="prm"
+   Type=1
+   link(Data,15512286:Data1,[(69,32)(97,32)])
+   Primary=[12333448,525,266]
+  }
+  Add(FormatStr,5528749,588,343)
+  {
+   Point(FString)
+   link(onFString,1831534:doExec,[])
+   link(Str1,12333448:Var,[])
+  }
+  Add(LineBreakEx,13839674,469,168)
+  {
+   Caption="hipath"
+   Type=2
+  }
+  Add(FormatStr,9240074,469,203)
+  {
+   Mask=""%1%2""
+   link(onFString,15324192:doWork1,[(515,209)])
+   link(Str1,13839674:getVar,[])
+  }
+  Add(Copy,3119244,238,203)
+  {
+   Position=1
+   Count=2
+   link(onCopy,7413556:doCase,[])
+  }
+  Add(Case,7413556,294,203)
+  {
+   Value=String(-I)
+   link(onNextCase,5822204:doData,[])
+   link(onTrue,9818432:doDelete,[(338,216)(338,286)])
+  }
+  Add(LineBreakEx,9407458,399,252)
+  {
+   Caption="hipath"
+   Type=2
+  }
+  Add(FormatStr,16327210,399,280)
+  {
+   Mask="-I "%1%2""
+   link(onFString,15324192:doWork2,[])
+   link(Str1,9407458:getVar,[])
+  }
+  Add(LineBreakEx,15665219,189,245)
+  {
+   Type=3
+   link(_Data,14444717:Item,[])
+  }
+  Add(LineBreakEx,6425279,350,175)
+  {
+   Type=2
+  }
+  Add(Delete,9818432,350,280)
+  {
+   Count=2
+   link(onDelete,16327210:doString,[])
+   link(Str,9011038:getVar,[])
+  }
+  Add(LineBreakEx,9011038,350,252)
+  {
+   Type=2
+  }
+  Add(HubEx,7753369,399,203)
+  {
+   link(onEvent,8394366:doWork1,[])
+  }
+  Add(DoData,5822204,350,203)
+  {
+   link(onEventData,7753369:doWork2,[])
+   link(Data,6425279:getVar,[])
+  }
+  Add(HubEx,15324192,511,280)
+  {
+   link(onEvent,16134470:doAdd,[])
+  }
+  Add(DoData,2475005,350,105)
+  {
+   Data=String(Elements\\STM32\\code\\result\\main.c)
+   link(onEventData,7753369:doWork1,[(403,111)])
+  }
+  Add(LineBreakEx,4183986,133,119)
+  {
+   Caption="hipath"
+   Type=2
+  }
+  Add(MultiElement,8394366,420,203)
+  {
+   link(onEvent1,9240074:doString,[])
+  }
+  BEGIN_SDK
+    Add(EditMulti,8328323,21,21)
+    {
+     EventCount=1
+     WorkCount=1
+     link(doWork1,4127762:doValue,[(39,27)(39,69)])
+    }
+    Add(FilePartElm,12953750,105,63)
+    {
+     Mode=4
+     link(onPart,11995798:doCompare,[])
+    }
+    Add(Memory,4127762,49,63)
+    {
+     link(onData,12953750:doPart,[])
+    }
+    Add(If_else,11995798,154,63)
+    {
+     Op2=String(c)
+     link(onTrue,7128202:doData,[])
+    }
+    Add(DoData,7128202,203,63)
+    {
+     link(onEventData,8328323:onEvent1,[(278,69)(278,27)])
+     link(Data,4127762:Value,[(209,51)(256,51)(256,108)(55,108)])
+    }
+  END_SDK
+  Add(Hub,16304686,35,161)
+  {
+   OutCount=3
+   link(onEvent1,2475005:doData,[(66,167)(66,111)])
+   link(onEvent2,9417823:doSearch,[])
+   link(onEvent3,14599196:doReplace,[(65,181)(65,349)])
+  }
+  Add(LineBreakEx,7485083,98,42)
+  {
+   Caption="hipath"
+   Type=3
+   link(_Data,15512286:Data2,[])
+  }
+  Add(LineBreak,12048306,154,42)
+  {
+   Caption="lib"
+   Type=1
+   link(Data,15512286:Data3,[(160,32)(111,32)])
+   Primary=[10290136,-77,98]
+  }
+END_SDK
+Add(LineBreakEx,13323281,665,203)
+{
+ Caption="hipath"
+ Type=2
+}
+Add(MultiElement,969681,749,322)
+{
+ @Hint=#14:Линкинг файлов|
+ link(Data1,12688375:getVar,[])
+ link(Data2,2181712:Var,[])
+ link(Data3,4125797:Var,[])
+ AddHint(67,7,99,13,@Hint)
+}
+BEGIN_SDK
+  Add(EditMulti,2306478,21,21)
+  {
+   WorkCount=1
+   DataCount=3
+   Width=405
+   VOffset=56
+   HOffset=70
+   link(doWork1,10639514:doEvent1,[])
+  }
+  Add(FileSearch,1879909,147,119)
+  {
+   Ext="*.o"
+   SubDir=1
+   link(onSearch,14055007:doPart,[])
+  }
+  Add(StrCat,3026622,91,119)
+  {
+   Str2="compiler\\STM32_GCC"
+   link(onStrCat,1879909:doSearch,[])
+   link(Str1,8705428:Var2,[])
+  }
+  Add(StrList,13037860,301,77)
+  {
+  }
+  Add(Hub,10639514,42,77)
+  {
+   OutCount=3
+   link(onEvent1,2068990:doString,[])
+   link(onEvent2,3026622:doStrCat,[(78,90)(78,125)])
+   link(onEvent3,7404417:doReplace,[(71,97)(71,167)])
+  }
+  Add(FormatStr,2068990,203,77)
+  {
+   DataCount=3
+   Mask="%2 -mthumb -g -nostartfiles -Wl,-Map=Test.map -O0 -Wl,--gc-sections -L%1compiler\STM32_GCC\ -Wl,-T%3.ld -g -o Test.elf"
+   link(onFString,5640356:doWork2,[])
+   link(Str1,8705428:Var3,[(209,61)])
+   link(Str2,2306478:Data2,[(216,54)(104,54)])
+   link(Str3,2306478:Data3,[(223,47)(111,47)])
+  }
+  Add(Replace,7404417,301,161)
+  {
+   SubStr="\r\n"
+   DestStr=" "
+   link(onReplace,11031195:doExec,[])
+   link(Str,13037860:Text,[])
+  }
+  Add(GetDataEx,8705428,91,56)
+  {
+   link(Data,2306478:Data1,[])
+  }
+  Add(HubEx,5640356,266,77)
+  {
+   link(onEvent,13037860:doAdd,[])
+  }
+  Add(WinExec,11031195,364,161)
+  {
+   FileName="bin\\arm-none-eabi-gcc.exe"
+   RunEvent=1
+  }
+  Add(FilePartElm,14055007,203,119)
+  {
+   link(onPart,5640356:doWork3,[(270,125)])
+  }
+END_SDK
+Add(Memory,8246433,616,70)
+{
+ link(onData,11069348:doSearch,[])
+}
+Add(LineBreakEx,12688375,749,252)
+{
+ Caption="hipath"
+ Type=2
+}
+Add(LineBreakEx,14355597,420,147)
+{
+ Caption="conf"
+ Type=3
+ link(_Data,3385030:Text,[])
+}
+Add(LineBreakEx,3578724,567,28)
+{
+ Caption="conf"
+ Type=2
+}
+Add(LineBreakEx,8104652,672,224)
+{
+ Caption="conf"
+ Type=2
+}
+Add(BlockFind,11069348,665,70)
+{
+ IncludeBlock=1
+ StartBlock="<model>\r\n"
+ EndBlock="\r\n</model>"
+ link(onSearch,4125797:doValue,[])
+ link(Text,516882:Var3,[(671,54)])
+}
+Add(GetDataEx,516882,567,49)
+{
+ link(Data,3578724:getVar,[])
+}
+Add(MultiElement,3344318,749,497)
+{
+ @Hint=#16:Программирование|
+ link(Data1,6475292:Var,[(755,489)(755,489)])
+ AddHint(71,8,116,13,@Hint)
+}
+BEGIN_SDK
+  Add(EditMulti,7142890,21,21)
+  {
+   WorkCount=1
+   DataCount=1
+   Width=202
+   Height=109
+   VOffset=56
+   HOffset=56
+   link(doWork1,9952685:doString,[])
+  }
+  Add(FormatStr,9952685,77,77)
+  {
+   DataCount=1
+   Mask="program %1 "Test.elf" --adapter-name=ST-Link --port=SWD --adapter-clk=1000000 --erase=affected --driver="flash\\%1.elf" "
+   Point(FString)
+   link(onFString,7222583:doExec,[])
+   link(Str1,7142890:Data1,[])
+  }
+  Add(WinExec,7222583,154,77)
+  {
+   Param="program STM32F407VG "Test.elf" --adapter-name=ST-Link --port=SWD --adapter-clk=1000000 --erase=affected --driver="flash\STM32F407VG.elf" "
+   FileName="coflash_bin\\coflash.exe"
+   RunEvent=1
+  }
+END_SDK
+Add(Check,16131785,504,252)
+{
+ Caption=" Compile"
+ link(onEvent,4723543:doWork1,[])
+}
+Add(Check,2254389,504,322)
+{
+ Caption=" Linking"
+ link(onEvent,969681:doWork1,[])
+}
+Add(MultiElement,3824334,749,371)
+{
+ @Hint=#20:Копирование прошивки|
+ AddHint(69,9,135,13,@Hint)
+}
+BEGIN_SDK
+  Add(EditMulti,12765322,21,21)
+  {
+   WorkCount=1
+   DataCount=1
+   Width=433
+   Height=270
+  }
+END_SDK
+Add(Check,10409242,511,371)
+{
+ Check=1
+ Caption=" Copy"
+ link(onEvent,3824334:doWork1,[])
+}
+Add(MultiElement,9571336,749,539)
+{
+ @Hint=#13:Очистка папки|
+ AddHint(72,7,90,13,@Hint)
+}
+BEGIN_SDK
+  Add(EditMulti,2965998,21,21)
+  {
+   WorkCount=1
+   link(doWork1,12763468:doSearch,[(39,27)(39,111)])
+  }
+  Add(FileSearch,12763468,70,105)
+  {
+   Ext="*.o"
+   SubDir=1
+   link(onSearch,4395408:doDelete,[(118,111)(118,125)])
+   link(Dir,1038169:CurrentDir,[])
+  }
+  Add(Dir,1038169,77,56)
+  {
+  }
+  Add(FileTools,4395408,133,105)
+  {
+  }
+END_SDK
+Add(Check,10133648,518,539)
+{
+ Caption=" Clear"
+ link(onEvent,9571336:doWork1,[])
+}
+Add(Dir,15220545,140,147)
+{
+}
+Add(MultiStrPart,729717,140,196)
+{
+ Char="\\"
+ Count=3
+ Direct=1
+ link(onSplit,1944346:doStrCat,[])
+ link(Str,15220545:CurrentDir,[])
+}
+Add(LineBreak,13557484,518,119)
+{
+ Caption="compiler"
+ Type=1
+ link(Data,12857757:Value,[])
+ Primary=[14794726,140,63]
+}
+Add(LineBreak,9311351,616,119)
+{
+ Caption="linker"
+ Type=1
+ link(Data,8246433:Value,[])
+ Primary=[2181712,140,154]
+}
+Add(Check,8063119,504,497)
+{
+ Caption="Programs"
+ link(onEvent,3344318:doWork1,[])
+}
+Add(Hub,9243888,434,497)
+{
+ link(onEvent1,8063119:doWork,[])
+ link(onEvent2,10133648:doWork,[(483,510)(483,545)])
+}
+Add(GVarContainer,13159275,532,399)
+{
+ Section="Programs"
+ VarList=#4:mode|
+}
+Add(GlobalVar,4125797,763,70)
+{
+ Name="mode"
+}
+Add(GlobalVar,6475292,749,466)
+{
+ Name="mode"
+}
+Add(Check,11383923,462,406)
+{
+ Check=1
+ Caption=" Copy"
+ link(onEvent,13159275:doSave,[])
+}
