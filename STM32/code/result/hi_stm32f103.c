@@ -645,10 +645,10 @@ void vHi_RTC_Task(void* params) {
 	}
 }
 
+uint8_t Hi_RTC_Initialised;
 void Hi_RTC_Init() {
-	static uint8_t rtc_init_toggle;
-	if(!rtc_init_toggle) {
-		rtc_init_toggle = 1;
+	if(!Hi_RTC_Initialised) {
+		Hi_RTC_Initialised = 1;
 		xTaskCreate(vHi_RTC_Task, "vHi_RTC_Task", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 	}
 }

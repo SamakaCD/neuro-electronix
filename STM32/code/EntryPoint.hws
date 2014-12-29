@@ -61,8 +61,6 @@ func entry_point_post_init(param, linker, model)
     // Include
     block.copyhere(BLK_INCLUDE)
     block.delete(BLK_INCLUDE)
-	println('#include "FreeRTOS.h"')
-    println('#include "task.h"')
 	
 	println('')
 	

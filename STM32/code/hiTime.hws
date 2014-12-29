@@ -1,19 +1,32 @@
 include("General")
 
+func init()
+  if(isndef(nHour) or isndef(nMin) or isndef(nSec))
+    fvar(old)
+    old = block.select(BLK_INIT)
+      println('Hi_RTC_Init();')
+      println('Hi_RTC_SetTime(',read_int(nHour),', ',read_int(nMin),', ',read_int(nSec),');')
+    block.select(old)
+  end
+end
+
 func doSetTime(_data)
   println('Hi_RTC_Init();')
   println('Hi_RTC_SetTime(',read_int(nHour),', ',read_int(nMin),', ',read_int(nSec),');')
 end
 
 func Hour()
-  return()
+  return('Hi_RTC_GetHour()'@int)
 end
 
 func Min()
-  return()
+  return('Hi_RTC_GetMin()'@int)
 end
 
 func Sec()
-  return()
+  return('Hi_RTC_GetSec()'@int)
 end
 
+func Time()
+  return('Hi_RTC_TimeCnt'@int)
+end

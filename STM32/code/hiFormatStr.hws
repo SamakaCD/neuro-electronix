@@ -1,7 +1,7 @@
 include("General")
 
 func init()
-  decl_var(rst + '[' + MemoryAllocation + ']', 'char')
+  decl_var(buf, 'char*')
 end
 
 func read_dt(i, dt)
@@ -15,8 +15,9 @@ func read_dt(i, dt)
 end
 
 func doFormatStr(_data)
-  fvar(i)  
-  print('sprintf(',rst,', ',Mask,', ')
+  fvar(i)
+  println(buf,' = (char*) pvPortMalloc(',MemoryAllocation,');')  
+  print('sprintf(',buf,', ',Mask,', ')
   for(i = 1; i <= DataCount; i++)
     if(i < DataCount)
       print(read_dt(i, _data),', ')
@@ -24,7 +25,8 @@ func doFormatStr(_data)
       println(read_dt(i, _data),');')
     end
   end
-  event(onFormatStr, rst)
+  event(onFormatStr, buf@str)
+  println('vPortFree(',buf,');')
 end
 
 func Result()
