@@ -18,6 +18,56 @@
 #include <stdarg.h>
 #include "heap_4.c"
 
+#define Hi_List_Create(LIST, TYPE)					\
+	struct LIST##_ItemStruct {						\
+		TYPE 		Item; 							\
+		uint32_t 	Index;							\
+		struct LIST ## _ItemStruct Next;			\
+	};												\
+	typedef struct LIST##_ItemStruct LIST##_Item;	\
+															\
+	typedef struct {										\
+		uint32_t	Count;									\
+		LIST##_Item 	First;								\
+		LIST##_Item 	Last;								\
+	} LIST##_Def;										\
+	LIST##_Def LIST;
+
+#define Hi_List_Add(LIST, ITEM) 				\
+	{											\
+		(LIST ## _Item) _Item;					\
+		_Item.Item = ITEM;						\
+		_Item.Index = LIST.Count;				\
+		_Item.Next = NULL;						\
+												\
+		if(LIST.Count == 0) {					\
+			LIST.First = _Item;					\
+			LIST.Last  = _Item;					\
+		} else {								\
+			LIST.Last.Next = (_Item);			\
+			LIST.Last = _Item;					\
+		}										\
+		LIST.Count++;							\
+	}
+
+#define Hi_List_Get(LIST, IDX)					\
+	{											\
+		S_ITEM Item = LIST.First;				\
+		uint32_t Index;							\
+		if(Item == NULL) {						\
+			return NULL;						\
+		}										\
+		do {									\
+			Index = Item.Index;					\
+			if(Item.Next == NULL) {				\
+				return NULL;					\
+			}									\
+			Item = (Item.Next);					\
+		} while(Index != IDX);					\
+		return Item.Item;						\
+	}
+
+
 #define BUS_GPIOA RCC_APB2Periph_GPIOA
 #define BUS_GPIOB RCC_APB2Periph_GPIOB
 #define BUS_GPIOC RCC_APB2Periph_GPIOC
@@ -334,14 +384,20 @@ typedef struct {
 Hi_UART_Struct Hi_UARTs[5];
 
 void Hi_UART_Send(uint8_t uart, uint8_t data) {
-	while(!(Hi_UARTs[uart].Def -> SR & USART_SR_TC));
+	while(!(Hi_UARTs[uart].Def -> SR & USART_SR_TC)) { }
 	Hi_UARTs[uart].Def -> DR = data;
 }
 
 void Hi_UART_SendStr(uint8_t uart, char* string) {
 	uint8_t i = 0;
 	while(string[i]) {
+		__asm("NOP");
+		__asm("NOP");
+		__asm("NOP");
 		Hi_UART_Send(uart, string[i]);
+		__asm("NOP");
+		__asm("NOP");
+		__asm("NOP");
 		i++;
 	}
 }
@@ -379,11 +435,11 @@ void Hi_UART_SendStr(uint8_t uart, char* string) {
 			GPIO_InitStruct.GPIO_Pin = PINRX; 						\
 			GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;			\
 			GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF_PP; 			\
-			GPIO_Init(GPIOA, &GPIO_InitStruct); 					\
+			GPIO_Init(PORT, &GPIO_InitStruct); 						\
 			 	 	 	 	 	 	 	 	 	 	 	 	 	 	\
 			GPIO_InitStruct.GPIO_Pin = PINTX; 						\
 			GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING; 		\
-			GPIO_Init(GPIOA, &GPIO_InitStruct); 					\
+			GPIO_Init(PORT, &GPIO_InitStruct); 						\
 			 	 	 	 	 	 	 	 	 	 	 	 	 	 	\
 			USART_StructInit(&USART_InitStruct); 					\
 			USART_InitStruct.USART_BaudRate = speed; 				\
@@ -446,19 +502,23 @@ void Hi_UART_Init(uint8_t uart, uint8_t mode, uint8_t echo, uint32_t speed) {
 			Hi_UART_InitPattern(USART1, GPIOA, GPIO_Pin_9, GPIO_Pin_10, Hi_UART1_ListenerTask);
 			break;
 		case Hi_UART2:
-			RCC_APB2PeriphClockCmd((RCC_APB1Periph_USART2 | RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO), ENABLE);
+			RCC_APB2PeriphClockCmd((RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO), ENABLE);
+			RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
 			Hi_UART_InitPattern(USART2, GPIOA, GPIO_Pin_2, GPIO_Pin_3, Hi_UART2_ListenerTask);
 			break;
 		case Hi_UART3:
-			RCC_APB2PeriphClockCmd((RCC_APB1Periph_USART3 | RCC_APB2Periph_GPIOB | RCC_APB2Periph_AFIO), ENABLE);
+			RCC_APB2PeriphClockCmd((RCC_APB2Periph_GPIOB | RCC_APB2Periph_AFIO), ENABLE);
+			RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3, ENABLE);
 			Hi_UART_InitPattern(USART3, GPIOB, GPIO_Pin_10, GPIO_Pin_11, Hi_UART3_ListenerTask);
 			break;
 		case Hi_UART4:
-			RCC_APB2PeriphClockCmd((RCC_APB1Periph_UART4 | RCC_APB2Periph_GPIOC | RCC_APB2Periph_AFIO), ENABLE);
+			RCC_APB2PeriphClockCmd((RCC_APB2Periph_GPIOC | RCC_APB2Periph_AFIO), ENABLE);
+			RCC_APB1PeriphClockCmd(RCC_APB1Periph_UART4, ENABLE);
 			Hi_UART_InitPattern(UART4, GPIOC, GPIO_Pin_10, GPIO_Pin_11, Hi_UART4_ListenerTask);
 			break;
 		case Hi_UART5:
-			RCC_APB2PeriphClockCmd((RCC_APB1Periph_UART5 | RCC_APB2Periph_GPIOC | RCC_APB2Periph_AFIO), ENABLE);
+			RCC_APB2PeriphClockCmd((RCC_APB2Periph_GPIOC | RCC_APB2Periph_AFIO), ENABLE);
+			RCC_APB1PeriphClockCmd(RCC_APB1Periph_UART5, ENABLE);
 			Hi_UART_InitPattern(UART5, GPIOC, GPIO_Pin_12, GPIO_Pin_12, Hi_UART5_ListenerTask);
 			break;
 	}
@@ -1085,49 +1145,19 @@ void Hi_CM_SendData(char* data, uint8_t len) {
 	Hi_CM_SendDataByConnection(data, Hi_CM_GetConnection(), len);
 }
 
-/* Bridge */
+/* SharedMemory */
 
-#define Hi_Bridge_RegistryMax 128
+uint16_t* Hi_SM_Markers;
 
-_FPTR(void, *Hi_Bridge_FuncRegistry, char*);
-uint16_t* Hi_Bridge_Indexes;
-uint16_t Hi_Bridge_Count = 0;
-
-void Hi_Bridge_CallByIdx(uint16_t idx, char* data) {
-	(*(Hi_Bridge_FuncRegistry + idx - 513))(data);
+void Hi_SM_Init() {
+	Hi_SM_Markers = pvPortMalloc(256);
 }
 
-void Hi_Bridge_Input(CM_Result r) {
-	uint16_t i;
-	for(i = 0; i < Hi_Bridge_Count; i++)
-		if(Hi_Bridge_Indexes[i] == (r.Marker - 513))
-			Hi_Bridge_CallByIdx(r.Marker, r.Data);
-}
+void Hi_SM_Create(uint32_t address, uint16_t len, uint16_t marker) {
 
-void Hi_Bridge_Init() {
-	Hi_Bridge_FuncRegistry = pvPortMalloc(Hi_Bridge_RegistryMax * sizeof(void (*) (char*)));
-	Hi_Bridge_Indexes = (uint16_t*) pvPortMalloc(Hi_Bridge_RegistryMax * sizeof(uint16_t));
-}
-
-void Hi_Bridge_Create(uint16_t idx, _FPTR(void, func, char*)) {
-	Hi_Bridge_FuncRegistry[idx - 513] = func;
-	Hi_Bridge_Indexes[Hi_Bridge_Count++] = idx;
-}
-
-void Hi_Bridge_SendByConnection(uint16_t idx, char* data, uint8_t connection, uint8_t len) {
-	uint8_t size;
-	char* pack = Hi_Proto_CreatePack(Hi_Proto_PacketType_Std, idx, data, len, &size);
-	Hi_CM_SendDataByConnection(pack, connection, size);
-}
-
-void Hi_Bridge_Send(uint16_t idx, char* data, uint8_t len) {
-	uint8_t size;
-	char* pack = Hi_Proto_CreatePack(Hi_Proto_PacketType_Std, idx, data, len, &size);
-	Hi_CM_SendData(pack, size);
 }
 
 uint32_t Hi_Logger_LastTime = 0;
-
 uint8_t* Hi_Logger_CreatePack(uint16_t address) {
 	uint8_t* pack = (uint8_t*) pvPortMalloc(4);
 	uint16_t timeDelta = Hi_RTC_TimeCnt - Hi_Logger_LastTime;
