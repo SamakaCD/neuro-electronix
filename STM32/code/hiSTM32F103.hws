@@ -1,7 +1,7 @@
 include("EntryPoint")
 include("General")
 
-// Build: AlDG
+// Build: AlEI
 func doStart()
    entry_point_init('stm32f103')
    include_library('stm32f103')

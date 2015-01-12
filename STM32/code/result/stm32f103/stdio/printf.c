@@ -6,6 +6,7 @@
  ********************************************************************************/
 #include <stdio.h>
 #include <stdarg.h>
+#include <math.h>
 
 
 /**
@@ -30,6 +31,48 @@ void PrintChar(char c)
 /** Required for proper compilation. */
 struct _reent r = {0, (FILE *) 0, (FILE *) 1, (FILE *) 0};
 struct _reent *_impure_ptr = &r;
+
+void reverse(char *str, int len)
+{
+    int i=0, j=len-1, temp;
+    while (i<j)
+    {
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+        i++; j--;
+    }
+}
+
+int intToStr(int x, char str[], int d)
+{
+    int i = 0;
+    while (x)
+    {
+        str[i++] = (x%10) + '0';
+        x = x/10;
+    }
+
+    while (i < d)
+        str[i++] = '0';
+    reverse(str, i);
+    str[i] = '\0';
+    return i;
+}
+
+// Converts a floating point number to string.
+signed int _ftoa(float n, char *res, int afterpoint) {
+    int ipart = (int) n;
+    float fpart = n - (float) ipart;
+    int i = intToStr(ipart, res, 0);
+
+    if (afterpoint != 0)  {
+        res[i] = '.';
+        fpart = fpart * pow(10, afterpoint);
+        intToStr((int) fpart, res + i + 1, afterpoint);
+    }
+    return i + afterpoint + 1;
+}
 
 /**
  * @brief  Writes a character inside the given string. Returns 1.
@@ -322,12 +365,13 @@ signed int vsnprintf(char *pStr, size_t length, const char *pFormat, va_list ap)
             /* Parse type */
             switch (*pFormat) {
             case 'd': 
-            case 'i': num = PutSignedInt(pStr, fill, width, va_arg(ap, signed int)); break;
+            case 'i': case 'l': num = PutSignedInt(pStr, fill, width, va_arg(ap, signed int)); break;
             case 'u': num = PutUnsignedInt(pStr, fill, width, va_arg(ap, unsigned int)); break;
             case 'x': num = PutHexa(pStr, fill, width, 0, va_arg(ap, unsigned int)); break;
             case 'X': num = PutHexa(pStr, fill, width, 1, va_arg(ap, unsigned int)); break;
             case 's': num = PutString(pStr, va_arg(ap, char *)); break;
             case 'c': num = PutChar(pStr, va_arg(ap, unsigned int)); break;
+            case 'f': case 'g':  num = _ftoa(va_arg(ap, double), pStr, 3); break;
             default:
                 return EOF;
             }

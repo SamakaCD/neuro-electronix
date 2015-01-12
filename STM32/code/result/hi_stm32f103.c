@@ -173,7 +173,7 @@ char* Hi_IntToStr(int i) {
 
 char* Hi_LongToStr(long l) {
 	char* str = (char*) pvPortMalloc(32);
-	sprintf(str, "%ld", l);
+	sprintf(str, "%l", l);
 	return str;
 }
 
@@ -389,45 +389,54 @@ void Hi_UART_Send(uint8_t uart, uint8_t data) {
 }
 
 void Hi_UART_SendStr(uint8_t uart, char* string) {
-	uint8_t i = 0;
-	while(string[i]) {
-		__asm("NOP");
-		__asm("NOP");
-		__asm("NOP");
-		Hi_UART_Send(uart, string[i]);
-		__asm("NOP");
-		__asm("NOP");
-		__asm("NOP");
-		i++;
+	taskENTER_CRITICAL();
+	{
+		uint8_t i = 0;
+		while(string[i]) {
+			__asm("NOP");
+			__asm("NOP");
+			__asm("NOP");
+			Hi_UART_Send(uart, string[i]);
+			__asm("NOP");
+			__asm("NOP");
+			__asm("NOP");
+			i++;
+		}
 	}
+	taskEXIT_CRITICAL();
 }
 
-#define Hi_UART_ListenerPattern(__UARTNAME, __UARTIDX) 			\
-		if(__UARTNAME -> SR & USART_SR_RXNE) {					\
-			Hi_UART_Struct Uart = Hi_UARTs[__UARTIDX];			\
-																\
-			if(Uart.Echo) {										\
-				__UARTNAME -> DR = __UARTNAME -> DR;			\
-			}													\
-			Uart.Char = __UARTNAME -> DR;						\
-			Uart.Buffer[Uart.BufferCounter++] = Uart.Char;		\
-																\
-			uint8_t i;											\
-			for(i = 0; i < Uart.CharListenersCount; i++) {		\
-				Uart.CharListeners[i](Uart.Char);				\
-			}													\
-																\
-			if(Uart.Char == '\r') {								\
-				Hi_UART_SendStr(__UARTIDX, "\r\n");				\
-				Uart.Buffer[Uart.BufferCounter-1] = 0;			\
-				for(i = 0; i < Uart.EntListenersCount; i++) {	\
-					Uart.EntListeners[i](Uart.Buffer);			\
-				}												\
-				memset(Uart.Buffer, 0, Uart.BufferCounter);		\
-				Uart.BufferCounter = 0;							\
-			}													\
-			Hi_UARTs[__UARTIDX] = Uart;							\
-		}														\
+void Hi_UART_ListenerInit(USART_TypeDef* UARTx, uint8_t UARTn) {
+	if(UARTx -> SR & USART_SR_RXNE) {
+		taskENTER_CRITICAL();
+		{
+			Hi_UART_Struct Uart = Hi_UARTs[UARTn];
+
+			if(Uart.Echo) {
+				UARTx -> DR = UARTx -> DR;
+			}
+			Uart.Char = UARTx -> DR;
+			Uart.Buffer[Uart.BufferCounter++] = Uart.Char;
+
+			uint8_t i;
+			for(i = 0; i < Uart.CharListenersCount; i++) {
+				Uart.CharListeners[i](Uart.Char);
+			}
+
+			if(Uart.Char == 'r') {
+				Uart.Buffer[Uart.BufferCounter-1] = 0;
+				for(i = 0; i < Uart.EntListenersCount; i++) {
+					Uart.EntListeners[i](Uart.Buffer);
+				}
+				memset(Uart.Buffer, 0, Uart.BufferCounter);
+				Uart.BufferCounter = 0;
+			}
+			Hi_UARTs[UARTn] = Uart;
+		}
+		taskEXIT_CRITICAL();
+	}
+	taskYIELD();
+}
 
 #define Hi_UART_InitPattern(__NAME, PORT, PINRX, PINTX, FUNCNAME) 	\
 		Uart = Hi_UARTs[uart]; 										\
@@ -463,31 +472,31 @@ void Hi_UART_SendStr(uint8_t uart, char* string) {
 
 void Hi_UART1_ListenerTask(void* params) {
 	while(1) {
-		Hi_UART_ListenerPattern(USART1, Hi_UART1);
+		Hi_UART_ListenerInit(USART1, Hi_UART1);
 	}
 }
 
 void Hi_UART2_ListenerTask(void* params) {
 	while(1) {
-		Hi_UART_ListenerPattern(USART2, Hi_UART2);
+		Hi_UART_ListenerInit(USART2, Hi_UART2);
 	}
 }
 
 void Hi_UART3_ListenerTask(void* params) {
 	while(1) {
-		Hi_UART_ListenerPattern(USART3, Hi_UART3);
+		Hi_UART_ListenerInit(USART3, Hi_UART3);
 	}
 }
 
 void Hi_UART4_ListenerTask(void* params) {
 	while(1) {
-		Hi_UART_ListenerPattern(UART4, Hi_UART4);
+		Hi_UART_ListenerInit(UART4, Hi_UART4);
 	}
 }
 
 void Hi_UART5_ListenerTask(void* params) {
 	while(1) {
-		Hi_UART_ListenerPattern(UART5, Hi_UART5);
+		Hi_UART_ListenerInit(UART5, Hi_UART5);
 	}
 }
 
