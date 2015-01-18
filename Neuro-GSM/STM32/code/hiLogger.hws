@@ -1,0 +1,23 @@
+include("General")
+
+func init()
+  fvar(old) 
+  decl_var(buf, 'char*')
+  decl_var(lrb, 'char*')
+  decl_var_val(lrp, 'int', 0)
+  
+  old = block.select(BLK_INIT)
+    println('Hi_RTC_Init();')
+    println(buf,' = (char*) pvPortMalloc(4096);')
+  block.select(old)
+end
+
+func doLog(_data)
+  println(lrb,' = Hi_Logger_Print(',read_int(ID),', ',read_str(Key),', ',buf,', &',lrp,', 0);')
+  event(onLog, lrb)
+  println('vPortFree(',lrb,');')
+end
+
+func Log()
+  return(buf)
+end

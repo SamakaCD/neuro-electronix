@@ -1,0 +1,118 @@
+func entry_point_init(prj_n)
+  gvar(BLK_INCLUDE, BLK_LOC, BLK_INIT, BLK_LOOP, BLK_LIBS) // Блоки
+  gvar(HAS_TIMER, PRJ_NAME) // Параметры
+  gvar(ARR_METHODS) // Массивы
+  gvar(DT_INT, DT_LONG, DT_DOUBLE, DT_FLOAT, DT_CHAR, DT_STR) // Примитивные типы данных. См. General.hws/"Функции ковертации"
+  var(ep_old)
+  
+  ep_old = block.cur()
+  PRJ_NAME = prj_n
+  
+  // ================ БЛОКИ КОДА =============== //
+  BLK_INCLUDE = block.reggen()
+  BLK_LOC = block.reggen()
+  BLK_INIT = block.reggen()
+  BLK_LOOP = block.reggen()
+  
+  // ========== ВСПОМАГАТЕЛЬНЫЕ БЛОКИ ========== //
+  BLK_LIBS = block.reggen()
+  
+  // ========== ТИПЫ ДАННЫХ ========== //
+  DT_INT    = 1
+  DT_STR   	= 2
+  DT_DOUBLE = 7
+  DT_LONG   = 112
+  DT_FLOAT  = 114
+  DT_CHAR   = 115
+end
+
+func entry_point_post_init(param, linker, model) 
+  fvar(tmp)
+  //Сохранение файла со списком библиотек в проекте
+  tmp = block.reggen()
+  ep_old = block.cur()
+ 
+  block.select(tmp)
+    println('<libs>') //Список библиотек
+      block.copyhere(BLK_LIBS)
+    println('</libs>')
+    
+    println('<compiler>') //Параметры компилятора
+      println(param)
+    println('</compiler>')
+	
+	println('<linker>') //Параметры линкера
+      println(linker)
+    println('</linker>')
+	
+	println('<model>') //Модель контроллера
+	  println(model)
+	println('</model>')
+  block.savecode('Elements\STM32\code\result\\config.conf')
+  
+  block.select(BLK_INIT)
+    event(onInit)
+  block.select(BLK_LOOP)
+    event(onLoop)
+	
+  tmp = block.reggen()
+  block.select(tmp)
+
+    // Include
+    block.copyhere(BLK_INCLUDE)
+    block.delete(BLK_INCLUDE)
+	
+	println('')
+	
+	// Local
+	block.copyhere(BLK_LOC)
+    block.delete(BLK_LOC)
+	
+	println('')
+	
+	fvar(i, j, c, d, ar)
+	c = array_count(ARR_METHODS)
+	
+	for(i = 0; i < c; i++)
+	  ar = ARR_METHODS[i]
+	  println(ar[0],' {')
+	    block.inclvl()
+		  d = _arr.count(ar)
+		  for(j = 0; j < d; j++)
+		    block.copyhere(ar[j])
+		  end
+		  if(ar[1] != '' and ar[1] != 'undefined')
+		    println(ar[1])
+		  end
+		block.declvl()
+	  println('}')
+	end
+	
+	println('')
+	
+    println('int main(void) {')
+      block.inclvl()
+	  
+	    println('')
+	  
+	    // Init
+        block.copyhere(BLK_INIT)
+		block.delete(BLK_INIT)
+		println('vTaskStartScheduler();') // Запуск планировщика
+		
+		println('')
+		
+		println('while(1) {')
+		  block.inclvl()
+		    // Loop
+            block.copyhere(BLK_LOOP)
+		    block.delete(BLK_LOOP) 
+		  block.declvl()
+		println('}')
+		
+      block.declvl()
+    println('}')
+  block.savecode('Elements\STM32\code\result\main.c')
+  
+  block.select(ep_old)
+end

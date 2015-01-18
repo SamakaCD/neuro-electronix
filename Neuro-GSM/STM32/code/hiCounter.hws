@@ -1,0 +1,33 @@
+include("General")
+
+func init()
+  decl_var_val(cnt, 'double', Default)
+end
+
+func doNext(_data)
+  println(cnt,' += ',read_double(Step),';')
+  println('if(',cnt,' > ',read_double(Max),') ',cnt,' = ',read_double(Min),';')
+  println('else if(',cnt,' < ',read_double(Min),') ',cnt,' = ',read_double(Max),';')
+  event(onCounter, to_type(cnt, DT_DOUBLE))
+end
+
+func doPrev(_data)
+  println(cnt,' -= ',read_double(Step),';')
+  println('if(',cnt,' > ',read_double(Max),') ',cnt,' = ',read_double(Min),';')
+  println('else if(',cnt,' < ',read_double(Min),') ',cnt,' = ',read_double(Max),';')
+  event(onCounter, to_type(cnt, DT_DOUBLE))
+end
+
+func doReset(_data)
+  println(cnt,' = ',read_double(Default),';')
+  event(onCounter, to_type(cnt, DT_DOUBLE))
+end
+
+func doSetValue(_data)
+  println(cnt,' = ',read_double(_data),';')
+  event(onCounter, to_type(cnt, DT_DOUBLE))
+end
+
+func Value()
+  return(cnt)
+end

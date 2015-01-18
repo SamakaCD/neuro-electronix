@@ -1,0 +1,33 @@
+include("General")
+
+func init()
+  fvar(old)
+   
+  if(PRJ_NAME == 'stm32f407')
+    include_file('stm32f4xx_gpio.h')
+    include_file('stm32f4xx_rcc.h')
+  elseif(PRJ_NAME == 'stm32f103')
+    include_file('stm32f10x_gpio.h')
+    include_file('stm32f10x_rcc.h') 
+  end
+  
+  old = block.select(BLK_INIT)
+    println('Hi_GPIO_InitOut(FE_TRANSISTOR_PORT, FE_TRANSISTOR_PIN, GPIO_Speed_2MHz);')
+  block.select(old)
+end
+
+func doOn(_data)
+  println('Hi_GPIO_On(FE_TRANSISTOR_PORT, FE_TRANSISTOR_PIN);')
+end
+
+func doOff(_data)
+  println('Hi_GPIO_Off(FE_TRANSISTOR_PORT, FE_TRANSISTOR_PIN);')
+end
+
+func doInvert(_data)
+  println('Hi_GPIO_Invert(FE_TRANSISTOR_PORT, FE_TRANSISTOR_PIN);')
+end
+
+func Status()
+  return(to_type(('Hi_GPIO_ReadOutputDataBit(FE_TRANSISTOR_PORT, FE_TRANSISTOR_PIN)'), DT_CHAR))
+end

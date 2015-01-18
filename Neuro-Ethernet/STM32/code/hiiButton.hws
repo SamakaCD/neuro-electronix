@@ -1,0 +1,48 @@
+include("General")
+
+func init()
+  fvar(tmp, old)
+  
+  old = block.select(BLK_LOC)
+    println('char ',buf,'[',ResultFormat?9:17,'];')
+  block.select(old)
+  decl_var_val(tim_drt, 'int', Interval)
+  decl_var_val(tgl, 'int', 0)
+  
+  tmp = block.reggen()
+  block.select(tmp)
+    println('void vIButton_',_id(),'_TimerTask(void* params) {')
+      block.inclvl()
+        println('while(1) {')
+          block.inclvl()
+            println('if(',tim_drt,' != 0) {')
+              block.inclvl()
+                println('vTaskDelay(',tim_drt,');')
+                println('Hi_iButton_Read(',Port,'_PORT, ',Port,'_PIN, ',buf,', &',tgl,', ',ResultFormat,');')
+                println('if(',tgl,' == 1) {')
+                  block.inclvl()
+                    event(onRead, buf)
+                  block.declvl()
+                println('}')
+              block.declvl()
+            println('}')
+          block.declvl()
+        println('}')
+      block.declvl()
+    println('}')
+  move_block_to(BLK_LOC)
+  
+  block.select(BLK_INIT)
+    enable_supp(Port)
+    println('xTaskCreate(vIButton_',_id(),'_TimerTask, (signed char*) "vDS18B20_',_id(),'_TimerTask", 2*configMINIMAL_STACK_SIZE, NULL, 1, NULL);')
+  block.select(old)
+end
+
+func doRead(_data)
+  println('Hi_iButton_Read(',Port,'_PORT, ',Port,'_PIN, ',buf,', &',tgl,', ',ResultFormat,');')
+  event(onRead, buf)
+end
+
+func doInterval(_data)
+  println(tim_drt,' = ',read_int(_data),';')
+end

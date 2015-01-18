@@ -1,0 +1,79 @@
+
+Описание подключения библиотеки:
+
+
+- копируем каталог с файлами библиотеки в проект
+
+
+- из репозитория добавляем в проект библиотеки периферии:
+	- RCC
+	- GPIO
+	- EXTI
+	- MISC
+
+
+- в окне "view - project" CooCox создаем новую группу, и потом добавляем в эту 
+группу все файлы из папки библиотеки
+
+
+- в main.c добавляем:
+		#include "usbd_cdc_vcp.h" // подключаем USB CDC
+
+		__ALIGN_BEGIN USB_OTG_CORE_HANDLE  USB_OTG_dev __ALIGN_END;
+
+
+- в коде программы добавляем запуск usb
+		// включаем usb
+		USBD_Init(&USB_OTG_dev,USB_OTG_FS_CORE_ID,&USR_desc,&USBD_CDC_cb,&USR_cb);
+
+
+- подпрограммы библиотеки:
+	- usb_cdc_kbhit(): используется для проверки наличия данных во входном буфере
+	- usb_cdc_putc(char *c): отправка символа в буфер на передачу
+	- usb_cdc_printf(char *s): отправка строки в буфер на передачу
+	- usb_cdc_getc(): получение символа
+
+
+- пример использования (файл main.c) -----------------------------------------------------
+
+#include "stm32f4xx.h"
+#include "usbd_cdc_vcp.h" // подключаем USB CDC
+
+__ALIGN_BEGIN USB_OTG_CORE_HANDLE  USB_OTG_dev __ALIGN_END;
+
+const char ch3[]="receive 3\x0D\x0A";
+const char ch4[]="получено 4\x0D\x0A";
+char       ch5[]="receive 5\x0D\x0A";
+char       ch6[]="receive 6\x0D\x0A";
+
+int main(void)
+{
+	SystemInit(); // настройки тактирования
+
+	// включаем usb
+	USBD_Init(&USB_OTG_dev,USB_OTG_FS_CORE_ID,&USR_desc,&USBD_CDC_cb,&USR_cb);
+
+	while (1){
+
+		if(usb_cdc_kbhit()){ // проверка: приняты данные?
+			char c;
+			c = usb_cdc_getc();  // получение байта с usb
+			switch(c){ // разбор принятого символа
+				case '3':
+					usb_cdc_printf((char *)ch3); // строки на хост
+					break;
+				case '4':
+					usb_cdc_printf((char *)ch4);
+					break;
+				case '5':
+					usb_cdc_printf(ch5);
+					break;
+				case '6':
+					usb_cdc_printf(ch6);
+					break;
+			}
+		}
+	}
+}
+
+-------------------------------------------------------------------------------------

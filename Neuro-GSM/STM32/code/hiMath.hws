@@ -1,0 +1,32 @@
+include("General")
+
+func init()
+  decl_var_val(r, ((Mode ==0)?('int'):('double')), 0)
+end
+
+func doOperation(_data)
+  fvar(o1, o2)
+  
+  if(linked(Op1) or isndef(Op1))
+    o1 = Op1
+  elseif(_data != '')
+    o1 = _data
+  else
+    o1 = 0
+  end
+  
+  if(linked(Op2) or isndef(Op2))
+    o2 = Op2
+  elseif(_data != '' and o1 != _data)
+    o2 = _data
+  else
+    o2 = 0
+  end 
+
+  println(r,' = ',((Mode == 0)?read_int(o1):read_double(o1)),' ',OpType,' ',((Mode == 0)?read_int(o2):read_double(o2)),';')
+  event(onResult, to_type(r, ((Mode == 0)?DT_INT:DT_DOUBLE)))
+end
+
+func Result()
+  return(to_type(r, ((Mode == 0)?DT_INT:DT_DOUBLE)))
+end

@@ -1,0 +1,24 @@
+include("General")
+
+func init()
+  decl_var_val(i, 'int', 0)
+  decl_var_val(t, 'char', 1)
+end
+
+func doFor(_data)
+  println('for(',i,' = ',read_double(Start),'; ',i,' <= ',read_double(`End`),' && ',t,'; ',i,' += ',read_double(Step),') {')
+    block.inclvl()
+      event(onEvent, i)
+    block.declvl()
+  println('}')
+  event(onStop)
+end
+
+func doStop(_data)
+  println(t,' = 0;')
+  event(onStop)
+end
+
+func Position()
+  return(i)
+end

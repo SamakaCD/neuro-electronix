@@ -1,0 +1,25 @@
+include("General")
+
+func init()
+  fvar(old)
+  
+  old = block.select(BLK_INIT)
+    println('Hi_GPIO_InitOut(RELAY_PORT, RELAY_PIN, GPIO_Speed_2MHz);')
+  block.select(old)
+end
+
+func doOn(_data)
+  println('Hi_GPIO_On(RELAY_PORT, RELAY_PIN);')
+end
+
+func doOff(_data)
+  println('Hi_GPIO_Off(RELAY_PORT, RELAY_PIN);')
+end
+
+func doInvert(_data)
+  println('Hi_GPIO_Invert(RELAY_PORT, RELAY_PIN);')
+end
+
+func State()
+  return(to_type(('Hi_GPIO_ReadOutputDataBit(RELAY_PORT, RELAY_PIN)'), DT_CHAR))
+end

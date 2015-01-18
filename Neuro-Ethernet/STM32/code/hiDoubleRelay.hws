@@ -1,0 +1,34 @@
+include("General")
+
+func init()
+  fvar(old)
+  old = block.select(BLK_INIT)
+    println('Hi_QGPIO_Out2(GPIOC, GPIO_Pin_9);')
+    println('Hi_GPIO_InitOut(UNB_A_PORT, UNB_A_PIN, GPIO_Speed_2MHz);')
+    println('Hi_GPIO_InitOut(UNB_B_PORT, UNB_B_PIN, GPIO_Speed_2MHz);')
+  block.select(old)
+end
+
+func doOn1(_data)
+  println('Hi_GPIO_On(UNB_A_PORT, UNB_A_PIN);')
+end
+
+func doOff1(_data)
+  println('Hi_GPIO_Off(UNB_A_PORT, UNB_A_PIN);')
+end
+
+func doInvert1(_data)
+  println('Hi_GPIO_Invert(UNB_A_PORT, UNB_A_PIN);')
+end
+
+func doOn2(_data)
+  println('Hi_GPIO_On(UNB_B_PORT, UNB_B_PIN);')
+end
+
+func doOff2(_data)
+  println('Hi_GPIO_Off(UNB_B_PORT, UNB_B_PIN);')
+end
+
+func doInvert2(_data)
+  println('Hi_GPIO_Invert(UNB_B_PORT, UNB_B_PIN);')
+end

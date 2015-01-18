@@ -1,0 +1,28 @@
+include("General")
+
+func init()
+  fvar(tmp, old, i)
+  tmp = block.reggen()
+  old = block.select(tmp)
+    println('void ',itc,'_method(int index) {')
+      block.inclvl()
+        println('switch(index) {')
+          block.inclvl()
+            for(i = 0; i < `Count`; i++)
+              println('case ',i,':')
+              block.inclvl()
+                event('onEvent' && (i+1))
+                println('break;')
+              block.declvl()  
+            end
+          block.declvl()
+        println('}')
+      block.declvl()
+    println('}')
+  move_block_to(BLK_LOC)
+  block.select(old)
+end
+
+func doEvent(_data)
+  println(itc,'_method(',read_int((linked(Index) ? Index : _data)),');')
+end

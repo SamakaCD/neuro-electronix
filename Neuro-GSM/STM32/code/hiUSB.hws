@@ -1,0 +1,28 @@
+include("General")
+
+func init()
+  fvar(old, tmp, tmp2)
+  old = block.select(BLK_INIT)
+    println('Hi_USB_Init();')
+  
+  block.select(BLK_LOOP)
+    println('Hi_USB_CheckData();')
+    
+  tmp = block.reggen()
+  block.select(tmp)
+    event(onReceiveByte, 'data')
+  decl_method('void Hi_USB_Byte_Handler(char* data)', tmp, '')
+  
+  tmp2 = block.reggen()
+  block.select(tmp2)
+    println('void Hi_USB_Handler(char* data) {')
+      block.inclvl()
+        event(onReceive, 'data')
+      block.declvl()
+    println('}')
+  block.select(old)
+end
+
+func doSend(_data)
+  println('Hi_USB_Send(',read_str(linked(Data)?(Data):(_data)),');')
+end

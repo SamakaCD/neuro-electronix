@@ -1,0 +1,57 @@
+include("General")
+
+func init()
+  fvar(keyz, idz, c, i, t, old)
+  c = array_count(Data)
+  
+  define('DB_CNT', c)
+  include_file('database_stm32f103.c')
+  decl_var(db_read_result, 'int')
+
+  for(i = 0; i < c; i++)
+    t = str_split(Data[i], ":")
+    keyz &= t[0]
+    idz &= code(t[1])
+  end
+  
+  old = block.select(BLK_LOC)
+    println('char* ',keys,'[DB_CNT] = {')
+      block.inclvl()
+        println(_arr.join(keyz, ', '))
+      block.declvl()
+    println('};')
+    
+    println('int ',ids,'[DB_CNT] = {')
+      block.inclvl()
+        println(_arr.join(idz, ', '))
+      block.declvl()
+    println('};')
+  
+  block.select(BLK_INIT)
+    println('Hi_DB_Init(',keys,', ',ids,');')
+  block.select(old)
+end
+
+func doRead(_data)
+  fvar(i)
+  println(db_read_result,' = Hi_DB_Read(',read_str(_data),');')
+  println('if(',db_read_result,' != -1) {')
+    block.inclvl()
+      println('switch(',db_read_result,') {')
+        block.inclvl()
+          for(i = 0; i < array_count(Data); i++)
+            println('case ',i,':')
+              block.inclvl()
+                event(Data[i], to_type(ids + '[' + i + ']', 1))
+                println('break;')
+              block.declvl()
+          end
+        block.declvl()
+      println('}')
+    block.declvl()
+  println('} else {')
+    block.inclvl()
+      event(onNotFound)
+    block.declvl()
+  println('}')
+end

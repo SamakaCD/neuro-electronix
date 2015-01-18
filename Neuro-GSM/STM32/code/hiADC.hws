@@ -1,0 +1,43 @@
+include("General")
+          
+func init()
+  fvar(tmp, old)
+  decl_var_val(val, 'int', 0)
+    
+  tmp = block.reggen()
+  old = block.select(tmp)
+    println('void ',vAdcTask,'(void* p) {')
+      block.inclvl()
+        println('while(1) {')
+          block.inclvl()
+            println('if(',tim_drt,' != 0) {')
+              block.inclvl()
+                println(val,' = Hi_ADC_Read(ADC_CH_',Port,');')
+                event(onGetValue, val)
+                println('vTaskDelay(',tim_drt,');')
+              block.declvl()
+            println('}')
+          block.declvl()
+        println('}')
+      block.declvl()
+    println('}')
+  
+  block.select(BLK_INIT)
+    println('Hi_ADC_Init(CPORT_',Port,'_PORT, CPORT_',Port,'_PIN);')
+    println('CreateTask2(',vAdcTask,');')
+
+  block.select(old)
+end
+
+func doGetValue(_data)
+  println(val,' = Hi_ADC_Read(ADC_CH_',Port,');')
+  event(onGetValue, val)
+end
+
+func doInterval(_data)
+  println(tim_drt,' = ',read_int(_data),';')
+end
+
+func ADCValue()
+  return(val)
+end
