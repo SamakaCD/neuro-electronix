@@ -1,0 +1,15 @@
+include("EntryPoint")
+include("General")
+
+// Build: AlPN
+func doStart()
+   entry_point_init('Neuro-GSM')
+   include_library('Neuro-GSM')
+   include_file('hi_stm32f103.c')
+   sys.initall()
+   entry_point_post_init('-mcpu=cortex-m3 -mthumb -w -ffunction-sections -g -O0 -c -DSTM32F103RC -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__', '-mcpu=cortex-m3', 'STM32F103RC')
+end
+
+func doReset(_data)
+  println('NVIC_SystemReset();')
+end

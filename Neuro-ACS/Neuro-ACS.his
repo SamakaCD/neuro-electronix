@@ -1,0 +1,8 @@
+function run() {
+  sys.addpack("neuro-acs","Neuro-ACS","Пакет для Neuro-ACS (Система контроля доступа)","hws");
+  sys.addproject("neuro-acs","Neuro-ACS","Neuro-ACS","Пакет для Neuro-ACS (Система контроля доступа)","elf","make_Neuro.dll");
+  sys.addcompiler("Neuro-compiler","\"%upath%\" \"%fname%\" \"%oname%\"","compiler\\Neuro-compiler\\compiler.exe","hex");  
+  sys.setcompiler("neuro-acs","Neuro-compiler");
+}
+
+// made by "HiAsm 4.4 build 185"

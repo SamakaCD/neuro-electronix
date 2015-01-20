@@ -1,0 +1,235 @@
+Make(delphi)
+ver(4.04 build 185)
+Add(MainForm,12792403,133,98)
+{
+ Width=356
+ Height=141
+ Caption="Программирование..."
+ BorderStyle=3
+ Position=1
+ Point(doHeight)
+ link(onCreate,15181166:doLoad,[])
+}
+Add(StyleXP,16394231,133,56)
+{
+}
+Add(StrList,15181166,182,84)
+{
+ FileName="params.xml"
+ link(onChange,586519:doSearch,[])
+}
+Add(BlockFind,586519,266,84)
+{
+ IncludeBlock=1
+ StartBlock="<model>\r\n"
+ EndBlock="\r\n</model>"
+ link(onSearch,9952685:doString,[])
+ link(Text,15181166:Text,[(272,72)(230,72)(230,141)(188,141)])
+}
+Add(FormatStr,9952685,315,84)
+{
+ DataCount=1
+ Mask="program %1 "%1.elf" --adapter-name=ST-Link --port=SWD --adapter-clk=1000000 --erase=affected --driver="flash\\%1.elf" "
+ Point(FString)
+ link(onFString,6971137:doEvent1,[])
+}
+Add(Hub,6971137,357,84)
+{
+ link(onEvent1,7222583:doConsoleExec,[])
+ link(onEvent2,7222583:doConsoleInput,[])
+}
+Add(WinExec,7222583,392,70)
+{
+ FileName="coflash_bin\\coflash.exe"
+ RunEvent=1
+ Point(doConsoleExec)
+ Point(doConsoleInput)
+ Point(doConsoleTerminate)
+ Point(onConsoleResult)
+ Point(onConsoleError)
+ Point(onConsoleTerminate)
+ link(onExec,12995534:doWork2,[])
+ link(Params,9952685:FString,[(405,58)(380,58)(380,123)(321,123)])
+ link(onConsoleResult,8155603:doWork2,[])
+ link(onConsoleError,8155603:doWork3,[(431,90)])
+}
+Add(ProgressBarRush,2632007,945,77)
+{
+ Left=70
+ Top=10
+ Width=275
+ Frame=0
+}
+Add(BlockFind,6581043,581,77)
+{
+ IncludeBlock=1
+ StartBlock="["
+ EndBlock="]"
+ link(onSearch,5337215:doCompare,[])
+}
+Add(If_else,5337215,630,77)
+{
+ Op2=String(Done)
+ link(onTrue,1705346:doNext,[(670,83)(670,146)])
+ link(onFalse,1467170:doDelete,[])
+}
+Add(CounterEx,1705346,679,140)
+{
+ Max=4
+ link(onNext,9735470:doCompare,[])
+}
+Add(Delete,1467170,679,84)
+{
+ Count=1
+ Direction=1
+ link(onDelete,7235520:doTrim,[])
+}
+Add(Hub,1560105,448,70)
+{
+ OutCount=3
+ link(onEvent1,10982262:doWork1,[(472,76)(472,41)])
+ link(onEvent2,6581043:doSearch,[])
+ link(onEvent3,1054326:doSearch,[(472,90)(472,125)])
+}
+Add(Trim,7235520,721,84)
+{
+ Char=" "
+ Point(Result)
+ link(onTrim,9487351:doEvent,[(814,90)(814,118)])
+}
+Add(IndexToChanel,9487351,875,112)
+{
+ Count=3
+ Point(Index)
+ Point(Data)
+ link(onEvent1,2632007:doPosition,[(926,118)(926,83)])
+ link(onEvent2,2518620:doPosition,[])
+ link(onEvent3,6513916:doPosition,[(926,132)(926,167)])
+ link(Index,1705346:Count,[(881,100)(859,100)(859,181)(685,181)])
+ link(Data,7235520:Result,[(888,79)(808,79)(808,128)(727,128)])
+}
+Add(ProgressBarRush,2518620,945,119)
+{
+ Left=70
+ Top=35
+ Width=275
+ Frame=0
+}
+Add(ProgressBarRush,6513916,945,161)
+{
+ Left=70
+ Top=60
+ Width=275
+ Frame=0
+}
+Add(Label,2356046,630,35)
+{
+ Left=20
+ Top=12
+ Width=34
+ Height=17
+ Caption="Erase:"
+}
+Add(Label,14957806,581,35)
+{
+ Left=10
+ Top=37
+ Width=46
+ Height=17
+ Caption="Program:"
+}
+Add(Label,12797730,532,35)
+{
+ Left=20
+ Top=62
+ Width=33
+ Height=17
+ Caption="Verify:"
+}
+Add(Button,12897415,49,140)
+{
+ Left=275
+ Top=85
+ Width=70
+ Caption="Подробней"
+ link(onClick,8967742:doSwitch,[])
+}
+Add(ChildGroupBox,10982262,483,35)
+{
+}
+BEGIN_SDK
+  Add(EditMulti,3586535,21,21)
+  {
+   WorkCount=1
+   link(doWork1,11371156:doAdd,[(98,27)(98,118)])
+  }
+  Add(GroupBox,2179523,35,105)
+  {
+   Left=5
+   Top=110
+   Width=338
+   Height=162
+   Caption="Консоь"
+  }
+  Add(Memo,11371156,175,112)
+  {
+   Left=5
+   Top=20
+   Width=329
+   Height=138
+   Font=[Courier New,11,0,0,204]
+   ScrollBars=3
+   ReadOnly=0
+  }
+END_SDK
+Add(Switch,8967742,91,140)
+{
+ DataOn=Real(307)
+ DataOff=Real(141)
+ link(onSwitch,12792403:doHeight,[(128,146)(128,132)])
+}
+Add(Position,1054326,483,119)
+{
+ Target="Error"
+ link(onSearch,7798017:doData,[])
+}
+Add(DoData,7798017,532,119)
+{
+ Data=String(Ошибка)
+ link(onEventData,3574010:doText,[])
+}
+Add(Label,3574010,581,119)
+{
+ Left=120
+ Top=85
+ Width=115
+ Font=[MS Sans Serif,12,0,255,1]
+ Caption=""
+ ColorHover=-16777208
+}
+Add(If_else,9735470,721,140)
+{
+ Op2=Real(3)
+ link(onTrue,9467219:doTimer,[])
+}
+Add(LineBreak,5982264,91,119)
+{
+ link(Out,12792403:doClose,[])
+ Primary=[16618812,728,21]
+}
+Add(MMTimer,9467219,770,140)
+{
+ Interval=500
+ Enable=1
+ AutoStop=1
+ link(onTimer,16618812:In,[])
+}
+Add(HubEx,12995534,427,70)
+{
+ link(onEvent,1560105:doEvent1,[])
+}
+Add(HubEx,8155603,427,77)
+{
+ Angle=3
+ link(onEvent,12995534:doWork3,[])
+}

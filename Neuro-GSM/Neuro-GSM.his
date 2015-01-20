@@ -1,0 +1,8 @@
+function run() {
+  sys.addpack("neuro-gsm","Neuro-GSM","Пакет для Neuro-GSM","hws");
+  sys.addproject("neuro-gsm","Neuro-GSM","Neuro-GSM","Пакет для Neuro-GSM","elf","make_Neuro.dll");
+  sys.addcompiler("Neuro-compiler","\"%upath%\" \"%fname%\" \"%oname%\"","compiler\\Neuro-compiler\\compiler.exe","hex");
+  sys.setcompiler("neuro-gsm","Neuro-compiler");
+}
+
+// made by "HiAsm 4.4 build 185"

@@ -1,0 +1,8 @@
+function run() {
+  sys.addpack("neuro-ethernet","Neuro-Ethernet","Пакет для Neuro-Ethernet","hws");
+  sys.addproject("neuro-ethernet","Neuro-Ethernet","Neuro-Ethernet","Пакет для Neuro-Ethernet","elf","make_Neuro.dll");
+  sys.addcompiler("Neuro-compiler","\"%upath%\" \"%fname%\" \"%oname%\"","compiler\\Neuro-compiler\\compiler.exe","hex");
+  sys.setcompiler("neuro-ethernet","Neuro-compiler");
+}
+
+// made by "HiAsm 4.4 build 185"
