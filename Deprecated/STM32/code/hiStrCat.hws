@@ -1,0 +1,31 @@
+include("General")
+
+func init()
+  decl_var(mstr, 'char*')
+end
+
+func doStrCat(_data)
+  fvar(s1, s2)
+  
+  if(linked(Str1) or isndef(Str1))
+    s1 = Str1
+  elseif(_data != '')
+    s1 = _data
+  else
+    s1 = ""
+  end
+  
+  if(linked(Str2) or isndef(Str2))
+    s2 = Str2
+  elseif(_data != '' and s1 != _data)
+    s2 = _data
+  else
+    s2 = ""
+  end 
+  println(mstr,' = Hi_Str_Concat(',read_str(s1),', ',read_str(s2),');')
+  event(onStrCat, mstr)
+end
+
+func Result()
+  return(mstr)
+end

@@ -1,0 +1,6 @@
+func doStart()
+  //TODO
+  trace("Paste you code here")
+  block.select(block.reggen())
+  println('Code of you project')
+end

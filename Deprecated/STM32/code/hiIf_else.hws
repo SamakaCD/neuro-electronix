@@ -1,0 +1,66 @@
+include("General")
+
+func init()
+  decl_var_val(r, 'unsigned char', 0)
+end
+
+func doCompare(_data)
+  fvar(_op1, _op2)
+  if(linked(Op1) or isndef(Op1))
+    _op1 = Op1
+  elseif('' != _data)
+    _op1 = _data
+  else
+    _op1 = 0
+  end
+  
+  if(linked(Op2) or isndef(Op2))
+    _op2 = Op2
+  elseif('' != _data and _data != _op1)
+    _op2 = _data
+  else
+    _op2 = 0
+  end
+  
+  if(chktp(_op1, DT_STR))
+    println('if(strcmp(',_op1,', ',read_str(_op2),') == 0) {')
+      block.inclvl()
+        println(r,' = 1;')
+        event(onTrue)
+      block.declvl()
+    println('} else {')
+      block.inclvl()
+        println(r,' = 0;')
+        event(onFalse, _data)
+      block.declvl()  
+    println('}')  
+  elseif(chktp(_op2, DT_STR))
+    println('if(strcmp(',_op2,', ',read_str(_op1),') == 0) {')
+      block.inclvl()
+        println(r,' = 1;')
+        event(onTrue)
+      block.declvl()
+    println('} else {')
+      block.inclvl()
+        println(r,' = 0;')
+        event(onFalse, _data)
+      block.declvl()  
+    println('}')  
+  else
+    println('if(',_op1,' ',code(Type),' ',_op2,') {')
+      block.inclvl()
+        println(r,' = 1;')
+        event(onTrue)
+      block.declvl()
+    println('} else {')
+      block.inclvl()
+        println(r,' = 0;')
+        event(onFalse, _data)
+      block.declvl()  
+    println('}')  
+  end
+end
+
+func Result()
+  return(to_type(r, DT_CHAR))
+end

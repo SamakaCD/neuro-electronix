@@ -1,0 +1,55 @@
+include("General")
+
+func init()
+  fvar(tmp, old)
+ 
+  decl_var_val(tim_tgl, 'int', code(Enabled))
+  decl_var_val(tim_drt, 'int', Interval)
+  decl_var_val(astp, 'int', 0)
+  decl_var_val(astpc, 'int', AutoStop)
+  
+  tmp = block.reggen()
+  old = block.select(tmp)
+    println('void vTimer',_id(),'Task(void* params) {')
+      block.inclvl()
+        println('while(1) {')
+          block.inclvl()
+            println('if(',tim_tgl,') {')
+              block.inclvl()
+                println('vTaskDelay(',tim_drt,');')
+                event(onEvent)
+                println('if((++',astp,' == ',astpc,') && (',astpc,' != 0)) {')
+                  block.inclvl()
+                    println(tim_tgl,' = 0;')
+                    event(onAutoStop)
+                  block.declvl()
+                println('}')
+              block.declvl()
+            println('}')
+          block.declvl()
+        println('}')
+      block.declvl()
+    println('}')
+  move_block_to(BLK_LOC)
+  
+  block.select(BLK_INIT)
+    println('xTaskCreate(vTimer',_id(),'Task, (signed char*) "vTimer',_id(),'Task", 2*configMINIMAL_STACK_SIZE, NULL, 1, NULL);')
+  block.select(old)
+end
+
+func doStart(_data)
+  println(tim_tgl,' = 1;')
+  println(astp,' = 0;')
+end
+
+func doStop(_data)
+  println(tim_tgl,' = 0;')
+end
+
+func doInterval(_data)
+  println(tim_drt,' = ',read_int(_data),';')
+end
+
+func doAutoStop(_data)
+  println(astpc,' = ',read_int(_data),';')
+end

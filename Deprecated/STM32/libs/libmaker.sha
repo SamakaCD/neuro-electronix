@@ -1,0 +1,189 @@
+Make(delphi)
+ver(4.04 build 185)
+Add(MainForm,2953706,224,56)
+{
+ Caption="STM32 HiAsm Library Maker"
+ BorderStyle=3
+ Position=1
+}
+Add(Memo,4325666,798,224)
+{
+ Width=394
+ Height=272
+ Align=5
+ ScrollBars=3
+}
+Add(Browse,3857400,224,98)
+{
+ Title="Select a library folder"
+ NewDirButton=1
+ link(onBrowse,14297230:doValue,[])
+}
+Add(FileSearch,9603768,322,217)
+{
+ link(onSearch,3696282:doValue,[])
+ link(Dir,14585752:Var2,[])
+}
+Add(MultiStrData,1926103,420,217)
+{
+ Char="."
+ Count=1
+ Direct=1
+ link(onPart1,10838757:doCase,[])
+}
+Add(Case,10838757,469,217)
+{
+ Value=String(c)
+ link(onNextCase,12973421:doCase,[])
+ link(onTrue,13840577:doWork3,[(510,230)(510,255)(557,255)])
+}
+Add(Case,12973421,518,217)
+{
+ Value=String(h)
+ link(onTrue,13840577:doWork2,[])
+}
+Add(Memory,3696282,371,217)
+{
+ link(onData,1926103:doSplit,[])
+}
+Add(LineBreak,2979942,371,259)
+{
+ Caption="fname"
+ Type=1
+ link(Data,3696282:Value,[])
+ Primary=[8896927,196,-63]
+}
+Add(HubEx,13840577,553,224)
+{
+ link(onEvent,14336638:doData,[])
+}
+Add(DoData,14336638,567,224)
+{
+ link(onEventData,11135105:doReplace,[])
+ link(Data,8896927:Var,[])
+}
+Add(StyleXP,13417275,329,56)
+{
+}
+Add(Replace,5355745,714,224)
+{
+ SubStr="\"
+ DestStr="\\"
+ link(onReplace,4325666:doAdd,[])
+}
+Add(Replace,11135105,616,224)
+{
+ link(onReplace,11637619:doString,[])
+ link(Sub_str,2573345:Var3,[(629,145)])
+}
+Add(GetDataEx,14585752,329,140)
+{
+ link(Data,14297230:Value,[])
+}
+Add(Hub,5128144,210,203)
+{
+ OutCount=3
+ link(onEvent1,12312760:In,[(244,209)(244,146)])
+ link(onEvent2,12353703:doPart,[(252,216)(252,167)])
+ link(onEvent3,9603768:doSearch,[])
+}
+Add(LineBreak,6810592,756,231)
+{
+ Caption="clr"
+ link(Out,4325666:doClear,[])
+ Primary=[12312760,-476,-91]
+}
+Add(Menu,16581256,49,91)
+{
+ Menu=#4:Open|4:Save|
+ Point(onSelectNum)
+ link(onSelectNum,557999:doEvent,[])
+}
+Add(IndexToChanel,557999,98,98)
+{
+ link(onEvent1,3857400:doBrowse,[])
+ link(onEvent2,3042733:doExecute,[(142,111)(142,237)])
+}
+Add(Memory,14297230,329,98)
+{
+ link(onData,16662457:In,[])
+}
+Add(LineBreak,15600965,154,203)
+{
+ Caption="make"
+ link(Out,5128144:doEvent1,[])
+ Primary=[16662457,224,-105]
+}
+Add(SDialog,3042733,154,231)
+{
+ Filter="STM32 Pack Library (*.slib)|*.slib"
+ Title="Save"
+ StartDir=""
+ FileName=""
+ link(onExecute,12133777:In,[])
+}
+Add(LineBreak,1582164,756,259)
+{
+ link(Out,4325666:doSave,[])
+ Primary=[12133777,-546,-28]
+}
+Add(FileSearch,8137259,420,161)
+{
+ Include=1
+ link(onSearch,9080467:doReplace,[])
+ link(Dir,9023165:Var2,[])
+}
+Add(GetDataEx,9023165,427,140)
+{
+ Angle=3
+ link(Data,14585752:Var3,[])
+}
+Add(FormatStr,11637619,665,224)
+{
+ Mask="Elements\\STM32\\code\\result\\%1%2"
+ link(onFString,2056832:doWork2,[])
+ link(Str1,13874963:getVar,[])
+}
+Add(FilePartElm,12353703,280,161)
+{
+ Point(Part)
+ link(onPart,8137259:doSearch,[])
+}
+Add(LineBreakEx,16707159,280,203)
+{
+ Caption="lib"
+ Type=3
+ PColor(_Data,11141375)
+ link(_Data,12353703:Part,[])
+}
+Add(LineBreakEx,13874963,665,196)
+{
+ Caption="lib"
+ Type=2
+}
+Add(Replace,9080467,469,161)
+{
+ link(onReplace,2277578:doString,[])
+ link(Sub_str,2573345:Var2,[])
+}
+Add(FormatStr,2277578,518,161)
+{
+ Mask="-IElements\\STM32\\code\\result\\%1%2"
+ PColor(Str1,11141375)
+ link(onFString,2056832:doWork1,[(704,167)])
+ link(Str1,16733185:getVar,[])
+}
+Add(LineBreakEx,16733185,518,119)
+{
+ Caption="lib"
+ Type=2
+}
+Add(GetDataEx,2573345,476,140)
+{
+ Angle=3
+ link(Data,9023165:Var3,[])
+}
+Add(HubEx,2056832,700,224)
+{
+ link(onEvent,5355745:doReplace,[])
+}

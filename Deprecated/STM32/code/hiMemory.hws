@@ -1,0 +1,26 @@
+include("General")
+
+func init()
+  if(isndef(Default))
+    fvar(old)
+    old = block.select(BLK_LOC)
+      println('char ',dat,'[',MemAlloc,'] = "',code(Default),'";')
+    block.select(old)
+  else
+    decl_var(dat + '[' + MemAlloc + ']', 'char')
+  end
+end
+
+func doSetValue(_data)
+  println('memset(',dat,', 0, sizeof(',dat,'));')
+  println('strcpy(',dat,', ',read_str((linked(Data)?Data:_data)),');')
+  event(onSetValue, dat@str)
+end
+
+func doClear(_data)
+  println('memset(',dat,', 0, sizeof(',dat,'));')
+end
+
+func Value()
+  return(dat@str)
+end

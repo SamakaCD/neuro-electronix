@@ -1,0 +1,6 @@
+Make(stm32)
+Add(PinOut,7285128,483,231)
+{
+ Port=1
+ PinNumber=5
+}

@@ -1,0 +1,14 @@
+include("General")
+
+func init()
+  decl_var_val(sln, 'int', 0)
+end
+
+func doLength(_data)
+  println(sln,' = strlen(',read_str(linked(String)?String:_data),');')
+  event(onLength, sln)
+end
+
+func Result()
+  return(sln)
+end

@@ -1,0 +1,34 @@
+include("General")
+
+func init()
+  fvar(tmp, old)
+  decl_var_val(sts_tgl, 'char', 0)
+  
+  tmp = block.reggen()
+  block.select(tmp)
+    println('void ',vInput,'(uint8_t ',s,') {')
+      block.inclvl()
+        println('if(',s,') {')
+          block.inclvl()
+            event(onKeyOn)
+          block.declvl()
+        println('} else {')
+          block.inclvl()
+            event(onKeyOff)
+          block.declvl()        
+        println('}')
+      block.declvl()
+    println('}')
+    println('Hi_QGPIO_In(',vInputTask,', ',vInput,', ',Status,', GPIO',Port,', GPIO_Pin_',PinNumber,');')
+  move_block_to(BLK_LOC)
+  
+  block.select(BLK_INIT)
+    enable_supp(Port)
+    println('Hi_GPIO_InitIn(GPIO',Port,', GPIO_Pin_',PinNumber,');')
+    println('CreateTask2(',vInputTask,');')
+  block.select(old)
+end
+
+func State()
+  return(to_type(sts_tgl, DT_CHAR))
+end

@@ -1,0 +1,54 @@
+include("General")
+
+func init()
+  fvar(tmp, old)
+  decl_var_val(mlt, 'double', 0)
+  decl_var_val(tim_drt, 'int', Interval)
+  tmp = block.cur()
+  
+  tmp = block.reggen()
+  block.select(tmp) 
+    println('void vDS18B20_',_id(),'_StatusHandler(uint8_t ',s,') {')
+      block.inclvl()
+        event(onStatus, s)
+      block.declvl()
+    println('}')
+    
+    println('void vDS18B20_',_id(),'_ResultHandler(double ',t,') {')
+      block.inclvl()
+        event(onResult, t)
+      block.declvl()
+    println('}')
+    
+    println('void vDS18B20_',_id(),'_TimerTask(void* params) {')
+      block.inclvl()
+        println('while(1) {')
+          block.inclvl()
+            println('if(',tim_drt,' != 0) {')
+              block.inclvl()
+                println('vTaskDelay(',tim_drt,');')
+                println('Hi_DS18B20_Scan(',Port,'_PORT, ',Port,'_PIN, vDS18B20_',_id(),'_StatusHandler, vDS18B20_',_id(),'_ResultHandler);')
+              block.declvl()
+            println('}')
+        println('}')
+      block.declvl()
+    println('}')
+  move_block_to(BLK_LOC)
+  
+  block.select(BLK_INIT)
+    enable_supp(Port)
+    println('xTaskCreate(vDS18B20_',_id(),'_TimerTask, (signed char*) "vDS18B20_',_id(),'_TimerTask", 2*configMINIMAL_STACK_SIZE, NULL, 1, NULL);')
+  block.select(old)
+end
+
+func doGetTemp(_data)
+  println('Hi_DS18B20_Scan(',Port,'_PORT, ',Port,'_PIN, vDS18B20_',_id(),'_StatusHandler, vDS18B20_',_id(),'_ResultHandler);')
+end
+
+func doInterval(_data)
+  println(tim_drt,' = ',read_int(_data),';')
+end
+
+func Temp()
+  return(mlt)
+end
