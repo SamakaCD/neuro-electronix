@@ -17,56 +17,8 @@
 #include "math.h"
 #include <stdarg.h>
 #include "heap_4.c"
-
-#define Hi_List_Create(LIST, TYPE)					\
-	struct LIST##_ItemStruct {						\
-		TYPE 		Item; 							\
-		uint32_t 	Index;							\
-		struct LIST ## _ItemStruct Next;			\
-	};												\
-	typedef struct LIST##_ItemStruct LIST##_Item;	\
-															\
-	typedef struct {										\
-		uint32_t	Count;									\
-		LIST##_Item 	First;								\
-		LIST##_Item 	Last;								\
-	} LIST##_Def;										\
-	LIST##_Def LIST;
-
-#define Hi_List_Add(LIST, ITEM) 				\
-	{											\
-		(LIST ## _Item) _Item;					\
-		_Item.Item = ITEM;						\
-		_Item.Index = LIST.Count;				\
-		_Item.Next = NULL;						\
-												\
-		if(LIST.Count == 0) {					\
-			LIST.First = _Item;					\
-			LIST.Last  = _Item;					\
-		} else {								\
-			LIST.Last.Next = (_Item);			\
-			LIST.Last = _Item;					\
-		}										\
-		LIST.Count++;							\
-	}
-
-#define Hi_List_Get(LIST, IDX)					\
-	{											\
-		S_ITEM Item = LIST.First;				\
-		uint32_t Index;							\
-		if(Item == NULL) {						\
-			return NULL;						\
-		}										\
-		do {									\
-			Index = Item.Index;					\
-			if(Item.Next == NULL) {				\
-				return NULL;					\
-			}									\
-			Item = (Item.Next);					\
-		} while(Index != IDX);					\
-		return Item.Item;						\
-	}
-
+#include "hi_list.c"
+#include "hi_debug.c"
 
 #define BUS_GPIOA RCC_APB2Periph_GPIOA
 #define BUS_GPIOB RCC_APB2Periph_GPIOB
@@ -79,10 +31,10 @@
 #define TIMER_DIVIDER 1000
 #define ANTI_BOUNCE_TIME 100
 
-#define RELAY_PORT GPIOB
-#define RELAY_PIN GPIO_Pin_12
+#define RELAY_PORT GPIOA
+#define RELAY_PIN GPIO_Pin_4
 #define FE_TRANSISTOR_PORT GPIOB
-#define FE_TRANSISTOR_PIN GPIO_Pin_1
+#define FE_TRANSISTOR_PIN GPIO_Pin_13
 
 #define TP_1_PORT GPIOB
 #define TP_2_PORT GPIOC
@@ -98,12 +50,17 @@
 #define TP_5_PIN GPIO_Pin_6
 #define TP_6_PIN GPIO_Pin_5
 
+#define TP_1 TP_1_PORT, TP_1_PIN
+#define TP_2 TP_2_PORT, TP_2_PIN
+#define TP_3 TP_3_PORT, TP_3_PIN
+#define TP_4 TP_4_PORT, TP_4_PIN
+#define TP_5 TP_5_PORT, TP_5_PIN
+#define TP_6 TP_6_PORT, TP_6_PIN
+
 #define UNB_A_PORT GPIOA
 #define UNB_B_PORT GPIOA
-#define UNB_C_PORT GPIOA
 #define UNB_A_PIN  GPIO_Pin_9
 #define UNB_B_PIN  GPIO_Pin_10
-#define UNB_C_PIN  GPIO_Pin_1
 
 #define ADC_CH_1 8
 #define ADC_CH_2 15
@@ -112,8 +69,8 @@
 #define ADC_CH_5 6
 #define ADC_CH_6 5
 
-#define SYSLED_PORT GPIOB
-#define SYSLED_PIN  GPIO_Pin_5
+#define SYSLED_PORT GPIOC
+#define SYSLED_PIN  GPIO_Pin_0
 
 #define WEAK __attribute__ ((weak))
 #define MAX(A, B) ((A > B)?A:B)
@@ -127,9 +84,11 @@
 #define FLASH_FIRST_ADDR 0x8014000 // Page 40
 #define FLASH_PARTITION_PAGE 0x807D000 // Page 250
 
+#define DBG_UART USART2
+
 void Hi_UART_Send1(uint8_t data) {
-	while(!(USART1 -> SR & USART_SR_TC));
-	USART1 -> DR = data;
+	while(!(DBG_UART -> SR & USART_SR_TC));
+	DBG_UART -> DR = data;
 }
 
 void Hi_UART_SendStr1(char* string) {
@@ -461,7 +420,7 @@ void Hi_UART_ListenerInit(USART_TypeDef* UARTx, uint8_t UARTn) {
 			} 														\
 			USART_Init(__NAME, &USART_InitStruct); 					\
 			USART_Cmd(__NAME, ENABLE);								\
-			CreateTask(FUNCNAME, "", NULL); 						\
+			xTaskCreate(FUNCNAME, "", configMINIMAL_STACK_SIZE, NULL, 1, NULL);	\
 			Uart.Buffer = (uint8_t*) pvPortMalloc(Hi_UART_BufferSize);	\
 			Uart.CharListeners = pvPortMalloc(Hi_UART_ListenersCount); 	\
 			Uart.EntListeners = pvPortMalloc(Hi_UART_ListenersCount); 	\
@@ -663,28 +622,41 @@ void Hi_IntToBin(uint8_t c, char* buf) {
 }
 
 /* iButton */
+uint8_t OW_Crc8(char* pcBlock, uint8_t len) {
+	uint8_t i, j, byte, crc = 0;
+	for(i = 0; i < len; i++) {
+		byte = pcBlock[i];
+		for(j = 0; j < 8; j++) {
+			if((byte ^ crc) & 1)
+				crc = ((crc ^ 24) >> 1) | 128;
+			else crc >>= 1;
+			byte >>= 1;
+		}
+	}
+	return crc;
+}
+
 void Hi_iButton_Read(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, char* buffer, int* pToggle, uint8_t type) {
 	uint8_t i;
 	char* b = pvPortMalloc(8);
 	char* hex = pvPortMalloc(2);
-
     taskENTER_CRITICAL();
     {
     	Hi_GPIO_InitOut(GPIOx, GPIO_Pin, GPIO_Speed_50MHz);
-    	Hi_GPIO_On(GPIOx, GPIO_Pin);
-    	if(One_Wire_Reset(GPIOx, GPIO_Pin) == 0) {
+    	u8 a = OW_SearchRom(GPIOx, GPIO_Pin, b);
+    	if(a == One_Wire_Success)
     		(*pToggle)++;
-        	One_Wire_Write_Byte(0x33, GPIOx, GPIO_Pin);
-        	for(i = 0; i < 8; i++) {
-        		b[i] = One_Wire_Read_Byte(GPIOx, GPIO_Pin);
-        	}
-    	} else {
-    		*pToggle = 0;
-    	}
+    	else (*pToggle) = 0;
     }
     taskEXIT_CRITICAL();
 
     if(*pToggle == 1) {
+    	if(OW_Crc8(b, 7) != b[7])) { // Check CRC
+    	    vPortFree(b);
+    	    vPortFree(hex);
+    	    return;
+    	}
+
         if(type) {
         	for(i = 0; i < 8; i++) {
         		*(buffer+i) = *(b+i);

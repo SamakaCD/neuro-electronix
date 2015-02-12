@@ -39,6 +39,19 @@ unsigned char Crc8(unsigned int len, unsigned char *pcBlock)
 #define One_Wire_Device_Number_MAX			10	//maximum number of 1-wire devices on bus
 unsigned char Search_Rom_SN[One_Wire_Device_Number_MAX][DS1822_SERIAL_NUM_SIZE];
 
+u8 OW_SearchRom(GPIO_TypeDef* GPIOx, unsigned long PINx, char* SN) {
+	unsigned char cnt_bytes;
+	unsigned char tmp;
+
+	tmp=One_Wire_Reset(GPIOx, PINx);
+	if (tmp!=One_Wire_Success) return tmp;
+	One_Wire_Write_Byte(0x33, GPIOx, PINx);
+	for(cnt_bytes = 0; cnt_bytes < 8; cnt_bytes++) {
+		SN[cnt_bytes] = One_Wire_Read_Byte(GPIOx, PINx);
+	}
+	return One_Wire_Success;
+}
+
 unsigned char DS1822_Search_Rom_One_Device (GPIO_TypeDef * GPIOx, unsigned long PINx, unsigned char (*Serial_Num)[DS1822_SERIAL_NUM_SIZE])
 {
 	unsigned char cnt_bits;
@@ -60,8 +73,8 @@ unsigned char DS1822_Search_Rom_One_Device (GPIO_TypeDef * GPIOx, unsigned long 
 			One_Wire_Write_Bit(tmp, GPIOx, PINx);
 			if (tmp!=0) tmp2|=(1<<cnt_bits);
 		}
-	( *Serial_Num)[cnt_bytes]=tmp2;
-	tmp2=0;
+		( *Serial_Num)[cnt_bytes]=tmp2;
+		tmp2=0;
 	}
 	if (Crc8Dallas(DS1822_SERIAL_NUM_SIZE,(*Serial_Num))==0) return One_Wire_Success;
 	else return One_Wire_CRC_Error;
@@ -142,39 +155,36 @@ unsigned char DS1822_Search_Rom (unsigned char * devices_found, GPIO_TypeDef * G
 
 unsigned char DS1822_Search_Rom2 (GPIO_TypeDef * GPIOx, unsigned long PINx, unsigned char * devices_found, unsigned char (* SN_ROM)[One_Wire_Device_Number_MAX][DS1822_SERIAL_NUM_SIZE])
 {
-	unsigned long path,next,pos;
- 	unsigned char bit,chk;
-	unsigned char cnt_bit, cnt_byte, cnt_num,tmp;
- 	path=0;
- 	cnt_num=0;
-	do
-	{
- 		tmp=One_Wire_Reset(GPIOx, PINx);
- 			if (tmp!=One_Wire_Success) return tmp;
-			One_Wire_Write_Byte(One_Wire_Search_ROM,GPIOx, PINx);
+	unsigned long path = 0, next, pos;
+ 	unsigned char bit, chk;
+	unsigned char cnt_bit, cnt_byte, cnt_num = 0, tmp;
+
+	do {
+		tmp=One_Wire_Reset(GPIOx, PINx);
+ 		if(tmp!=One_Wire_Success) return tmp;
+ 		One_Wire_Write_Byte(One_Wire_Search_ROM,GPIOx, PINx);
      	next=0;
      	pos=1;
-  		for (cnt_byte=0;cnt_byte!=8;cnt_byte++)
-		{
+
+  		for (cnt_byte=0;cnt_byte!=8;cnt_byte++) {
 			(*SN_ROM)[cnt_num][cnt_byte]=0;
-			for (cnt_bit=0;cnt_bit!=8;cnt_bit++)
-  		{
+			for (cnt_bit=0;cnt_bit!=8;cnt_bit++) {
 				bit=One_Wire_Read_Bit(GPIOx, PINx);
 				chk=One_Wire_Read_Bit(GPIOx, PINx);
-        if(!bit && !chk)
-				{
-          if(pos&path) bit=1;
-            else next=(path&(pos-1))|pos;
-          pos<<=1;
-        }
- 			One_Wire_Write_Bit(bit, GPIOx, PINx);
-			if (bit!=0) (*SN_ROM)[cnt_num][cnt_byte]|=(1<<cnt_bit);
-     	}
+				if(!bit && !chk) {
+					if(pos&path) bit=1;
+					else next=(path&(pos-1))|pos;
+					pos<<=1;
+				}
+				One_Wire_Write_Bit(bit, GPIOx, PINx);
+				if (bit!=0) (*SN_ROM)[cnt_num][cnt_byte]|=(1<<cnt_bit);
+			}
 		}
-    path=next;
+
+  		path=next;
 		cnt_num++;
- 	}while(path);
-	* devices_found = cnt_num;
+ 	} while(path);
+	*devices_found = cnt_num;
 	return One_Wire_Success;
 }
 

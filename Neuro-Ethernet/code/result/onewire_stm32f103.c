@@ -19,7 +19,11 @@
 #define One_Wire_Device_Busy	0x03
 #define One_Wire_CRC_Error		0x04
 
-#define US_TICKS 2
+#define US_TICKS 1
+
+#ifdef NEURO_OLD_1
+	#define US_TICKS 2
+#endif
 
 void delay_one_us() {
 	int i;
@@ -107,7 +111,9 @@ unsigned int One_Wire_Reset(GPIO_TypeDef * GPIOx, u16 PINx)
 {
 	unsigned int tmp;
 	PIN_IN(GPIOx, PINx);
-	if ((PIN_SYG(GPIOx, PINx))==0)	return One_Wire_Bus_Low_Error;
+	if ((PIN_SYG(GPIOx, PINx))==0)	{
+		return One_Wire_Bus_Low_Error;
+	}
 	PIN_OUT_PP(GPIOx, PINx);
 	PIN_OFF(GPIOx, PINx);
 	delay_us(Time_Reset_Low);
