@@ -18,7 +18,6 @@
 #include <stdarg.h>
 #include "heap_4.c"
 #include "hi_list.c"
-#include "hi_debug.c"
 
 #define BUS_GPIOA RCC_APB2Periph_GPIOA
 #define BUS_GPIOB RCC_APB2Periph_GPIOB
@@ -651,7 +650,7 @@ void Hi_iButton_Read(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, char* buffer, int* 
     taskEXIT_CRITICAL();
 
     if(*pToggle == 1) {
-    	if(OW_Crc8(b, 7) != b[7])) { // Check CRC
+    	if(OW_Crc8(b, 7) != b[7]) { // Check CRC
     	    vPortFree(b);
     	    vPortFree(hex);
     	    return;
