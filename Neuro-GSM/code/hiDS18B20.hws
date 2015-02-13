@@ -10,14 +10,14 @@ func init()
   block.select(tmp) 
     println('void vDS18B20_',_id(),'_StatusHandler(uint8_t ',s,') {')
       block.inclvl()
-        event(onStatus, s)
+        event(onStatus, s@int)
       block.declvl()
     println('}')
     
     println('void vDS18B20_',_id(),'_ResultHandler(double ',t,') {')
       block.inclvl()
         println(mlt,' = ',t,';')
-        event(onResult, t)
+        event(onResult, t@int)
       block.declvl()
     println('}')
     
@@ -52,5 +52,5 @@ func doInterval(_data)
 end
 
 func Temp()
-  return(mlt)
+  return(mlt@int)
 end

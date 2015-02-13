@@ -14,7 +14,7 @@ func init()
             println('if(',tim_drt,' != 0) {')
               block.inclvl()
                 println(val,' = Hi_ADC_Read(ADC_CH_',Port,');')
-                event(onGetValue, val)
+                event(onGetValue, val@int)
                 println('vTaskDelay(',tim_drt,');')
               block.declvl()
             println('}')
@@ -41,5 +41,5 @@ func doInterval(_data)
 end
 
 func ADCValue()
-  return(val)
+  return(val@int)
 end

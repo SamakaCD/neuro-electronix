@@ -1,7 +1,7 @@
 include("EntryPoint")
 include("General")
 
-// Build: AlPN
+// Build: AlRR
 func doStart()
    entry_point_init('Neuro-Ethernet')
    include_library('Neuro-Ethernet')

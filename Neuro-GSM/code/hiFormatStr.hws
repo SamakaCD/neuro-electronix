@@ -6,11 +6,11 @@ end
 
 func read_dt(i, dt)
   fvar(t)
-  if(cgt.pt_get_link_point(cgt.pt_arr_data(i-1)) != 0)
+  if(cgt.pt_get_link_point(cgt.pt_arr_data(i-1)) != 0) // If linked
     t = point("Str" + i)
-    return((t == '')?" ":t)
+    return(InputAsString ? read_str(t) : ((t == '')?" ":t))
   else
-    return((dt == '')?" ":dt)
+    return(InputAsString ? read_str(dt) : ((dt == '')?" ":dt))
   end
 end
 
@@ -30,5 +30,5 @@ func doFormatStr(_data)
 end
 
 func Result()
-  return(rst)
+  return(rst@str)
 end
