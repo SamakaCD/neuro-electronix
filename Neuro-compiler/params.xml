@@ -5,7 +5,7 @@ Neuro-Ethernet
 Neuro-Ethernet
 </libs>
 <compiler>
--mcpu=cortex-m3 -mthumb -w -ffunction-sections -g -O0 -c -DSTM32F103RC -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__
+-mcpu=cortex-m3 -mthumb -w -ffunction-sections -g -O0 -std=c99 -c -DSTM32F103RC -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__
 </compiler>
 <linker>
 -mcpu=cortex-m3

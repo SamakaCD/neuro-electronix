@@ -20,7 +20,7 @@
 /*----------Stack Configuration-----------------------------------------------*/  
 #define STACK_SIZE       0x00000100      /*!< The Stack size suggest using even number     */
 __attribute__ ((section(".co_stack")))
-unsigned long pulStack[STACK_SIZE];      
+unsigned long pulStack[STACK_SIZE];
 
 
 /*----------Macro definition--------------------------------------------------*/  
@@ -340,3 +340,9 @@ static void Default_Handler(void)
 }
 
 /*********************** (C) COPYRIGHT 2011 Coocox ************END OF FILE*****/
+
+#define HEAP_SIZE       0x00000100
+ __attribute__ ((section(".co_heap")))
+ unsigned long pulHeap[HEAP_SIZE];
+ extern unsigned long __cs3_heap_start;
+ extern unsigned long __cs3_heap_end;

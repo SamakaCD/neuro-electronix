@@ -94,14 +94,20 @@ func entry_point_post_init(param, linker, model)
 	
 	println('')
 	
-    println('int main(void) {')
-      block.inclvl()
-	  
-	    println('')
-	  
+	println('void vHiInitTask(VP) {')
+	  block.inclvl()
 	    // Init
         block.copyhere(BLK_INIT)
 		block.delete(BLK_INIT)
+		println('vTaskDelete(NULL);')
+	  block.declvl()
+	println('}')
+	
+	println('')
+	
+    println('int main(void) {')
+      block.inclvl() 
+        println('CreateTask2(vHiInitTask);')	  
 		println('vTaskStartScheduler();') // Запуск планировщика
 		
 		println('')

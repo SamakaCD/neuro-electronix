@@ -163,6 +163,26 @@ func str_split(s, spl)
   end
 end
 
+// Разделяет строку на n частей
+// s     -   строка для разделения
+// spl   -   разделитель строки
+// n     -   количество частей строки
+func str_splitn(s, spl, n)
+  fvar(res, i, e, t)
+  for(i = 0; i < n+1; i++)
+    res &= ''
+  end
+  t = s
+  for(i = 0; i < n; i++)
+    e = str_split(t, spl)
+	res[i] = e[0]
+	if(e[1] != '')
+	  t = e[1]
+	end
+  end
+  return(res)
+end
+
 func _id()
   return(code(_id_))
 end

@@ -1,7 +1,7 @@
 Archive member included because of file (symbol)
 
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o)
-                              main.o (pow)
+                              hi_lib.o (pow)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o)
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o) (__ieee754_pow)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_sqrt.o)
@@ -27,7 +27,7 @@ d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_addsubdf3.o)
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o) (__aeabi_dsub)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_muldivdf3.o)
-                              main.o (__aeabi_dmul)
+                              hi_lib.o (__aeabi_dmul)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_cmpdf2.o)
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o) (__aeabi_dcmpeq)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_truncdfsf2.o)
@@ -37,31 +37,35 @@ d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgc
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_fixsfsi.o)
                               printf.o (__aeabi_f2iz)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atof.o)
-                              main.o (atof)
+                              hi_lib.o (atof)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atoff.o)
-                              main.o (atoff)
+                              hi_lib.o (atoff)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atoi.o)
-                              main.o (atoi)
+                              hi_lib.o (atoi)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atol.o)
-                              main.o (atol)
+                              hi_lib.o (atol)
+d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+                              websrv_help_functions.o (__ctype_ptr__)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o) (__errno)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
-                              queue.o (memcpy)
+                              dhcp.o (memcpy)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
-                              main.o (memset)
+                              dhcp.o (memset)
+d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-rand.o)
+                              dhcp.o (srand)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-reent.o)
                               syscalls.o (errno)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcmp.o)
-                              main.o (strcmp)
+                              hi_lib.o (strcmp)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
-                              main.o (strlen)
+                              hi_lib.o (strlen)
+d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncmp.o)
+                              ip_arp_udp_tcp.o (strncmp)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtod.o)
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atof.o) (strtod)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtol.o)
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atoi.o) (_strtol_r)
-d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
-                              d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtol.o) (__ctype_ptr__)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-freer.o)
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-reent.o) (_free_r)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-gdtoa-gethex.o)
@@ -70,20 +74,18 @@ d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtod.o) (__hexnan)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-locale.o)
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtod.o) (_localeconv_r)
+d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-malloc.o)
+                              d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-rand.o) (malloc)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mallocr.o)
-                              d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-freer.o) (__malloc_av_)
+                              d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-malloc.o) (_malloc_r)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mlock.o)
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-freer.o) (__malloc_lock)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mprec.o)
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtod.o) (_Balloc)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-sbrkr.o)
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-freer.o) (_sbrk_r)
-d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncmp.o)
-                              d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtod.o) (strncmp)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-callocr.o)
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mprec.o) (_calloc_r)
-d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-malloc.o)
-                              d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mprec.o) (malloc)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_udivsi3.o)
                               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtol.o) (__aeabi_uidiv)
 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_dvmd_tls.o)
@@ -98,17 +100,21 @@ d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgc
 Allocating common symbols
 Common symbol       size              file
 
-Hi_CM_UARTSemaphore
-                    0x4               main.o
-Hi_Proto_Buffer     0x4               main.o
+MYWWWPORT           0x1               hi_ethernet.o
 errno               0x4               d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-reent.o)
+macaddr             0x6               ip_arp_udp_tcp.o
 __hexdig            0x100             d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-gdtoa-gethex.o)
-Hi_UARTs            0x8c              main.o
-Hi_CM_Listeners     0x4               main.o
-Hi_RTC_Initialised  0x1               main.o
-Hi_SM_Markers       0x4               main.o
-Hi_CM_Result        0xc               main.o
-Search_Rom_SN       0x50              main.o
+TimingDelay         0x4               Delay.o
+dnsserver           0x4               dhcp.o
+DHCP_IP             0x4               dhcp.o
+buf2                0x4               main.o
+Hi_RTC_Initialised  0x1               hi_lib.o
+dhcpip              0x4               dhcp.o
+dhcpserver          0x4               dhcp.o
+Hi_SM_Markers       0x4               hi_lib.o
+gwaddr              0x4               dhcp.o
+dhcpmask            0x4               dhcp.o
+Search_Rom_SN       0x50              hi_lib.o
 
 Discarded input sections
 
@@ -157,281 +163,483 @@ Discarded input sections
                 0x00000000       0x28 core_cm3.o
  .text          0x00000000        0x0 croutine.o
  .data          0x00000000        0x0 croutine.o
- .bss           0x00000000       0x7c croutine.o
+ .bss           0x00000000       0x80 croutine.o
  .text.xCoRoutineCreate
-                0x00000000       0xe8 croutine.o
+                0x00000000       0xe4 croutine.o
  .text.vCoRoutineAddToDelayedList
-                0x00000000       0x90 croutine.o
+                0x00000000       0x8c croutine.o
  .text.prvCheckPendingReadyList
                 0x00000000       0x88 croutine.o
  .text.prvCheckDelayedList
-                0x00000000      0x118 croutine.o
+                0x00000000      0x110 croutine.o
  .text.vCoRoutineSchedule
                 0x00000000       0xb8 croutine.o
  .text.prvInitialiseCoRoutineLists
                 0x00000000       0x74 croutine.o
  .text.xCoRoutineRemoveFromEventList
                 0x00000000       0x5c croutine.o
+ .text          0x00000000        0x0 Delay.o
+ .data          0x00000000        0x0 Delay.o
+ .text.TimingDelay_Decrement
+                0x00000000       0x24 Delay.o
+ .text.IncreaseMillis
+                0x00000000       0x1c Delay.o
+ COMMON         0x00000000        0x4 Delay.o
+ .text          0x00000000        0x0 dhcp.o
+ .text          0x00000000        0x0 dnslkup.o
+ .bss           0x00000000        0xc dnslkup.o
+ .text.dnslkup_haveanswer
+                0x00000000       0x14 dnslkup.o
+ .text.dnslkup_get_error_info
+                0x00000000       0x14 dnslkup.o
+ .text.dnslkup_getip
+                0x00000000       0x14 dnslkup.o
+ .text.dnslkup_request
+                0x00000000      0x1c4 dnslkup.o
+ .text.udp_client_check_for_dns_answer
+                0x00000000      0x1a0 dnslkup.o
+ .text          0x00000000        0x0 enc28j60.o
+ .data          0x00000000        0x0 enc28j60.o
+ .text.ENC28J60_GPIO_Configuration
+                0x00000000       0x98 enc28j60.o
+ .text.enc28j60PowerDown
+                0x00000000       0x50 enc28j60.o
+ .text.enc28j60PowerUp
+                0x00000000       0x28 enc28j60.o
+ .text.enc28j60EnableMulticast
+                0x00000000       0x28 enc28j60.o
+ .text.enc28j60DisableMulticast
+                0x00000000       0x28 enc28j60.o
+ .text          0x00000000        0x0 EtherShield.o
+ .data          0x00000000        0x0 EtherShield.o
+ .bss           0x00000000        0x0 EtherShield.o
+ .text.ES_enc28j60clkout
+                0x00000000       0x1c EtherShield.o
+ .text.ES_enc28j60linkup
+                0x00000000       0x10 EtherShield.o
+ .text.ES_enc28j60EnableBroadcast
+                0x00000000        0xc EtherShield.o
+ .text.ES_enc28j60DisableBroadcast
+                0x00000000        0xc EtherShield.o
+ .text.ES_enc28j60EnableMulticast
+                0x00000000        0xc EtherShield.o
+ .text.ES_enc28j60DisableMulticast
+                0x00000000        0xc EtherShield.o
+ .text.ES_enc28j60Read
+                0x00000000       0x20 EtherShield.o
+ .text.ES_enc28j60PhyWrite
+                0x00000000       0x24 EtherShield.o
+ .text.ES_enc28j60PacketSend
+                0x00000000       0x20 EtherShield.o
+ .text.ES_init_ip_arp_udp_tcp
+                0x00000000       0x24 EtherShield.o
+ .text.ES_eth_type_is_arp_and_my_ip
+                0x00000000       0x24 EtherShield.o
+ .text.ES_eth_type_is_ip_and_my_ip
+                0x00000000       0x20 EtherShield.o
+ .text.ES_make_echo_reply_from_request
+                0x00000000       0x20 EtherShield.o
+ .text.ES_make_tcp_synack_from_syn
+                0x00000000       0x18 EtherShield.o
+ .text.ES_make_tcp_ack_from_any
+                0x00000000       0x1c EtherShield.o
+ .text.ES_make_tcp_ack_with_data
+                0x00000000       0x20 EtherShield.o
+ .text.ES_make_tcp_ack_with_data_noflags
+                0x00000000       0x20 EtherShield.o
+ .text.ES_build_tcp_data
+                0x00000000       0x24 EtherShield.o
+ .text.ES_send_tcp_data
+                0x00000000       0x20 EtherShield.o
+ .text.ES_send_udp_data2
+                0x00000000       0x54 EtherShield.o
+ .text.ES_send_udp_data1
+                0x00000000       0x34 EtherShield.o
+ .text.ES_init_len_info
+                0x00000000       0x18 EtherShield.o
+ .text.ES_checksum
+                0x00000000       0x2c EtherShield.o
+ .text.ES_fill_ip_hdr_checksum
+                0x00000000       0x18 EtherShield.o
+ .text.ES_get_tcp_data_pointer
+                0x00000000       0x10 EtherShield.o
+ .text.ES_fill_tcp_data_len
+                0x00000000       0x2c EtherShield.o
+ .text.ES_www_server_reply
+                0x00000000       0x20 EtherShield.o
+ .text.ES_client_store_gw_mac
+                0x00000000       0x1c EtherShield.o
+ .text.ES_client_set_gwip
+                0x00000000       0x18 EtherShield.o
+ .text.ES_client_set_wwwip
+                0x00000000       0x18 EtherShield.o
+ .text.ES_client_tcp_set_serverip
+                0x00000000       0x18 EtherShield.o
+ .text.ES_client_arp_whohas
+                0x00000000       0x1c EtherShield.o
+ .text.ES_client_tcp_req
+                0x00000000       0x28 EtherShield.o
+ .text.ES_tcp_client_send_packet
+                0x00000000       0x3c EtherShield.o
+ .text.ES_tcp_get_dlength
+                0x00000000       0x1c EtherShield.o
+ .text.ES_client_browse_url
+                0x00000000       0x24 EtherShield.o
+ .text.ES_client_http_post
+                0x00000000       0x2c EtherShield.o
+ .text.ES_register_ping_rec_callback
+                0x00000000       0x18 EtherShield.o
+ .text.ES_find_key_val
+                0x00000000       0x2c EtherShield.o
+ .text.ES_urldecode
+                0x00000000       0x18 EtherShield.o
+ .text.ES_urlencode
+                0x00000000       0x1c EtherShield.o
+ .text.ES_parse_ip
+                0x00000000       0x20 EtherShield.o
+ .text.ES_mk_net_str
+                0x00000000       0x28 EtherShield.o
+ .text.ES_client_waiting_gw
+                0x00000000       0x10 EtherShield.o
+ .text.ES_dnslkup_haveanswer
+                0x00000000       0x10 EtherShield.o
+ .text.ES_dnslkup_get_error_info
+                0x00000000       0x10 EtherShield.o
+ .text.ES_dnslkup_getip
+                0x00000000       0x10 EtherShield.o
+ .text.ES_dnslkup_set_dnsip
+                0x00000000       0x18 EtherShield.o
+ .text.ES_dnslkup_request
+                0x00000000       0x1c EtherShield.o
+ .text.ES_udp_client_check_for_dns_answer
+                0x00000000       0x24 EtherShield.o
+ .text.resolveHostname
+                0x00000000      0x10c EtherShield.o
+ .text.ES_dhcp_start
+                0x00000000       0x30 EtherShield.o
+ .text.ES_dhcp_state
+                0x00000000       0x10 EtherShield.o
+ .text.ES_check_for_dhcp_answer
+                0x00000000       0x24 EtherShield.o
+ .text.ES_enc28j60PowerUp
+                0x00000000        0xc EtherShield.o
+ .text.ES_enc28j60PowerDown
+                0x00000000        0xc EtherShield.o
+ .text.ES_nextTcpState
+                0x00000000       0x24 EtherShield.o
+ .text.ES_currentTcpState
+                0x00000000       0x10 EtherShield.o
+ .text.ES_tcpActiveOpen
+                0x00000000       0x30 EtherShield.o
+ .text.ES_tcpPassiveOpen
+                0x00000000       0x20 EtherShield.o
+ .text.ES_tcpClose
+                0x00000000       0x20 EtherShield.o
  .text          0x00000000        0x0 event_groups.o
  .data          0x00000000        0x0 event_groups.o
  .bss           0x00000000        0x0 event_groups.o
  .text.xEventGroupCreate
                 0x00000000       0x38 event_groups.o
  .text.xEventGroupSync
-                0x00000000      0x118 event_groups.o
+                0x00000000       0xf0 event_groups.o
  .text.xEventGroupWaitBits
-                0x00000000      0x13c event_groups.o
+                0x00000000      0x118 event_groups.o
  .text.xEventGroupClearBits
-                0x00000000       0x44 event_groups.o
+                0x00000000       0x38 event_groups.o
  .text.xEventGroupGetBitsFromISR
                 0x00000000       0x2c event_groups.o
  .text.xEventGroupSetBits
-                0x00000000      0x108 event_groups.o
+                0x00000000       0xf0 event_groups.o
  .text.vEventGroupDelete
                 0x00000000       0x44 event_groups.o
  .text.vEventGroupSetBitsCallback
-                0x00000000       0x20 event_groups.o
+                0x00000000       0x1c event_groups.o
  .text.vEventGroupClearBitsCallback
-                0x00000000       0x20 event_groups.o
+                0x00000000       0x1c event_groups.o
  .text.prvTestWaitCondition
-                0x00000000       0x58 event_groups.o
+                0x00000000       0x4c event_groups.o
  .text.uxEventGroupGetNumber
                 0x00000000       0x30 event_groups.o
+ .text          0x00000000        0x0 heap_4.o
+ .data          0x00000000        0x0 heap_4.o
+ .text.xPortGetFreeHeapSize
+                0x00000000       0x14 heap_4.o
+ .text.xPortGetMinimumEverFreeHeapSize
+                0x00000000       0x14 heap_4.o
+ .text.vPortInitialiseBlocks
+                0x00000000        0xc heap_4.o
+ .text          0x00000000        0x0 hi_ethernet.o
+ .text          0x00000000        0x0 hi_lib.o
+ .data          0x00000000       0x14 hi_lib.o
+ .bss           0x00000000       0xb8 hi_lib.o
+ .text.delay_us
+                0x00000000       0x34 hi_lib.o
+ .text.PIN_ON   0x00000000       0x1c hi_lib.o
+ .text.PIN_OFF  0x00000000       0x1c hi_lib.o
+ .text.PIN_SYG  0x00000000       0x30 hi_lib.o
+ .text.PIN_IN   0x00000000       0x30 hi_lib.o
+ .text.PIN_OUT_PP
+                0x00000000       0x30 hi_lib.o
+ .text.PIN_OUT_OD
+                0x00000000       0x30 hi_lib.o
+ .text.PIN_INV  0x00000000       0x3c hi_lib.o
+ .text.One_Wire_Reset
+                0x00000000       0x98 hi_lib.o
+ .text.One_Wire_Write_Bit
+                0x00000000       0x74 hi_lib.o
+ .text.One_Wire_Read_Bit
+                0x00000000       0x6c hi_lib.o
+ .text.One_Wire_Write_Byte
+                0x00000000       0x50 hi_lib.o
+ .text.One_Wire_Read_Byte
+                0x00000000       0x64 hi_lib.o
+ .text.Crc8Dallas
+                0x00000000       0x90 hi_lib.o
+ .text.Crc8     0x00000000       0x88 hi_lib.o
+ .text.OW_SearchRom
+                0x00000000       0x70 hi_lib.o
+ .text.DS1822_Search_Rom_One_Device
+                0x00000000       0xfc hi_lib.o
+ .text.DS1822_Start_Conversion_by_ROM
+                0x00000000       0x80 hi_lib.o
+ .text.DS1822_Get_Conversion_Result_by_ROM_CRC
+                0x00000000       0xe0 hi_lib.o
+ .text.DS1822_Search_Rom
+                0x00000000      0x160 hi_lib.o
+ .text.DS1822_Search_Rom2
+                0x00000000      0x160 hi_lib.o
+ .text.DS1822_Start_Conversion_Skip_Rom
+                0x00000000       0x6c hi_lib.o
+ .text.DS1822_Read_Temp_NoCRC_Skip_Rom
+                0x00000000       0x80 hi_lib.o
+ .text.Hi_UART_Send1
+                0x00000000       0x30 hi_lib.o
+ .text.Hi_UART_SendStr1
+                0x00000000       0x3c hi_lib.o
+ .text.__print  0x00000000       0x40 hi_lib.o
+ .rodata        0x00000000       0xc4 hi_lib.o
+ .text.__println
+                0x00000000       0x48 hi_lib.o
+ .text.Hi_NumberLen
+                0x00000000       0x60 hi_lib.o
+ .text.iitod    0x00000000       0x70 hi_lib.o
+ .text.Hi_CharToHex
+                0x00000000       0x58 hi_lib.o
+ .text.Hi_IntToBin
+                0x00000000       0x58 hi_lib.o
+ .text.Hi_TrimZeros
+                0x00000000       0x54 hi_lib.o
+ .text.Hi_IntToStr
+                0x00000000       0x30 hi_lib.o
+ .text.Hi_LongToStr
+                0x00000000       0x30 hi_lib.o
+ .text.Hi_FloatToStr
+                0x00000000       0x38 hi_lib.o
+ .text.Hi_DoubleToStr
+                0x00000000       0x34 hi_lib.o
+ .text.Hi_StrToInt
+                0x00000000       0x28 hi_lib.o
+ .text.Hi_StrToLong
+                0x00000000       0x28 hi_lib.o
+ .text.Hi_StrToFloat
+                0x00000000       0x34 hi_lib.o
+ .text.Hi_StrToDouble
+                0x00000000       0x30 hi_lib.o
+ .text.Hi_StrToChar
+                0x00000000       0x28 hi_lib.o
+ .text.Hi_CharToStr
+                0x00000000       0x34 hi_lib.o
+ .text.Hi_Str_Concat
+                0x00000000       0x5c hi_lib.o
+ .text.Hi_GPIO_InitIn
+                0x00000000       0x44 hi_lib.o
+ .text.Hi_GPIO_ReadOutputDataBit
+                0x00000000       0x3c hi_lib.o
+ .text.Hi_GPIO_Off
+                0x00000000       0x1c hi_lib.o
+ .text.Hi_ADC_Init
+                0x00000000       0xc4 hi_lib.o
+ .text.Hi_ADC_Read
+                0x00000000       0x50 hi_lib.o
+ .text.Hi_UART_Send
+                0x00000000       0x60 hi_lib.o
+ .text.Hi_UART_SendStr
+                0x00000000       0x58 hi_lib.o
+ .text.Hi_UART_ListenerInit
+                0x00000000      0x140 hi_lib.o
+ .text.Hi_UART1_ListenerTask
+                0x00000000       0x18 hi_lib.o
+ .text.Hi_UART2_ListenerTask
+                0x00000000       0x18 hi_lib.o
+ .text.Hi_UART3_ListenerTask
+                0x00000000       0x18 hi_lib.o
+ .text.Hi_UART4_ListenerTask
+                0x00000000       0x18 hi_lib.o
+ .text.Hi_UART5_ListenerTask
+                0x00000000       0x18 hi_lib.o
+ .text.Hi_UART_Init
+                0x00000000      0x6f8 hi_lib.o
+ .text.Hi_UART_AddListener
+                0x00000000       0x7c hi_lib.o
+ .text.Hi_UART_AddEntListener
+                0x00000000       0x7c hi_lib.o
+ .text.Hi_DS18B20_Scan
+                0x00000000      0x190 hi_lib.o
+ .text.OW_Crc8  0x00000000       0x94 hi_lib.o
+ .text.Hi_iButton_Read
+                0x00000000      0x144 hi_lib.o
+ .text.vHi_RTC_Task
+                0x00000000       0x38 hi_lib.o
+ .text.Hi_RTC_GetTime
+                0x00000000       0x14 hi_lib.o
+ .text.Hi_RTC_Init
+                0x00000000       0x50 hi_lib.o
+ .text.Hi_RTC_SetTime
+                0x00000000       0x58 hi_lib.o
+ .text.Hi_RTC_GetHour
+                0x00000000       0x24 hi_lib.o
+ .text.Hi_RTC_GetMin
+                0x00000000       0x3c hi_lib.o
+ .text.Hi_RTC_GetSec
+                0x00000000       0x4c hi_lib.o
+ .text.Hi_Logger_Print
+                0x00000000       0xa4 hi_lib.o
+ .text.Hi_Flash_IsReady
+                0x00000000       0x24 hi_lib.o
+ .text.Hi_Flash_EraseAllPages
+                0x00000000       0x3c hi_lib.o
+ .text.Hi_Flash_ErasePage
+                0x00000000       0x4c hi_lib.o
+ .text.Hi_Flash_Unlock
+                0x00000000       0x24 hi_lib.o
+ .text.Hi_Flash_Lock
+                0x00000000       0x1c hi_lib.o
+ .text.Hi_Flash_Read32
+                0x00000000       0x18 hi_lib.o
+ .text.Hi_Flash_Read16
+                0x00000000       0x1c hi_lib.o
+ .text.Hi_Flash_Read1
+                0x00000000       0x1c hi_lib.o
+ .text.Hi_Flash_Read2
+                0x00000000       0x24 hi_lib.o
+ .text.Hi_Flash_GetPage
+                0x00000000       0x20 hi_lib.o
+ .text.Hi_Flash_GetOPage
+                0x00000000       0x28 hi_lib.o
+ .text.Hi_Flash_StartRecord
+                0x00000000       0x20 hi_lib.o
+ .text.Hi_Flash_EndRecord
+                0x00000000       0x1c hi_lib.o
+ .text.Hi_Flash_Write
+                0x00000000       0x78 hi_lib.o
+ .text.Hi_Flash_Write16
+                0x00000000       0x30 hi_lib.o
+ .text.Hi_Flash_DumpProtocolPage
+                0x00000000       0x8c hi_lib.o
+ .text.Hi_Flash_WriteData
+                0x00000000       0xbc hi_lib.o
+ .text.Hi_Flash_AddData
+                0x00000000      0x12c hi_lib.o
+ .text.Hi_Flash_WriteData2
+                0x00000000       0xb4 hi_lib.o
+ .text.Hi_Flash_AddData2
+                0x00000000      0x130 hi_lib.o
+ .text.Hi_Flash_CreatePartition
+                0x00000000      0x108 hi_lib.o
+ .text.Hi_Flash_Print
+                0x00000000       0xd4 hi_lib.o
+ .text.Hi_Proto_Crc8
+                0x00000000       0x94 hi_lib.o
+ .text.Hi_Proto_CheckCRC
+                0x00000000       0x34 hi_lib.o
+ .text.Hi_Proto_CreateDesriptior
+                0x00000000       0x44 hi_lib.o
+ .text.Hi_Proto_GetDescriptorPacketType
+                0x00000000       0x40 hi_lib.o
+ .text.Hi_Proto_GetDescriptorMarkerSize
+                0x00000000       0x1c hi_lib.o
+ .text.Hi_Proto_GetDescriptorDataSize
+                0x00000000       0x20 hi_lib.o
+ .text.Hi_Proto_MarkerSize
+                0x00000000       0x40 hi_lib.o
+ .text.Hi_Proto_CreateMarkerArr
+                0x00000000       0x5c hi_lib.o
+ .text.Hi_Proto_CreatePack
+                0x00000000       0xf8 hi_lib.o
+ .text.Hi_Proto_AllocateBuffer
+                0x00000000       0x1c hi_lib.o
+ .text.Hi_Proto_WriteBuffer
+                0x00000000       0x38 hi_lib.o
+ .text.Hi_Proto_ClearBuffer
+                0x00000000       0x20 hi_lib.o
+ .text.Hi_CM_UARTConnectionListener
+                0x00000000      0x1b0 hi_lib.o
+ .text.Hi_CM_UARTListener
+                0x00000000       0x48 hi_lib.o
+ .text.Hi_CM_AddListener
+                0x00000000       0x38 hi_lib.o
+ .text.Hi_CM_Init
+                0x00000000       0x84 hi_lib.o
+ .text.Hi_CM_IsUARTActive
+                0x00000000       0x48 hi_lib.o
+ .text.Hi_CM_GetConnection
+                0x00000000       0x10 hi_lib.o
+ .text.Hi_CM_SendDataByConnection
+                0x00000000       0x48 hi_lib.o
+ .text.Hi_CM_SendData
+                0x00000000       0x28 hi_lib.o
+ .text.Hi_SM_Init
+                0x00000000       0x1c hi_lib.o
+ .text.Hi_SM_Create
+                0x00000000       0x1c hi_lib.o
+ .text.Hi_Logger_CreatePack
+                0x00000000       0x74 hi_lib.o
+ .text.Hi_Logger_Notify
+                0x00000000       0x64 hi_lib.o
+ COMMON         0x00000000       0x58 hi_lib.o
+ .text          0x00000000        0x0 ip_arp_udp_tcp.o
+ .text.set_srv_port
+                0x00000000       0x20 ip_arp_udp_tcp.o
+ .text.make_eth_ip_new
+                0x00000000       0x68 ip_arp_udp_tcp.o
+ .text.eth_type_is_arp_reply
+                0x00000000       0x28 ip_arp_udp_tcp.o
+ .text.eth_type_is_arp_req
+                0x00000000       0x28 ip_arp_udp_tcp.o
+ .text.make_ip_tcp_new
+                0x00000000       0xf8 ip_arp_udp_tcp.o
+ .text.make_udp_reply_from_request
+                0x00000000      0x14c ip_arp_udp_tcp.o
+ .text.make_tcp_ack_with_data
+                0x00000000       0xb0 ip_arp_udp_tcp.o
+ .text.send_udp
+                0x00000000       0x70 ip_arp_udp_tcp.o
+ .text.client_waiting_gw
+                0x00000000       0x28 ip_arp_udp_tcp.o
+ .text.client_gw_arp_refresh
+                0x00000000       0x2c ip_arp_udp_tcp.o
+ .text.client_tcp_set_serverip
+                0x00000000       0x3c ip_arp_udp_tcp.o
+ .text.build_tcp_data
+                0x00000000      0x230 ip_arp_udp_tcp.o
+ .text.send_tcp_data
+                0x00000000       0xb0 ip_arp_udp_tcp.o
+ .text.client_tcp_req
+                0x00000000       0x80 ip_arp_udp_tcp.o
+ .text.www_client_internal_datafill_callback
+                0x00000000      0x258 ip_arp_udp_tcp.o
+ .text.www_client_internal_result_callback
+                0x00000000       0xd4 ip_arp_udp_tcp.o
+ .text.client_browse_url
+                0x00000000       0x70 ip_arp_udp_tcp.o
+ .text.client_http_post
+                0x00000000       0x84 ip_arp_udp_tcp.o
+ .text.register_ping_rec_callback
+                0x00000000       0x1c ip_arp_udp_tcp.o
  .text          0x00000000        0x0 list.o
  .data          0x00000000        0x0 list.o
  .bss           0x00000000        0x0 list.o
  .text          0x00000000        0x0 main.o
- .text.delay_one_us
-                0x00000000       0x28 main.o
- .text.delay_us
-                0x00000000       0x34 main.o
- .text.delay_ms
-                0x00000000       0x48 main.o
- .text.PIN_ON   0x00000000       0x1c main.o
- .text.PIN_OFF  0x00000000       0x1c main.o
- .text.PIN_SYG  0x00000000       0x30 main.o
- .text.PIN_IN   0x00000000       0x30 main.o
- .text.PIN_OUT_PP
-                0x00000000       0x30 main.o
- .text.PIN_OUT_OD
-                0x00000000       0x30 main.o
- .text.PIN_INV  0x00000000       0x3c main.o
- .text.One_Wire_Reset
-                0x00000000       0x98 main.o
- .text.One_Wire_Write_Bit
-                0x00000000       0x74 main.o
- .text.One_Wire_Read_Bit
-                0x00000000       0x6c main.o
- .text.One_Wire_Write_Byte
-                0x00000000       0x50 main.o
- .text.One_Wire_Read_Byte
-                0x00000000       0x64 main.o
- .text.xPortGetFreeHeapSize
-                0x00000000       0x14 main.o
- .text.xPortGetMinimumEverFreeHeapSize
-                0x00000000       0x14 main.o
- .text.vPortInitialiseBlocks
-                0x00000000        0xc main.o
- .text.Hi_UART_Send1
-                0x00000000       0x30 main.o
- .text.Hi_UART_SendStr1
-                0x00000000       0x3c main.o
- .text.__println
-                0x00000000       0x48 main.o
- .text.Hi_TrimZeros
-                0x00000000       0x54 main.o
- .text.Hi_IntToStr
-                0x00000000       0x30 main.o
- .text.Hi_LongToStr
-                0x00000000       0x30 main.o
- .text.Hi_FloatToStr
-                0x00000000       0x38 main.o
- .text.Hi_DoubleToStr
-                0x00000000       0x34 main.o
- .text.Hi_StrToInt
-                0x00000000       0x28 main.o
- .text.Hi_StrToLong
-                0x00000000       0x28 main.o
- .text.Hi_StrToFloat
-                0x00000000       0x2c main.o
- .text.Hi_StrToDouble
-                0x00000000       0x30 main.o
- .text.Hi_StrToChar
-                0x00000000       0x28 main.o
- .text.Hi_CharToStr
-                0x00000000       0x34 main.o
- .text.Hi_Str_Concat
-                0x00000000       0x5c main.o
- .text.Hi_GPIO_InitIn
-                0x00000000       0x44 main.o
- .text.Hi_GPIO_ReadOutputDataBit
-                0x00000000       0x3c main.o
- .text.Hi_GPIO_On
-                0x00000000       0x1c main.o
- .text.Hi_GPIO_Off
-                0x00000000       0x1c main.o
- .text.Hi_ADC_Init
-                0x00000000       0xc4 main.o
- .text.Hi_ADC_Read
-                0x00000000       0x50 main.o
- .text.Hi_UART_Send
-                0x00000000       0x60 main.o
- .text.Hi_UART_SendStr
-                0x00000000       0x58 main.o
- .text.Hi_UART_ListenerInit
-                0x00000000      0x140 main.o
- .text.Hi_UART1_ListenerTask
-                0x00000000       0x18 main.o
- .text.Hi_UART2_ListenerTask
-                0x00000000       0x18 main.o
- .text.Hi_UART3_ListenerTask
-                0x00000000       0x18 main.o
- .text.Hi_UART4_ListenerTask
-                0x00000000       0x18 main.o
- .text.Hi_UART5_ListenerTask
-                0x00000000       0x18 main.o
- .text.Hi_UART_Init
-                0x00000000      0x6f8 main.o
- .text.Hi_UART_AddListener
-                0x00000000       0x7c main.o
- .text.Hi_UART_AddEntListener
-                0x00000000       0x7c main.o
- .text.Hi_NumberLen
-                0x00000000       0x60 main.o
- .text.iitod    0x00000000       0x70 main.o
- .text.Crc8Dallas
-                0x00000000       0x90 main.o
- .text.Crc8     0x00000000       0x88 main.o
- .text.DS1822_Search_Rom_One_Device
-                0x00000000       0xfc main.o
- .text.DS1822_Start_Conversion_by_ROM
-                0x00000000       0x80 main.o
- .text.DS1822_Get_Conversion_Result_by_ROM_CRC
-                0x00000000       0xe0 main.o
- .text.DS1822_Search_Rom
-                0x00000000      0x160 main.o
- .text.DS1822_Search_Rom2
-                0x00000000      0x160 main.o
- .text.DS1822_Start_Conversion_Skip_Rom
-                0x00000000       0x6c main.o
- .text.DS1822_Read_Temp_NoCRC_Skip_Rom
-                0x00000000       0x80 main.o
- .text.Hi_DS18B20_Scan
-                0x00000000      0x190 main.o
- .text.__print  0x00000000       0x40 main.o
- .text.Hi_CharToHex
-                0x00000000       0x58 main.o
- .text.Hi_IntToBin
-                0x00000000       0x58 main.o
- .text.Hi_iButton_Read
-                0x00000000      0x158 main.o
- .text.vHi_RTC_Task
-                0x00000000       0x38 main.o
- .text.Hi_RTC_Init
-                0x00000000       0x50 main.o
- .text.Hi_RTC_SetTime
-                0x00000000       0x58 main.o
- .text.Hi_RTC_GetHour
-                0x00000000       0x24 main.o
- .text.Hi_RTC_GetMin
-                0x00000000       0x3c main.o
- .text.Hi_RTC_GetSec
-                0x00000000       0x4c main.o
- .text.Hi_Logger_Print
-                0x00000000       0xa4 main.o
- .text.Hi_Flash_IsReady
-                0x00000000       0x24 main.o
- .text.Hi_Flash_EraseAllPages
-                0x00000000       0x3c main.o
- .text.Hi_Flash_ErasePage
-                0x00000000       0x4c main.o
- .text.Hi_Flash_Unlock
-                0x00000000       0x24 main.o
- .text.Hi_Flash_Lock
-                0x00000000       0x1c main.o
- .text.Hi_Flash_Read32
-                0x00000000       0x18 main.o
- .text.Hi_Flash_Read16
-                0x00000000       0x1c main.o
- .text.Hi_Flash_Read1
-                0x00000000       0x1c main.o
- .text.Hi_Flash_Read2
-                0x00000000       0x24 main.o
- .text.Hi_Flash_GetPage
-                0x00000000       0x20 main.o
- .text.Hi_Flash_GetOPage
-                0x00000000       0x28 main.o
- .text.Hi_Flash_StartRecord
-                0x00000000       0x20 main.o
- .text.Hi_Flash_EndRecord
-                0x00000000       0x1c main.o
- .text.Hi_Flash_Write
-                0x00000000       0x78 main.o
- .text.Hi_Flash_Write16
-                0x00000000       0x30 main.o
- .text.Hi_Flash_DumpProtocolPage
-                0x00000000       0x8c main.o
- .text.Hi_Flash_WriteData
-                0x00000000       0xbc main.o
- .text.Hi_Flash_AddData
-                0x00000000      0x12c main.o
- .text.Hi_Flash_WriteData2
-                0x00000000       0xb4 main.o
- .text.Hi_Flash_AddData2
-                0x00000000      0x130 main.o
- .text.Hi_Flash_CreatePartition
-                0x00000000      0x108 main.o
- .text.Hi_Flash_Print
-                0x00000000       0xd4 main.o
- .text.Hi_Proto_Crc8
-                0x00000000       0x94 main.o
- .text.Hi_Proto_CheckCRC
-                0x00000000       0x34 main.o
- .text.Hi_Proto_CreateDesriptior
-                0x00000000       0x44 main.o
- .text.Hi_Proto_GetDescriptorPacketType
-                0x00000000       0x40 main.o
- .text.Hi_Proto_GetDescriptorMarkerSize
-                0x00000000       0x1c main.o
- .text.Hi_Proto_GetDescriptorDataSize
-                0x00000000       0x20 main.o
- .text.Hi_Proto_MarkerSize
-                0x00000000       0x40 main.o
- .text.Hi_Proto_CreateMarkerArr
-                0x00000000       0x5c main.o
- .text.Hi_Proto_CreatePack
-                0x00000000       0xf8 main.o
- .text.Hi_Proto_AllocateBuffer
-                0x00000000       0x1c main.o
- .text.Hi_Proto_WriteBuffer
-                0x00000000       0x38 main.o
- .text.Hi_Proto_ClearBuffer
-                0x00000000       0x20 main.o
- .text.Hi_CM_UARTConnectionListener
-                0x00000000      0x1b0 main.o
- .text.Hi_CM_UARTListener
-                0x00000000       0x48 main.o
- .text.Hi_CM_AddListener
-                0x00000000       0x38 main.o
- .text.Hi_CM_Init
-                0x00000000       0x84 main.o
- .text.Hi_CM_IsUARTActive
-                0x00000000       0x48 main.o
- .text.Hi_CM_GetConnection
-                0x00000000       0x10 main.o
- .text.Hi_CM_SendDataByConnection
-                0x00000000       0x48 main.o
- .text.Hi_CM_SendData
-                0x00000000       0x28 main.o
- .text.Hi_SM_Init
-                0x00000000       0x1c main.o
- .text.Hi_SM_Create
-                0x00000000       0x1c main.o
- .text.Hi_Logger_CreatePack
-                0x00000000       0x74 main.o
- .text.Hi_Logger_Notify
-                0x00000000       0x64 main.o
- COMMON         0x00000000       0xfc main.o
  .text          0x00000000        0x0 misc.o
  .data          0x00000000        0x0 misc.o
  .bss           0x00000000        0x0 misc.o
@@ -450,35 +658,17 @@ Discarded input sections
  .text.vPortEndScheduler
                 0x00000000        0xc port.o
  .text          0x00000000        0x0 printf.o
- .data          0x00000000       0xf4 printf.o
  .bss           0x00000000        0x0 printf.o
  .text.PrintChar
                 0x00000000       0x14 printf.o
- .text.reverse  0x00000000       0x64 printf.o
- .text.intToStr
-                0x00000000       0xa8 printf.o
- .text._ftoa    0x00000000       0xbc printf.o
- .text.PutChar  0x00000000       0x24 printf.o
- .text.PutString
-                0x00000000       0x48 printf.o
- .text.PutUnsignedInt
-                0x00000000       0xb4 printf.o
- .text.PutSignedInt
-                0x00000000      0x11c printf.o
- .text.PutHexa  0x00000000       0xe8 printf.o
- .text.vsnprintf
-                0x00000000      0x2d4 printf.o
  .text.snprintf
                 0x00000000       0x34 printf.o
- .text.vsprintf
-                0x00000000       0x28 printf.o
  .rodata        0x00000000       0x24 printf.o
  .text.vfprintf
                 0x00000000       0x68 printf.o
  .text.vprintf  0x00000000       0x2c printf.o
  .text.fprintf  0x00000000       0x30 printf.o
  .text.printf   0x00000000       0x2c printf.o
- .text.sprintf  0x00000000       0x30 printf.o
  .text.puts     0x00000000       0x28 printf.o
  .text.fputc    0x00000000       0x44 printf.o
  .text.fputs    0x00000000       0x50 printf.o
@@ -489,14 +679,12 @@ Discarded input sections
                 0x00000000       0xb4 queue.o
  .text.xQueueGenericCreate
                 0x00000000       0x88 queue.o
- .text.xQueueCreateMutex
-                0x00000000       0xa4 queue.o
  .text.xQueueGenericSend
-                0x00000000      0x13c queue.o
+                0x00000000      0x138 queue.o
  .text.xQueueGenericSendFromISR
                 0x00000000       0xa8 queue.o
  .text.xQueueGenericReceive
-                0x00000000      0x190 queue.o
+                0x00000000      0x160 queue.o
  .text.xQueueReceiveFromISR
                 0x00000000       0x94 queue.o
  .text.xQueuePeekFromISR
@@ -516,7 +704,7 @@ Discarded input sections
  .text.ucQueueGetQueueType
                 0x00000000       0x1c queue.o
  .text.prvCopyDataToQueue
-                0x00000000       0xe8 queue.o
+                0x00000000       0xcc queue.o
  .text.prvCopyDataFromQueue
                 0x00000000       0x50 queue.o
  .text.prvUnlockQueue
@@ -532,6 +720,7 @@ Discarded input sections
  .text          0x00000000        0x0 startup_stm32f10x_hd.o
  .data          0x00000000        0x0 startup_stm32f10x_hd.o
  .bss           0x00000000        0x0 startup_stm32f10x_hd.o
+ .co_heap       0x00000000      0x400 startup_stm32f10x_hd.o
  .text          0x00000000        0x0 stm32f10x_adc.o
  .data          0x00000000        0x0 stm32f10x_adc.o
  .bss           0x00000000        0x0 stm32f10x_adc.o
@@ -625,6 +814,61 @@ Discarded input sections
                 0x00000000       0x54 stm32f10x_exti.o
  .text.EXTI_ClearITPendingBit
                 0x00000000       0x1c stm32f10x_exti.o
+ .text          0x00000000        0x0 stm32f10x_flash.o
+ .data          0x00000000        0x0 stm32f10x_flash.o
+ .bss           0x00000000        0x0 stm32f10x_flash.o
+ .text.FLASH_HalfCycleAccessCmd
+                0x00000000       0x30 stm32f10x_flash.o
+ .text.FLASH_Unlock
+                0x00000000       0x24 stm32f10x_flash.o
+ .text.FLASH_UnlockBank1
+                0x00000000       0x24 stm32f10x_flash.o
+ .text.FLASH_Lock
+                0x00000000       0x1c stm32f10x_flash.o
+ .text.FLASH_LockBank1
+                0x00000000       0x1c stm32f10x_flash.o
+ .text.FLASH_ErasePage
+                0x00000000       0x6c stm32f10x_flash.o
+ .text.FLASH_EraseAllPages
+                0x00000000       0x64 stm32f10x_flash.o
+ .text.FLASH_EraseAllBank1Pages
+                0x00000000       0x64 stm32f10x_flash.o
+ .text.FLASH_EraseOptionBytes
+                0x00000000       0xe4 stm32f10x_flash.o
+ .text.FLASH_ProgramWord
+                0x00000000       0xa0 stm32f10x_flash.o
+ .text.FLASH_ProgramHalfWord
+                0x00000000       0x64 stm32f10x_flash.o
+ .text.FLASH_ProgramOptionByteData
+                0x00000000       0x80 stm32f10x_flash.o
+ .text.FLASH_EnableWriteProtection
+                0x00000000      0x128 stm32f10x_flash.o
+ .text.FLASH_ReadOutProtection
+                0x00000000       0xe4 stm32f10x_flash.o
+ .text.FLASH_UserOptionByteConfig
+                0x00000000       0x9c stm32f10x_flash.o
+ .text.FLASH_GetUserOptionByte
+                0x00000000       0x18 stm32f10x_flash.o
+ .text.FLASH_GetWriteProtectionOptionByte
+                0x00000000       0x14 stm32f10x_flash.o
+ .text.FLASH_GetReadOutProtectionStatus
+                0x00000000       0x38 stm32f10x_flash.o
+ .text.FLASH_GetPrefetchBufferStatus
+                0x00000000       0x38 stm32f10x_flash.o
+ .text.FLASH_ITConfig
+                0x00000000       0x44 stm32f10x_flash.o
+ .text.FLASH_GetFlagStatus
+                0x00000000       0x60 stm32f10x_flash.o
+ .text.FLASH_ClearFlag
+                0x00000000       0x1c stm32f10x_flash.o
+ .text.FLASH_GetStatus
+                0x00000000       0x64 stm32f10x_flash.o
+ .text.FLASH_GetBank1Status
+                0x00000000       0x64 stm32f10x_flash.o
+ .text.FLASH_WaitForLastOperation
+                0x00000000       0x4c stm32f10x_flash.o
+ .text.FLASH_WaitForLastBank1Operation
+                0x00000000       0x4c stm32f10x_flash.o
  .text          0x00000000        0x0 stm32f10x_gpio.o
  .data          0x00000000        0x0 stm32f10x_gpio.o
  .bss           0x00000000        0x0 stm32f10x_gpio.o
@@ -641,10 +885,6 @@ Discarded input sections
  .text.GPIO_ReadOutputDataBit
                 0x00000000       0x3c stm32f10x_gpio.o
  .text.GPIO_ReadOutputData
-                0x00000000       0x1c stm32f10x_gpio.o
- .text.GPIO_SetBits
-                0x00000000       0x1c stm32f10x_gpio.o
- .text.GPIO_ResetBits
                 0x00000000       0x1c stm32f10x_gpio.o
  .text.GPIO_WriteBit
                 0x00000000       0x30 stm32f10x_gpio.o
@@ -663,32 +903,11 @@ Discarded input sections
  .text.GPIO_ETH_MediaInterfaceConfig
                 0x00000000       0x1c stm32f10x_gpio.o
  .text          0x00000000        0x0 stm32f10x_rcc.o
- .data          0x00000000       0x14 stm32f10x_rcc.o
  .bss           0x00000000        0x0 stm32f10x_rcc.o
- .text.RCC_DeInit
-                0x00000000       0x5c stm32f10x_rcc.o
- .text.RCC_HSEConfig
-                0x00000000       0x5c stm32f10x_rcc.o
- .text.RCC_WaitForHSEStartUp
-                0x00000000       0x64 stm32f10x_rcc.o
  .text.RCC_AdjustHSICalibrationValue
                 0x00000000       0x40 stm32f10x_rcc.o
  .text.RCC_HSICmd
                 0x00000000       0x20 stm32f10x_rcc.o
- .text.RCC_PLLConfig
-                0x00000000       0x44 stm32f10x_rcc.o
- .text.RCC_PLLCmd
-                0x00000000       0x20 stm32f10x_rcc.o
- .text.RCC_SYSCLKConfig
-                0x00000000       0x3c stm32f10x_rcc.o
- .text.RCC_GetSYSCLKSource
-                0x00000000       0x1c stm32f10x_rcc.o
- .text.RCC_HCLKConfig
-                0x00000000       0x3c stm32f10x_rcc.o
- .text.RCC_PCLK1Config
-                0x00000000       0x3c stm32f10x_rcc.o
- .text.RCC_PCLK2Config
-                0x00000000       0x40 stm32f10x_rcc.o
  .text.RCC_ITConfig
                 0x00000000       0x50 stm32f10x_rcc.o
  .text.RCC_USBCLKConfig
@@ -703,15 +922,7 @@ Discarded input sections
                 0x00000000       0x24 stm32f10x_rcc.o
  .text.RCC_RTCCLKCmd
                 0x00000000       0x20 stm32f10x_rcc.o
- .text.RCC_GetClocksFreq
-                0x00000000      0x17c stm32f10x_rcc.o
  .text.RCC_AHBPeriphClockCmd
-                0x00000000       0x44 stm32f10x_rcc.o
- .text.RCC_APB1PeriphClockCmd
-                0x00000000       0x44 stm32f10x_rcc.o
- .text.RCC_APB2PeriphResetCmd
-                0x00000000       0x44 stm32f10x_rcc.o
- .text.RCC_APB1PeriphResetCmd
                 0x00000000       0x44 stm32f10x_rcc.o
  .text.RCC_BackupResetCmd
                 0x00000000       0x20 stm32f10x_rcc.o
@@ -719,14 +930,48 @@ Discarded input sections
                 0x00000000       0x20 stm32f10x_rcc.o
  .text.RCC_MCOConfig
                 0x00000000       0x20 stm32f10x_rcc.o
- .text.RCC_GetFlagStatus
-                0x00000000       0x84 stm32f10x_rcc.o
  .text.RCC_ClearFlag
                 0x00000000       0x1c stm32f10x_rcc.o
  .text.RCC_GetITStatus
                 0x00000000       0x40 stm32f10x_rcc.o
  .text.RCC_ClearITPendingBit
                 0x00000000       0x20 stm32f10x_rcc.o
+ .text          0x00000000        0x0 stm32f10x_spi.o
+ .data          0x00000000        0x0 stm32f10x_spi.o
+ .bss           0x00000000        0x0 stm32f10x_spi.o
+ .text.I2S_Init
+                0x00000000      0x1a0 stm32f10x_spi.o
+ .text.SPI_StructInit
+                0x00000000       0x5c stm32f10x_spi.o
+ .text.I2S_StructInit
+                0x00000000       0x44 stm32f10x_spi.o
+ .text.I2S_Cmd  0x00000000       0x40 stm32f10x_spi.o
+ .text.SPI_I2S_ITConfig
+                0x00000000       0x70 stm32f10x_spi.o
+ .text.SPI_I2S_DMACmd
+                0x00000000       0x4c stm32f10x_spi.o
+ .text.SPI_NSSInternalSoftwareConfig
+                0x00000000       0x44 stm32f10x_spi.o
+ .text.SPI_SSOutputCmd
+                0x00000000       0x40 stm32f10x_spi.o
+ .text.SPI_DataSizeConfig
+                0x00000000       0x38 stm32f10x_spi.o
+ .text.SPI_TransmitCRC
+                0x00000000       0x24 stm32f10x_spi.o
+ .text.SPI_CalculateCRC
+                0x00000000       0x40 stm32f10x_spi.o
+ .text.SPI_GetCRC
+                0x00000000       0x34 stm32f10x_spi.o
+ .text.SPI_GetCRCPolynomial
+                0x00000000       0x1c stm32f10x_spi.o
+ .text.SPI_BiDirectionalLineConfig
+                0x00000000       0x40 stm32f10x_spi.o
+ .text.SPI_I2S_ClearFlag
+                0x00000000       0x24 stm32f10x_spi.o
+ .text.SPI_I2S_GetITStatus
+                0x00000000       0x8c stm32f10x_spi.o
+ .text.SPI_I2S_ClearITPendingBit
+                0x00000000       0x38 stm32f10x_spi.o
  .text          0x00000000        0x0 stm32f10x_usart.o
  .data          0x00000000        0x0 stm32f10x_usart.o
  .bss           0x00000000        0x0 stm32f10x_usart.o
@@ -790,8 +1035,6 @@ Discarded input sections
                 0x00000000       0x44 stm32f10x_usart.o
  .text          0x00000000        0x0 syscalls.o
  .data          0x00000000        0x0 syscalls.o
- .bss           0x00000000        0x4 syscalls.o
- .text._sbrk    0x00000000       0x40 syscalls.o
  .text._link    0x00000000       0x1c syscalls.o
  .text._close   0x00000000       0x18 syscalls.o
  .text._fstat   0x00000000       0x24 syscalls.o
@@ -806,14 +1049,6 @@ Discarded input sections
  .text.SystemCoreClockUpdate
                 0x00000000       0xe4 system_stm32f10x.o
  .text          0x00000000        0x0 tasks.o
- .text.vTaskDelete
-                0x00000000       0xec tasks.o
- .text.vTaskDelayUntil
-                0x00000000       0xcc tasks.o
- .text.uxTaskPriorityGet
-                0x00000000       0x38 tasks.o
- .text.vTaskPrioritySet
-                0x00000000      0x160 tasks.o
  .text.vTaskSuspend
                 0x00000000       0xf4 tasks.o
  .text.prvTaskIsTaskSuspended
@@ -833,17 +1068,17 @@ Discarded input sections
  .text.uxTaskGetSystemState
                 0x00000000      0x11c tasks.o
  .text.vTaskPlaceOnEventList
-                0x00000000       0x94 tasks.o
+                0x00000000       0x8c tasks.o
  .text.vTaskPlaceOnUnorderedEventList
-                0x00000000       0xac tasks.o
+                0x00000000       0x9c tasks.o
  .text.xTaskRemoveFromEventList
                 0x00000000       0xc4 tasks.o
  .text.xTaskRemoveFromUnorderedEventList
-                0x00000000       0xb0 tasks.o
+                0x00000000       0xa8 tasks.o
  .text.vTaskSetTimeOutState
                 0x00000000       0x2c tasks.o
  .text.xTaskCheckForTimeOut
-                0x00000000       0x98 tasks.o
+                0x00000000       0x94 tasks.o
  .text.vTaskMissedYield
                 0x00000000       0x18 tasks.o
  .text.uxTaskGetTaskNumber
@@ -854,77 +1089,63 @@ Discarded input sections
                 0x00000000      0x13c tasks.o
  .text.prvTaskCheckFreeStackSpace
                 0x00000000       0x40 tasks.o
- .text.xTaskGetCurrentTaskHandle
-                0x00000000       0x20 tasks.o
- .text.vTaskPriorityInherit
-                0x00000000      0x118 tasks.o
- .text.xTaskPriorityDisinherit
-                0x00000000       0xec tasks.o
+ .text.uxTaskGetStackHighWaterMark
+                0x00000000       0x38 tasks.o
  .text.uxTaskResetEventItemValue
-                0x00000000       0x34 tasks.o
- .text.pvTaskIncrementMutexHeldCount
-                0x00000000       0x28 tasks.o
+                0x00000000       0x30 tasks.o
  .text          0x00000000        0x0 timers.o
  .data          0x00000000        0x0 timers.o
  .bss           0x00000000        0x0 timers.o
- .text          0x00000000      0x348 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o)
+ .text          0x00000000        0x0 websrv_help_functions.o
+ .data          0x00000000        0x0 websrv_help_functions.o
+ .bss           0x00000000        0x0 websrv_help_functions.o
+ .text.find_key_val
+                0x00000000       0xf0 websrv_help_functions.o
+ .text.h2int    0x00000000       0x5c websrv_help_functions.o
+ .text.urldecode
+                0x00000000       0x90 websrv_help_functions.o
+ .text.int2h    0x00000000       0x80 websrv_help_functions.o
+ .text.urlencode
+                0x00000000       0xa0 websrv_help_functions.o
+ .text.parse_ip
+                0x00000000       0xdc websrv_help_functions.o
+ .rodata        0x00000000        0x8 websrv_help_functions.o
+ .text.mk_net_str
+                0x00000000       0xf4 websrv_help_functions.o
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o)
- .rodata.str1.4
-                0x00000000        0x4 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o)
- .text          0x00000000      0xb50 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o)
- .rodata        0x00000000       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o)
- .rodata.str1.4
-                0x00000000        0x4 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o)
- .text          0x00000000      0x1c0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_sqrt.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_sqrt.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_sqrt.o)
- .text          0x00000000        0x8 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fabs.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fabs.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fabs.o)
- .text          0x00000000       0x10 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_finite.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_finite.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_finite.o)
- .text          0x00000000       0x90 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fpclassify.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fpclassify.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fpclassify.o)
  .text          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_lib_ver.o)
- .data          0x00000000        0x1 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_lib_ver.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_lib_ver.o)
- .text          0x00000000        0x4 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_matherr.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_matherr.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_matherr.o)
- .text          0x00000000        0xc d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_nan.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_nan.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_nan.o)
- .text          0x00000000      0x13c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_rint.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_rint.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_rint.o)
- .rodata        0x00000000       0x10 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_rint.o)
- .text          0x00000000      0x108 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_scalbn.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_scalbn.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_scalbn.o)
- .text          0x00000000       0x14 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_copysign.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_copysign.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_copysign.o)
- .text          0x00000000      0x370 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_addsubdf3.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_addsubdf3.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_addsubdf3.o)
- .text          0x00000000      0x424 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_muldivdf3.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_muldivdf3.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_muldivdf3.o)
- .text          0x00000000      0x110 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_cmpdf2.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_cmpdf2.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_cmpdf2.o)
- .text          0x00000000       0xa0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_truncdfsf2.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_truncdfsf2.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_truncdfsf2.o)
- .text          0x00000000      0x21c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_addsubsf3.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_addsubsf3.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_addsubsf3.o)
- .text          0x00000000       0x4c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_fixsfsi.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_fixsfsi.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_fixsfsi.o)
  .text          0x00000000        0x8 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atof.o)
@@ -939,24 +1160,29 @@ Discarded input sections
  .text          0x00000000       0x10 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atol.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atol.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atol.o)
- .text          0x00000000        0xc d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
+ .text          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+ .data          0x00000000        0x4 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+ .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+ .rodata        0x00000000      0x104 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
- .text          0x00000000      0x150 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+ .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-rand.o)
+ .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-rand.o)
  .text          0x00000000      0x118 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-reent.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-reent.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-reent.o)
- COMMON         0x00000000        0x4 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-reent.o)
  .text          0x00000000      0x1dc d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcmp.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcmp.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcmp.o)
- .text          0x00000000       0x60 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+ .text          0x00000000       0xac d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncmp.o)
+ .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncmp.o)
+ .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncmp.o)
  .text          0x00000000     0x10a0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtod.o)
  .data          0x00000000       0x28 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtod.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtod.o)
@@ -966,11 +1192,6 @@ Discarded input sections
  .text          0x00000000      0x17c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtol.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtol.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtol.o)
- .text          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
- .data          0x00000000        0x4 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
- .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
- .rodata        0x00000000      0x104 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
- .text          0x00000000      0x240 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-freer.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-freer.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-freer.o)
  .text          0x00000000      0x680 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-gdtoa-gethex.o)
@@ -987,28 +1208,19 @@ Discarded input sections
  .bss           0x00000000        0xc d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-locale.o)
  .rodata.str1.4
                 0x00000000       0x14 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-locale.o)
- .text          0x00000000      0x57c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mallocr.o)
- .data          0x00000000      0x410 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mallocr.o)
- .bss           0x00000000       0x34 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mallocr.o)
- .text          0x00000000        0x8 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mlock.o)
+ .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-malloc.o)
+ .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-malloc.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mlock.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mlock.o)
  .text          0x00000000      0x91c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mprec.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mprec.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mprec.o)
  .rodata        0x00000000      0x128 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mprec.o)
- .text          0x00000000       0x28 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-sbrkr.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-sbrkr.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-sbrkr.o)
- .text          0x00000000       0xac d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncmp.o)
- .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncmp.o)
- .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncmp.o)
  .text          0x00000000       0x5c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-callocr.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-callocr.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-callocr.o)
- .text          0x00000000       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-malloc.o)
- .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-malloc.o)
- .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-malloc.o)
  .text          0x00000000      0x278 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_udivsi3.o)
  .data          0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_udivsi3.o)
  .bss           0x00000000        0x0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_udivsi3.o)
@@ -1036,223 +1248,691 @@ Linker script and memory map
 
                 0x2000c000                _eram = 0x2000c000
 
-.text           0x08000000     0x17fc
+.text           0x08000000     0x82b0
  *(.isr_vector .isr_vector.*)
  .isr_vector    0x08000000      0x134 startup_stm32f10x_hd.o
                 0x08000000                g_pfnVectors
  *(.text .text.* .gnu.linkonce.t.*)
- .text.vListInitialise
-                0x08000134       0x48 list.o
-                0x08000134                vListInitialise
- .text.vListInitialiseItem
-                0x0800017c       0x1c list.o
-                0x0800017c                vListInitialiseItem
- .text.vListInsertEnd
-                0x08000198       0x48 list.o
-                0x08000198                vListInsertEnd
- .text.vListInsert
-                0x080001e0       0x78 list.o
-                0x080001e0                vListInsert
- .text.uxListRemove
-                0x08000258       0x58 list.o
-                0x08000258                uxListRemove
+ .text.Delay_Ms
+                0x08000134       0x34 Delay.o
+                0x08000134                Delay_Ms
+ .text.Delay_us
+                0x08000168       0x30 Delay.o
+                0x08000168                Delay_us
+ .text.Millis   0x08000198       0x14 Delay.o
+                0x08000198                Millis
+ .text.addToBuf
+                0x080001ac       0x28 dhcp.o
+ .text.dhcp_state
+                0x080001d4       0x3c dhcp.o
+                0x080001d4                dhcp_state
+ .text.dhcp_start
+                0x08000210      0x12c dhcp.o
+                0x08000210                dhcp_start
+ .text.dhcp_request_ip
+                0x0800033c       0x28 dhcp.o
+                0x0800033c                dhcp_request_ip
+ .text.dhcp_send
+                0x08000364      0x2d8 dhcp.o
+                0x08000364                dhcp_send
+ .text.check_for_dhcp_answer
+                0x0800063c       0xa4 dhcp.o
+                0x0800063c                check_for_dhcp_answer
+ .text.have_dhcpoffer
+                0x080006e0      0x13c dhcp.o
+                0x080006e0                have_dhcpoffer
+ .text.have_dhcpack
+                0x0800081c       0x38 dhcp.o
+                0x0800081c                have_dhcpack
+ .text.dnslkup_set_dnsip
+                0x08000854       0x3c dnslkup.o
+                0x08000854                dnslkup_set_dnsip
+ .text.ENC28J60_SPI1_Configuration
+                0x08000890      0x124 enc28j60.o
+                0x08000890                ENC28J60_SPI1_Configuration
+ .text.ENC28J60_SendByte
+                0x080009b4       0x54 enc28j60.o
+                0x080009b4                ENC28J60_SendByte
+ .text.enc28j60ReadOp
+                0x08000a08       0x7c enc28j60.o
+                0x08000a08                enc28j60ReadOp
+ .text.enc28j60WriteOp
+                0x08000a84       0x64 enc28j60.o
+                0x08000a84                enc28j60WriteOp
+ .text.enc28j60ReadBuffer
+                0x08000ae8       0x78 enc28j60.o
+                0x08000ae8                enc28j60ReadBuffer
+ .text.enc28j60ReadBufferWord
+                0x08000b60       0x20 enc28j60.o
+ .text.enc28j60WriteBuffer
+                0x08000b80       0x70 enc28j60.o
+                0x08000b80                enc28j60WriteBuffer
+ .text.enc28j60SetBank
+                0x08000bf0       0x58 enc28j60.o
+                0x08000bf0                enc28j60SetBank
+ .text.enc28j60Read
+                0x08000c48       0x2c enc28j60.o
+                0x08000c48                enc28j60Read
+ .text.enc28j60WriteWord
+                0x08000c74       0x40 enc28j60.o
+                0x08000c74                enc28j60WriteWord
+ .text.enc28j60PhyReadH
+                0x08000cb4       0x60 enc28j60.o
+                0x08000cb4                enc28j60PhyReadH
+ .text.enc28j60Write
+                0x08000d14       0x30 enc28j60.o
+                0x08000d14                enc28j60Write
+ .text.enc28j60PhyWrite
+                0x08000d44       0x64 enc28j60.o
+                0x08000d44                enc28j60PhyWrite
+ .text.enc28j60clkout
+                0x08000da8       0x24 enc28j60.o
+                0x08000da8                enc28j60clkout
+ .text.enc28j60Init
+                0x08000dcc      0x1b0 enc28j60.o
+                0x08000dcc                enc28j60Init
+ .text.enc28j60getrev
+                0x08000f7c       0x2c enc28j60.o
+                0x08000f7c                enc28j60getrev
+ .text.enc28j60EnableBroadcast
+                0x08000fa8       0x28 enc28j60.o
+                0x08000fa8                enc28j60EnableBroadcast
+ .text.enc28j60DisableBroadcast
+                0x08000fd0       0x28 enc28j60.o
+                0x08000fd0                enc28j60DisableBroadcast
+ .text.enc28j60linkup
+                0x08000ff8       0x24 enc28j60.o
+                0x08000ff8                enc28j60linkup
+ .text.enc28j60PacketSend
+                0x0800101c       0xac enc28j60.o
+                0x0800101c                enc28j60PacketSend
+ .text.enc28j60PacketReceive
+                0x080010c8       0xec enc28j60.o
+                0x080010c8                enc28j60PacketReceive
+ .text.ES_enc28j60SpiInit
+                0x080011b4        0xc EtherShield.o
+                0x080011b4                ES_enc28j60SpiInit
+ .text.ES_enc28j60Init
+                0x080011c0       0x78 EtherShield.o
+                0x080011c0                ES_enc28j60Init
+ .text.ES_enc28j60Revision
+                0x08001238       0x10 EtherShield.o
+                0x08001238                ES_enc28j60Revision
+ .text.ES_enc28j60PacketReceive
+                0x08001248       0x24 EtherShield.o
+                0x08001248                ES_enc28j60PacketReceive
+ .text.ES_packetloop_icmp_tcp
+                0x0800126c       0x24 EtherShield.o
+                0x0800126c                ES_packetloop_icmp_tcp
+ .text.ES_fill_tcp_data
+                0x08001290       0x28 EtherShield.o
+                0x08001290                ES_fill_tcp_data
+ .text.allocateIPAddress
+                0x080012b8      0x12c EtherShield.o
+                0x080012b8                allocateIPAddress
  .text.pvPortMalloc
-                0x080002b0      0x13c main.o
-                0x080002b0                pvPortMalloc
+                0x080013e4      0x13c heap_4.o
+                0x080013e4                pvPortMalloc
  .text.vPortFree
-                0x080003ec       0x80 main.o
-                0x080003ec                vPortFree
+                0x08001520       0x80 heap_4.o
+                0x08001520                vPortFree
  .text.prvHeapInit
-                0x0800046c       0xd0 main.o
+                0x080015a0       0xd0 heap_4.o
  .text.prvInsertBlockIntoFreeList
-                0x0800053c       0xb0 main.o
+                0x08001670       0xb0 heap_4.o
+ .text.NVIC_SetPriority
+                0x08001720       0x58 hi_ethernet.o
+ .text.SysTick_Config
+                0x08001778       0x54 hi_ethernet.o
+ .text.Hi_Eth_InitialiseBuffers
+                0x080017cc       0x44 hi_ethernet.o
+ .text.Hi_Eth_AddCallback
+                0x08001810       0x3c hi_ethernet.o
+                0x08001810                Hi_Eth_AddCallback
+ .text.Hi_Eth_AddDHCPIPCallback
+                0x0800184c       0x3c hi_ethernet.o
+                0x0800184c                Hi_Eth_AddDHCPIPCallback
+ .text.Hi_Eth_Loop
+                0x08001888       0x90 hi_ethernet.o
+                0x08001888                Hi_Eth_Loop
+ .text.Hi_Eth_Send
+                0x08001918       0x30 hi_ethernet.o
+                0x08001918                Hi_Eth_Send
+ .text.vHi_Eth_LoopTask
+                0x08001948       0x10 hi_ethernet.o
+                0x08001948                vHi_Eth_LoopTask
+ .text.dhcp_got_ip
+                0x08001958       0x4c hi_ethernet.o
+                0x08001958                dhcp_got_ip
+ .text.RCC_Configuration
+                0x080019a4       0x88 hi_ethernet.o
+ .text.Hi_Eth_Init
+                0x08001a2c      0x1d8 hi_ethernet.o
+                0x08001a2c                Hi_Eth_Init
+ .text.ES_PingCallback
+                0x08001c04        0xc hi_ethernet.o
+                0x08001c04                ES_PingCallback
+ .text.delay_one_us
+                0x08001c10       0x28 hi_lib.o
+                0x08001c10                delay_one_us
+ .text.delay_ms
+                0x08001c38       0x48 hi_lib.o
+                0x08001c38                delay_ms
  .text.Hi_GPIO_GetBus
-                0x080005ec       0x98 main.o
-                0x080005ec                Hi_GPIO_GetBus
+                0x08001c80       0x98 hi_lib.o
  .text.Hi_GPIO_InitOut
-                0x08000684       0x44 main.o
-                0x08000684                Hi_GPIO_InitOut
+                0x08001d18       0x44 hi_lib.o
+                0x08001d18                Hi_GPIO_InitOut
+ .text.Hi_GPIO_On
+                0x08001d5c       0x1c hi_lib.o
+                0x08001d5c                Hi_GPIO_On
  .text.Hi_GPIO_Invert
-                0x080006c8       0x24 main.o
-                0x080006c8                Hi_GPIO_Invert
- .text.vTimer1Task
-                0x080006ec       0x70 main.o
-                0x080006ec                vTimer1Task
- .text.main     0x0800075c       0x50 main.o
-                0x0800075c                main
+                0x08001d78       0x24 hi_lib.o
+                0x08001d78                Hi_GPIO_Invert
+ .text.checksum
+                0x08001d9c       0xd4 ip_arp_udp_tcp.o
+                0x08001d9c                checksum
+ .text.init_ip_arp_udp_tcp
+                0x08001e70       0x88 ip_arp_udp_tcp.o
+                0x08001e70                init_ip_arp_udp_tcp
+ .text.check_ip_message_is_from
+                0x08001ef8       0x50 ip_arp_udp_tcp.o
+                0x08001ef8                check_ip_message_is_from
+ .text.eth_type_is_arp_and_my_ip
+                0x08001f48       0x7c ip_arp_udp_tcp.o
+                0x08001f48                eth_type_is_arp_and_my_ip
+ .text.eth_type_is_ip_and_my_ip
+                0x08001fc4       0x8c ip_arp_udp_tcp.o
+                0x08001fc4                eth_type_is_ip_and_my_ip
+ .text.make_eth
+                0x08002050       0x54 ip_arp_udp_tcp.o
+                0x08002050                make_eth
+ .text.fill_ip_hdr_checksum
+                0x080020a4       0x84 ip_arp_udp_tcp.o
+                0x080020a4                fill_ip_hdr_checksum
+ .text.make_ip  0x08002128       0x5c ip_arp_udp_tcp.o
+                0x08002128                make_ip
+ .text.step_seq
+                0x08002184       0x90 ip_arp_udp_tcp.o
+                0x08002184                step_seq
+ .text.make_tcphead
+                0x08002214       0x94 ip_arp_udp_tcp.o
+                0x08002214                make_tcphead
+ .text.make_arp_answer_from_request
+                0x080022a8       0xc0 ip_arp_udp_tcp.o
+                0x080022a8                make_arp_answer_from_request
+ .text.make_echo_reply_from_request
+                0x08002368       0x68 ip_arp_udp_tcp.o
+                0x08002368                make_echo_reply_from_request
+ .text.make_tcp_synack_from_syn
+                0x080023d0      0x124 ip_arp_udp_tcp.o
+                0x080023d0                make_tcp_synack_from_syn
+ .text.get_tcp_data_len
+                0x080024f4       0x70 ip_arp_udp_tcp.o
+                0x080024f4                get_tcp_data_len
+ .text.fill_tcp_data_len
+                0x08002564       0x50 ip_arp_udp_tcp.o
+                0x08002564                fill_tcp_data_len
+ .text.fill_tcp_data
+                0x080025b4       0x30 ip_arp_udp_tcp.o
+                0x080025b4                fill_tcp_data
+ .text.make_tcp_ack_from_any
+                0x080025e4       0xe4 ip_arp_udp_tcp.o
+                0x080025e4                make_tcp_ack_from_any
+ .text.make_tcp_ack_with_data_noflags
+                0x080026c8       0xa4 ip_arp_udp_tcp.o
+                0x080026c8                make_tcp_ack_with_data_noflags
+ .text.www_server_reply
+                0x0800276c       0x44 ip_arp_udp_tcp.o
+                0x0800276c                www_server_reply
+ .text.fill_buf_p
+                0x080027b0       0x40 ip_arp_udp_tcp.o
+                0x080027b0                fill_buf_p
+ .text.send_udp_prepare
+                0x080027f0      0x13c ip_arp_udp_tcp.o
+                0x080027f0                send_udp_prepare
+ .text.send_udp_transmit
+                0x0800292c       0xb4 ip_arp_udp_tcp.o
+                0x0800292c                send_udp_transmit
+ .text.client_arp_whohas
+                0x080029e0      0x110 ip_arp_udp_tcp.o
+                0x080029e0                client_arp_whohas
+ .text.client_store_gw_mac
+                0x08002af0       0x7c ip_arp_udp_tcp.o
+                0x08002af0                client_store_gw_mac
+ .text.client_set_gwip
+                0x08002b6c       0x48 ip_arp_udp_tcp.o
+                0x08002b6c                client_set_gwip
+ .text.client_syn
+                0x08002bb4      0x220 ip_arp_udp_tcp.o
+                0x08002bb4                client_syn
+ .text.packetloop_icmp_tcp
+                0x08002dd4      0x5c8 ip_arp_udp_tcp.o
+                0x08002dd4                packetloop_icmp_tcp
+ .text.vListInitialise
+                0x0800339c       0x48 list.o
+                0x0800339c                vListInitialise
+ .text.vListInitialiseItem
+                0x080033e4       0x1c list.o
+                0x080033e4                vListInitialiseItem
+ .text.vListInsertEnd
+                0x08003400       0x48 list.o
+                0x08003400                vListInsertEnd
+ .text.vListInsert
+                0x08003448       0x74 list.o
+                0x08003448                vListInsert
+ .text.uxListRemove
+                0x080034bc       0x58 list.o
+                0x080034bc                uxListRemove
+ .text.vdatacallback1
+                0x08003514       0x50 main.o
+                0x08003514                vdatacallback1
+ .text.vdhcpcallback1
+                0x08003564       0x14 main.o
+                0x08003564                vdhcpcallback1
+ .text.vTimer3Task
+                0x08003578       0x70 main.o
+                0x08003578                vTimer3Task
+ .text.vHiInitTask
+                0x080035e8       0xb0 main.o
+                0x080035e8                vHiInitTask
+ .text.main     0x08003698       0x3c main.o
+                0x08003698                main
  .text.pxPortInitialiseStack
-                0x080007ac       0x60 port.o
-                0x080007ac                pxPortInitialiseStack
+                0x080036d4       0x60 port.o
+                0x080036d4                pxPortInitialiseStack
  .text.prvTaskExitError
-                0x0800080c        0xc port.o
+                0x08003734        0xc port.o
  .text.SVC_Handler
-                0x08000818       0x24 port.o
-                0x08000818                SVC_Handler
+                0x08003740       0x24 port.o
+                0x08003740                SVC_Handler
  .text.prvPortStartFirstTask
-                0x0800083c       0x20 port.o
+                0x08003764       0x20 port.o
  .text.xPortStartScheduler
-                0x0800085c       0x40 port.o
-                0x0800085c                xPortStartScheduler
+                0x08003784       0x40 port.o
+                0x08003784                xPortStartScheduler
  .text.vPortYield
-                0x0800089c       0x20 port.o
-                0x0800089c                vPortYield
+                0x080037c4       0x20 port.o
+                0x080037c4                vPortYield
  .text.vPortEnterCritical
-                0x080008bc       0x24 port.o
-                0x080008bc                vPortEnterCritical
+                0x080037e4       0x24 port.o
+                0x080037e4                vPortEnterCritical
  .text.vPortExitCritical
-                0x080008e0       0x28 port.o
-                0x080008e0                vPortExitCritical
+                0x08003808       0x28 port.o
+                0x08003808                vPortExitCritical
  .text.ulPortSetInterruptMask
-                0x08000908       0x14 port.o
-                0x08000908                ulPortSetInterruptMask
+                0x08003830       0x14 port.o
+                0x08003830                ulPortSetInterruptMask
  .text.vPortClearInterruptMask
-                0x0800091c        0x8 port.o
-                0x0800091c                vPortClearInterruptMask
+                0x08003844        0x8 port.o
+                0x08003844                vPortClearInterruptMask
  .text.PendSV_Handler
-                0x08000924       0x44 port.o
-                0x08000924                PendSV_Handler
+                0x0800384c       0x44 port.o
+                0x0800384c                PendSV_Handler
  .text.SysTick_Handler
-                0x08000968       0x28 port.o
-                0x08000968                SysTick_Handler
+                0x08003890       0x28 port.o
+                0x08003890                SysTick_Handler
  .text.vPortSetupTimerInterrupt
-                0x08000990       0x24 port.o
-                0x08000990                vPortSetupTimerInterrupt
+                0x080038b8       0x24 port.o
+                0x080038b8                vPortSetupTimerInterrupt
+ .text.reverse  0x080038dc       0x64 printf.o
+                0x080038dc                reverse
+ .text.intToStr
+                0x08003940       0xa8 printf.o
+                0x08003940                intToStr
+ .text._ftoa    0x080039e8       0xbc printf.o
+                0x080039e8                _ftoa
+ .text.PutChar  0x08003aa4       0x24 printf.o
+                0x08003aa4                PutChar
+ .text.PutString
+                0x08003ac8       0x48 printf.o
+                0x08003ac8                PutString
+ .text.PutUnsignedInt
+                0x08003b10       0xb4 printf.o
+                0x08003b10                PutUnsignedInt
+ .text.PutSignedInt
+                0x08003bc4      0x11c printf.o
+                0x08003bc4                PutSignedInt
+ .text.PutHexa  0x08003ce0       0xe8 printf.o
+                0x08003ce0                PutHexa
+ .text.vsnprintf
+                0x08003dc8      0x2d4 printf.o
+                0x08003dc8                vsnprintf
+ .text.vsprintf
+                0x0800409c       0x28 printf.o
+                0x0800409c                vsprintf
+ .text.sprintf  0x080040c4       0x30 printf.o
+                0x080040c4                sprintf
  .text.Default_Reset_Handler
-                0x080009b4       0x68 startup_stm32f10x_hd.o
-                0x080009b4                Default_Reset_Handler
-                0x080009b4                Reset_Handler
+                0x080040f4       0x68 startup_stm32f10x_hd.o
+                0x080040f4                Default_Reset_Handler
+                0x080040f4                Reset_Handler
  .text.Default_Handler
-                0x08000a1c        0x8 startup_stm32f10x_hd.o
-                0x08000a1c                EXTI2_IRQHandler
-                0x08000a1c                TIM8_TRG_COM_IRQHandler
-                0x08000a1c                TIM8_CC_IRQHandler
-                0x08000a1c                DebugMon_Handler
-                0x08000a1c                TIM1_CC_IRQHandler
-                0x08000a1c                HardFault_Handler
-                0x08000a1c                TIM6_IRQHandler
-                0x08000a1c                PVD_IRQHandler
-                0x08000a1c                SDIO_IRQHandler
-                0x08000a1c                NMI_Handler
-                0x08000a1c                EXTI3_IRQHandler
-                0x08000a1c                EXTI0_IRQHandler
-                0x08000a1c                I2C2_EV_IRQHandler
-                0x08000a1c                UsageFault_Handler
-                0x08000a1c                ADC1_2_IRQHandler
-                0x08000a1c                SPI1_IRQHandler
-                0x08000a1c                TAMPER_IRQHandler
-                0x08000a1c                TIM8_UP_IRQHandler
-                0x08000a1c                DMA2_Channel2_IRQHandler
-                0x08000a1c                DMA1_Channel4_IRQHandler
-                0x08000a1c                USART3_IRQHandler
-                0x08000a1c                RTC_IRQHandler
-                0x08000a1c                DMA1_Channel7_IRQHandler
-                0x08000a1c                CAN1_RX1_IRQHandler
-                0x08000a1c                UART5_IRQHandler
-                0x08000a1c                ADC3_IRQHandler
-                0x08000a1c                TIM4_IRQHandler
-                0x08000a1c                DMA2_Channel1_IRQHandler
-                0x08000a1c                I2C1_EV_IRQHandler
-                0x08000a1c                DMA1_Channel6_IRQHandler
-                0x08000a1c                UART4_IRQHandler
-                0x08000a1c                TIM3_IRQHandler
-                0x08000a1c                RCC_IRQHandler
-                0x08000a1c                TIM1_TRG_COM_IRQHandler
-                0x08000a1c                DMA1_Channel1_IRQHandler
-                0x08000a1c                EXTI15_10_IRQHandler
-                0x08000a1c                TIM7_IRQHandler
-                0x08000a1c                TIM5_IRQHandler
-                0x08000a1c                EXTI9_5_IRQHandler
-                0x08000a1c                SPI2_IRQHandler
-                0x08000a1c                MemManage_Handler
-                0x08000a1c                DMA1_Channel5_IRQHandler
-                0x08000a1c                EXTI4_IRQHandler
-                0x08000a1c                USB_LP_CAN1_RX0_IRQHandler
-                0x08000a1c                USB_HP_CAN1_TX_IRQHandler
-                0x08000a1c                DMA1_Channel3_IRQHandler
-                0x08000a1c                FSMC_IRQHandler
-                0x08000a1c                TIM1_UP_IRQHandler
-                0x08000a1c                WWDG_IRQHandler
-                0x08000a1c                TIM2_IRQHandler
-                0x08000a1c                TIM1_BRK_IRQHandler
-                0x08000a1c                EXTI1_IRQHandler
-                0x08000a1c                RTCAlarm_IRQHandler
-                0x08000a1c                DMA2_Channel4_5_IRQHandler
-                0x08000a1c                USART2_IRQHandler
-                0x08000a1c                I2C2_ER_IRQHandler
-                0x08000a1c                DMA1_Channel2_IRQHandler
-                0x08000a1c                TIM8_BRK_IRQHandler
-                0x08000a1c                CAN1_SCE_IRQHandler
-                0x08000a1c                FLASH_IRQHandler
-                0x08000a1c                BusFault_Handler
-                0x08000a1c                USART1_IRQHandler
-                0x08000a1c                SPI3_IRQHandler
-                0x08000a1c                I2C1_ER_IRQHandler
-                0x08000a1c                USBWakeUp_IRQHandler
-                0x08000a1c                DMA2_Channel3_IRQHandler
+                0x0800415c        0x8 startup_stm32f10x_hd.o
+                0x0800415c                EXTI2_IRQHandler
+                0x0800415c                TIM8_TRG_COM_IRQHandler
+                0x0800415c                TIM8_CC_IRQHandler
+                0x0800415c                DebugMon_Handler
+                0x0800415c                TIM1_CC_IRQHandler
+                0x0800415c                HardFault_Handler
+                0x0800415c                TIM6_IRQHandler
+                0x0800415c                PVD_IRQHandler
+                0x0800415c                SDIO_IRQHandler
+                0x0800415c                NMI_Handler
+                0x0800415c                EXTI3_IRQHandler
+                0x0800415c                EXTI0_IRQHandler
+                0x0800415c                I2C2_EV_IRQHandler
+                0x0800415c                UsageFault_Handler
+                0x0800415c                ADC1_2_IRQHandler
+                0x0800415c                SPI1_IRQHandler
+                0x0800415c                TAMPER_IRQHandler
+                0x0800415c                TIM8_UP_IRQHandler
+                0x0800415c                DMA2_Channel2_IRQHandler
+                0x0800415c                DMA1_Channel4_IRQHandler
+                0x0800415c                USART3_IRQHandler
+                0x0800415c                RTC_IRQHandler
+                0x0800415c                DMA1_Channel7_IRQHandler
+                0x0800415c                CAN1_RX1_IRQHandler
+                0x0800415c                UART5_IRQHandler
+                0x0800415c                ADC3_IRQHandler
+                0x0800415c                TIM4_IRQHandler
+                0x0800415c                DMA2_Channel1_IRQHandler
+                0x0800415c                I2C1_EV_IRQHandler
+                0x0800415c                DMA1_Channel6_IRQHandler
+                0x0800415c                UART4_IRQHandler
+                0x0800415c                TIM3_IRQHandler
+                0x0800415c                RCC_IRQHandler
+                0x0800415c                TIM1_TRG_COM_IRQHandler
+                0x0800415c                DMA1_Channel1_IRQHandler
+                0x0800415c                EXTI15_10_IRQHandler
+                0x0800415c                TIM7_IRQHandler
+                0x0800415c                TIM5_IRQHandler
+                0x0800415c                EXTI9_5_IRQHandler
+                0x0800415c                SPI2_IRQHandler
+                0x0800415c                MemManage_Handler
+                0x0800415c                DMA1_Channel5_IRQHandler
+                0x0800415c                EXTI4_IRQHandler
+                0x0800415c                USB_LP_CAN1_RX0_IRQHandler
+                0x0800415c                USB_HP_CAN1_TX_IRQHandler
+                0x0800415c                DMA1_Channel3_IRQHandler
+                0x0800415c                FSMC_IRQHandler
+                0x0800415c                TIM1_UP_IRQHandler
+                0x0800415c                WWDG_IRQHandler
+                0x0800415c                TIM2_IRQHandler
+                0x0800415c                TIM1_BRK_IRQHandler
+                0x0800415c                EXTI1_IRQHandler
+                0x0800415c                RTCAlarm_IRQHandler
+                0x0800415c                DMA2_Channel4_5_IRQHandler
+                0x0800415c                USART2_IRQHandler
+                0x0800415c                I2C2_ER_IRQHandler
+                0x0800415c                DMA1_Channel2_IRQHandler
+                0x0800415c                TIM8_BRK_IRQHandler
+                0x0800415c                CAN1_SCE_IRQHandler
+                0x0800415c                FLASH_IRQHandler
+                0x0800415c                BusFault_Handler
+                0x0800415c                USART1_IRQHandler
+                0x0800415c                SPI3_IRQHandler
+                0x0800415c                I2C1_ER_IRQHandler
+                0x0800415c                USBWakeUp_IRQHandler
+                0x0800415c                DMA2_Channel3_IRQHandler
+ .text.FLASH_SetLatency
+                0x08004164       0x3c stm32f10x_flash.o
+                0x08004164                FLASH_SetLatency
+ .text.FLASH_PrefetchBufferCmd
+                0x080041a0       0x30 stm32f10x_flash.o
+                0x080041a0                FLASH_PrefetchBufferCmd
  .text.GPIO_Init
-                0x08000a24      0x1c0 stm32f10x_gpio.o
-                0x08000a24                GPIO_Init
+                0x080041d0      0x1c0 stm32f10x_gpio.o
+                0x080041d0                GPIO_Init
+ .text.GPIO_SetBits
+                0x08004390       0x1c stm32f10x_gpio.o
+                0x08004390                GPIO_SetBits
+ .text.GPIO_ResetBits
+                0x080043ac       0x1c stm32f10x_gpio.o
+                0x080043ac                GPIO_ResetBits
+ .text.RCC_DeInit
+                0x080043c8       0x5c stm32f10x_rcc.o
+                0x080043c8                RCC_DeInit
+ .text.RCC_HSEConfig
+                0x08004424       0x5c stm32f10x_rcc.o
+                0x08004424                RCC_HSEConfig
+ .text.RCC_WaitForHSEStartUp
+                0x08004480       0x64 stm32f10x_rcc.o
+                0x08004480                RCC_WaitForHSEStartUp
+ .text.RCC_PLLConfig
+                0x080044e4       0x44 stm32f10x_rcc.o
+                0x080044e4                RCC_PLLConfig
+ .text.RCC_PLLCmd
+                0x08004528       0x20 stm32f10x_rcc.o
+                0x08004528                RCC_PLLCmd
+ .text.RCC_SYSCLKConfig
+                0x08004548       0x3c stm32f10x_rcc.o
+                0x08004548                RCC_SYSCLKConfig
+ .text.RCC_GetSYSCLKSource
+                0x08004584       0x1c stm32f10x_rcc.o
+                0x08004584                RCC_GetSYSCLKSource
+ .text.RCC_HCLKConfig
+                0x080045a0       0x3c stm32f10x_rcc.o
+                0x080045a0                RCC_HCLKConfig
+ .text.RCC_PCLK1Config
+                0x080045dc       0x3c stm32f10x_rcc.o
+                0x080045dc                RCC_PCLK1Config
+ .text.RCC_PCLK2Config
+                0x08004618       0x40 stm32f10x_rcc.o
+                0x08004618                RCC_PCLK2Config
+ .text.RCC_GetClocksFreq
+                0x08004658      0x17c stm32f10x_rcc.o
+                0x08004658                RCC_GetClocksFreq
  .text.RCC_APB2PeriphClockCmd
-                0x08000be4       0x44 stm32f10x_rcc.o
-                0x08000be4                RCC_APB2PeriphClockCmd
+                0x080047d4       0x44 stm32f10x_rcc.o
+                0x080047d4                RCC_APB2PeriphClockCmd
+ .text.RCC_APB1PeriphClockCmd
+                0x08004818       0x44 stm32f10x_rcc.o
+                0x08004818                RCC_APB1PeriphClockCmd
+ .text.RCC_APB2PeriphResetCmd
+                0x0800485c       0x44 stm32f10x_rcc.o
+                0x0800485c                RCC_APB2PeriphResetCmd
+ .text.RCC_APB1PeriphResetCmd
+                0x080048a0       0x44 stm32f10x_rcc.o
+                0x080048a0                RCC_APB1PeriphResetCmd
+ .text.RCC_GetFlagStatus
+                0x080048e4       0x84 stm32f10x_rcc.o
+                0x080048e4                RCC_GetFlagStatus
+ .text.SPI_I2S_DeInit
+                0x08004968       0x80 stm32f10x_spi.o
+                0x08004968                SPI_I2S_DeInit
+ .text.SPI_Init
+                0x080049e8       0x98 stm32f10x_spi.o
+                0x080049e8                SPI_Init
+ .text.SPI_Cmd  0x08004a80       0x40 stm32f10x_spi.o
+                0x08004a80                SPI_Cmd
+ .text.SPI_I2S_SendData
+                0x08004ac0       0x1c stm32f10x_spi.o
+                0x08004ac0                SPI_I2S_SendData
+ .text.SPI_I2S_ReceiveData
+                0x08004adc       0x1c stm32f10x_spi.o
+                0x08004adc                SPI_I2S_ReceiveData
+ .text.SPI_I2S_GetFlagStatus
+                0x08004af8       0x40 stm32f10x_spi.o
+                0x08004af8                SPI_I2S_GetFlagStatus
+ .text._sbrk    0x08004b38       0x40 syscalls.o
+                0x08004b38                _sbrk
  .text.SystemInit
-                0x08000c28       0x68 system_stm32f10x.o
-                0x08000c28                SystemInit
+                0x08004b78       0x68 system_stm32f10x.o
+                0x08004b78                SystemInit
  .text.SetSysClock
-                0x08000c90        0xc system_stm32f10x.o
+                0x08004be0        0xc system_stm32f10x.o
  .text.SetSysClockTo72
-                0x08000c9c      0x108 system_stm32f10x.o
+                0x08004bec      0x108 system_stm32f10x.o
  .text.xTaskGenericCreate
-                0x08000da4      0x154 tasks.o
-                0x08000da4                xTaskGenericCreate
+                0x08004cf4      0x154 tasks.o
+                0x08004cf4                xTaskGenericCreate
+ .text.vTaskDelete
+                0x08004e48       0xec tasks.o
+                0x08004e48                vTaskDelete
  .text.vTaskDelay
-                0x08000ef8       0x84 tasks.o
-                0x08000ef8                vTaskDelay
+                0x08004f34       0x7c tasks.o
+                0x08004f34                vTaskDelay
  .text.vTaskStartScheduler
-                0x08000f7c       0x68 tasks.o
-                0x08000f7c                vTaskStartScheduler
+                0x08004fb0       0x68 tasks.o
+                0x08004fb0                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x08000fe4       0x1c tasks.o
-                0x08000fe4                vTaskSuspendAll
+                0x08005018       0x1c tasks.o
+                0x08005018                vTaskSuspendAll
  .text.xTaskResumeAll
-                0x08001000      0x118 tasks.o
-                0x08001000                xTaskResumeAll
+                0x08005034      0x118 tasks.o
+                0x08005034                xTaskResumeAll
  .text.xTaskIncrementTick
-                0x08001118      0x190 tasks.o
-                0x08001118                xTaskIncrementTick
+                0x0800514c      0x18c tasks.o
+                0x0800514c                xTaskIncrementTick
  .text.vTaskSwitchContext
-                0x080012a8       0x98 tasks.o
-                0x080012a8                vTaskSwitchContext
+                0x080052d8       0x98 tasks.o
+                0x080052d8                vTaskSwitchContext
  .text.prvIdleTask
-                0x08001340       0x24 tasks.o
+                0x08005370       0x24 tasks.o
  .text.prvInitialiseTCBVariables
-                0x08001364       0xac tasks.o
+                0x08005394       0x9c tasks.o
  .text.prvInitialiseTaskLists
-                0x08001410       0x88 tasks.o
+                0x08005430       0x88 tasks.o
  .text.prvCheckTasksWaitingTermination
-                0x08001498       0x7c tasks.o
+                0x080054b8       0x7c tasks.o
  .text.prvAddCurrentTaskToDelayedList
-                0x08001514       0x78 tasks.o
+                0x08005534       0x70 tasks.o
  .text.prvAllocateTCBAndStack
-                0x0800158c       0x74 tasks.o
+                0x080055a4       0x74 tasks.o
  .text.prvDeleteTCB
-                0x08001600       0x20 tasks.o
+                0x08005618       0x20 tasks.o
  .text.prvResetNextTaskUnblockTime
-                0x08001620       0x4c tasks.o
- .text          0x0800166c       0xb4 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
-                0x0800166c                memset
+                0x08005638       0x4c tasks.o
+ .text          0x08005684      0x348 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o)
+                0x08005684                pow
+ *fill*         0x080059cc        0x4 00
+ .text          0x080059d0      0xb50 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o)
+                0x080059d0                __ieee754_pow
+ .text          0x08006520      0x1c0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_sqrt.o)
+                0x08006520                __ieee754_sqrt
+ .text          0x080066e0        0x8 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fabs.o)
+                0x080066e0                fabs
+ .text          0x080066e8       0x10 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_finite.o)
+                0x080066e8                finite
+ .text          0x080066f8       0x90 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fpclassify.o)
+                0x080066f8                __fpclassifyd
+ .text          0x08006788        0x4 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_matherr.o)
+                0x08006788                matherr
+ .text          0x0800678c        0xc d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_nan.o)
+                0x0800678c                nan
+ .text          0x08006798      0x13c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_rint.o)
+                0x08006798                rint
+ *fill*         0x080068d4        0x4 00
+ .text          0x080068d8      0x108 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_scalbn.o)
+                0x080068d8                scalbn
+ .text          0x080069e0       0x14 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_copysign.o)
+                0x080069e0                copysign
+ .text          0x080069f4      0x370 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_addsubdf3.o)
+                0x080069f4                __aeabi_drsub
+                0x080069fc                __aeabi_dsub
+                0x080069fc                __subdf3
+                0x08006a00                __aeabi_dadd
+                0x08006a00                __adddf3
+                0x08006c78                __floatunsidf
+                0x08006c78                __aeabi_ui2d
+                0x08006c98                __floatsidf
+                0x08006c98                __aeabi_i2d
+                0x08006cbc                __aeabi_f2d
+                0x08006cbc                __extendsfdf2
+                0x08006cf8                __floatundidf
+                0x08006cf8                __aeabi_ul2d
+                0x08006d08                __floatdidf
+                0x08006d08                __aeabi_l2d
+ .text          0x08006d64      0x424 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_muldivdf3.o)
+                0x08006d64                __aeabi_dmul
+                0x08006d64                __muldf3
+                0x08006fb8                __divdf3
+                0x08006fb8                __aeabi_ddiv
+ .text          0x08007188      0x110 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_cmpdf2.o)
+                0x08007188                __gtdf2
+                0x08007188                __gedf2
+                0x08007190                __ltdf2
+                0x08007190                __ledf2
+                0x08007198                __nedf2
+                0x08007198                __eqdf2
+                0x08007198                __cmpdf2
+                0x08007214                __aeabi_cdrcmple
+                0x08007224                __aeabi_cdcmpeq
+                0x08007224                __aeabi_cdcmple
+                0x08007234                __aeabi_dcmpeq
+                0x08007248                __aeabi_dcmplt
+                0x0800725c                __aeabi_dcmple
+                0x08007270                __aeabi_dcmpge
+                0x08007284                __aeabi_dcmpgt
+ .text          0x08007298       0xa0 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_truncdfsf2.o)
+                0x08007298                __truncdfsf2
+                0x08007298                __aeabi_d2f
+ .text          0x08007338      0x21c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_addsubsf3.o)
+                0x08007338                __aeabi_frsub
+                0x08007340                __subsf3
+                0x08007340                __aeabi_fsub
+                0x08007344                __aeabi_fadd
+                0x08007344                __addsf3
+                0x080074a4                __aeabi_ui2f
+                0x080074a4                __floatunsisf
+                0x080074ac                __aeabi_i2f
+                0x080074ac                __floatsisf
+                0x080074c8                __aeabi_ul2f
+                0x080074c8                __floatundisf
+                0x080074d8                __aeabi_l2f
+                0x080074d8                __floatdisf
+ .text          0x08007554       0x4c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_fixsfsi.o)
+                0x08007554                __aeabi_f2iz
+                0x08007554                __fixsfsi
+ .text          0x080075a0        0xc d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
+                0x080075a0                __errno
+ .text          0x080075ac      0x150 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+                0x080075ac                memcpy
+ .text          0x080076fc       0xb4 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+                0x080076fc                memset
+ .text          0x080077b0      0x100 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-rand.o)
+                0x080077b0                srand
+                0x0800780c                rand
+ .text          0x080078b0       0x60 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+                0x080078b0                strlen
+ .text          0x08007910      0x240 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-freer.o)
+                0x08007910                _malloc_trim_r
+                0x080079b8                _free_r
+ .text          0x08007b50       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-malloc.o)
+                0x08007b50                malloc
+                0x08007b60                free
+ .text          0x08007b70      0x57c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mallocr.o)
+                0x08007b70                _malloc_r
+ .text          0x080080ec        0x8 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mlock.o)
+                0x080080ec                __malloc_lock
+                0x080080f0                __malloc_unlock
+ .text          0x080080f4       0x28 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-sbrkr.o)
+                0x080080f4                _sbrk_r
  *(.glue_7t)
  .glue_7t       0x00000000        0x0 linker stubs
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
- .rodata        0x08001720       0xd4 main.o
- .rodata        0x080017f4        0x8 tasks.o
+ .rodata        0x0800811c        0x4 heap_4.o
+ .rodata        0x08008120        0x4 hi_ethernet.o
+ .rodata        0x08008124      0x11c ip_arp_udp_tcp.o
+                0x08008124                arpreqhdr
+                0x0800812c                iphdr
+ .rodata        0x08008240       0x1c main.o
+ .rodata        0x0800825c        0x8 tasks.o
+ .rodata.str1.4
+                0x08008264        0x4 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o)
+ .rodata        0x08008268       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o)
+ .rodata.str1.4
+                0x08008298        0x4 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o)
+ *fill*         0x0800829c        0x4 00
+ .rodata        0x080082a0       0x10 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_rint.o)
 
-.vfp11_veneer   0x080017fc        0x0
+.vfp11_veneer   0x080082b0        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x080017fc        0x0
+.v4_bx          0x080082b0        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
 .ARM.extab
@@ -1260,54 +1940,101 @@ Linker script and memory map
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x080017fc                . = ALIGN (0x4)
-                0x080017fc                _etext = .
-                0x080017fc                _sidata = .
+                0x080082b0                . = ALIGN (0x4)
+                0x080082b0                _etext = .
+                0x080082b0                _sidata = .
 
-.data           0x20000000       0x24 load address 0x080017fc
+.data           0x20000000      0x548 load address 0x080082b0
                 0x20000000                _sdata = .
  *(.data .data.*)
- .data          0x20000000       0x1c main.o
-                0x20000000                tim_tgl1
-                0x20000004                tim_drt1
- .data          0x2000001c        0x4 port.o
- .data          0x20000020        0x2 tasks.o
-                0x20000024                . = ALIGN (0x4)
- *fill*         0x20000022        0x2 00
-                0x20000024                _edata = .
+ .data          0x20000000        0xc dhcp.o
+ .data          0x2000000c        0x4 dnslkup.o
+                0x2000000c                dnsip
+ .data          0x20000010        0x8 hi_ethernet.o
+ .data          0x20000018        0x8 ip_arp_udp_tcp.o
+ .data          0x20000020        0x4 main.o
+                0x20000020                tim_drt3
+ .data          0x20000024        0x4 port.o
+ .data          0x20000028       0xf4 printf.o
+                0x20000028                r
+                0x20000118                _impure_ptr
+ .data          0x2000011c       0x14 stm32f10x_rcc.o
+ .data          0x20000130        0x4 tasks.o
+ .data          0x20000134        0x1 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_lib_ver.o)
+                0x20000134                __fdlib_version
+ *fill*         0x20000135        0x3 00
+ .data          0x20000138      0x410 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mallocr.o)
+                0x20000138                __malloc_av_
+                0x20000540                __malloc_sbrk_base
+                0x20000544                __malloc_trim_threshold
+                0x20000548                . = ALIGN (0x4)
+                0x20000548                _edata = .
 
-.bss            0x20000024     0x4530 load address 0x08001820
-                0x20000024                _sbss = .
+.bss            0x20000548     0x4c58 load address 0x080087f8
+                0x20000548                _sbss = .
  *(.bss .bss.*)
- .bss           0x20000024     0x4434 main.o
-                0x2000443c                Hi_RTC_TimeCnt
-                0x20004440                Hi_Proto_BufferPos
-                0x20004441                Hi_CM_IsPacketTransition
-                0x20004442                Hi_CM_ReceivedCount
-                0x20004443                Hi_CM_PacketSize
-                0x20004444                Hi_CM_ListenersPos
-                0x20004445                Hi_CM_WaitingOnUART
-                0x20004448                Hi_Logger_LastTime
-                0x2000444c                Hi_Logger_LastTimeAvilable
-                0x20004450                astp1
-                0x20004454                astpc1
- .bss           0x20004458       0xfc tasks.o
-                0x20004458                pxCurrentTCB
+ .bss           0x20000548        0x4 Delay.o
+                0x20000548                MillisCounter
+ .bss           0x2000054c       0x20 dhcp.o
+                0x20000558                currentXid
+                0x2000055c                currentSecs
+ .bss           0x2000056c        0x6 enc28j60.o
+ *fill*         0x20000572        0x2 00
+ .bss           0x20000574     0x4818 heap_4.o
+ .bss           0x20004d8c      0x258 hi_ethernet.o
+ .bss           0x20004fe4       0x50 ip_arp_udp_tcp.o
+ .bss           0x20005034        0xc main.o
+                0x20005034                tim_tgl3
+                0x20005038                astp3
+                0x2000503c                astpc3
+ .bss           0x20005040        0x4 syscalls.o
+ .bss           0x20005044       0xfc tasks.o
+                0x20005044                pxCurrentTCB
+ .bss           0x20005140       0x34 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mallocr.o)
+                0x20005140                __malloc_top_pad
+                0x20005144                __malloc_current_mallinfo
+                0x2000516c                __malloc_max_sbrked_mem
+                0x20005170                __malloc_max_total_mem
  *(COMMON)
-                0x20004554                . = ALIGN (0x4)
-                0x20004554                _ebss = .
+ COMMON         0x20005174       0x18 dhcp.o
+                0x20005174                dnsserver
+                0x20005178                DHCP_IP
+                0x2000517c                dhcpip
+                0x20005180                dhcpserver
+                0x20005184                gwaddr
+                0x20005188                dhcpmask
+ COMMON         0x2000518c        0x1 hi_ethernet.o
+                0x2000518c                MYWWWPORT
+ *fill*         0x2000518d        0x3 00
+ COMMON         0x20005190        0x6 ip_arp_udp_tcp.o
+                0x20005190                macaddr
+ *fill*         0x20005196        0x2 00
+ COMMON         0x20005198        0x4 main.o
+                0x20005198                buf2
+ COMMON         0x2000519c        0x4 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-reent.o)
+                0x2000519c                errno
+                0x200051a0                . = ALIGN (0x4)
+                0x200051a0                _ebss = .
 
-.co_stack       0x20004554      0x404 load address 0x08005d50
-                0x20004558                . = ALIGN (0x8)
- *fill*         0x20004554        0x4 00
+.co_stack       0x200051a0      0x400 load address 0x0800d450
+                0x200051a0                . = ALIGN (0x8)
  *(.co_stack .co_stack.*)
- .co_stack      0x20004558      0x400 startup_stm32f10x_hd.o
-                0x20004558                pulStack
-                0x20004958                . = ALIGN (0x4)
-                0x20004958                _end = .
+ .co_stack      0x200051a0      0x400 startup_stm32f10x_hd.o
+                0x200051a0                pulStack
+                0x200055a0                . = ALIGN (0x4)
+                0x200055a0                _end = .
 LOAD core_cm3.o
 LOAD croutine.o
+LOAD Delay.o
+LOAD dhcp.o
+LOAD dnslkup.o
+LOAD enc28j60.o
+LOAD EtherShield.o
 LOAD event_groups.o
+LOAD heap_4.o
+LOAD hi_ethernet.o
+LOAD hi_lib.o
+LOAD ip_arp_udp_tcp.o
 LOAD list.o
 LOAD main.o
 LOAD misc.o
@@ -1317,13 +2044,16 @@ LOAD queue.o
 LOAD startup_stm32f10x_hd.o
 LOAD stm32f10x_adc.o
 LOAD stm32f10x_exti.o
+LOAD stm32f10x_flash.o
 LOAD stm32f10x_gpio.o
 LOAD stm32f10x_rcc.o
+LOAD stm32f10x_spi.o
 LOAD stm32f10x_usart.o
 LOAD syscalls.o
 LOAD system_stm32f10x.o
 LOAD tasks.o
 LOAD timers.o
+LOAD websrv_help_functions.o
 LOAD d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a
 LOAD d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a
 LOAD d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a
@@ -1333,270 +2063,435 @@ LOAD d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../.
 END GROUP
 OUTPUT(STM32F103RC.elf elf32-littlearm)
 
-.debug_abbrev   0x00000000     0x1a45
+.debug_abbrev   0x00000000     0x2c16
  .debug_abbrev  0x00000000       0xd5 core_cm3.o
  .debug_abbrev  0x000000d5      0x17f croutine.o
- .debug_abbrev  0x00000254      0x128 event_groups.o
- .debug_abbrev  0x0000037c       0xb8 list.o
- .debug_abbrev  0x00000434      0x31d main.o
- .debug_abbrev  0x00000751      0x135 misc.o
- .debug_abbrev  0x00000886      0x147 port.o
- .debug_abbrev  0x000009cd      0x238 printf.o
- .debug_abbrev  0x00000c05      0x15a queue.o
- .debug_abbrev  0x00000d5f       0xa3 startup_stm32f10x_hd.o
- .debug_abbrev  0x00000e02      0x174 stm32f10x_adc.o
- .debug_abbrev  0x00000f76      0x14a stm32f10x_exti.o
- .debug_abbrev  0x000010c0      0x1a4 stm32f10x_gpio.o
- .debug_abbrev  0x00001264      0x191 stm32f10x_rcc.o
- .debug_abbrev  0x000013f5      0x15b stm32f10x_usart.o
- .debug_abbrev  0x00001550      0x15a syscalls.o
- .debug_abbrev  0x000016aa      0x17e system_stm32f10x.o
- .debug_abbrev  0x00001828      0x1f5 tasks.o
- .debug_abbrev  0x00001a1d       0x28 timers.o
+ .debug_abbrev  0x00000254       0xd2 Delay.o
+ .debug_abbrev  0x00000326      0x1cb dhcp.o
+ .debug_abbrev  0x000004f1      0x133 dnslkup.o
+ .debug_abbrev  0x00000624      0x230 enc28j60.o
+ .debug_abbrev  0x00000854      0x1cc EtherShield.o
+ .debug_abbrev  0x00000a20      0x128 event_groups.o
+ .debug_abbrev  0x00000b48      0x149 heap_4.o
+ .debug_abbrev  0x00000c91      0x245 hi_ethernet.o
+ .debug_abbrev  0x00000ed6      0x335 hi_lib.o
+ .debug_abbrev  0x0000120b      0x1c1 ip_arp_udp_tcp.o
+ .debug_abbrev  0x000013cc       0xb8 list.o
+ .debug_abbrev  0x00001484      0x12a main.o
+ .debug_abbrev  0x000015ae      0x126 misc.o
+ .debug_abbrev  0x000016d4      0x147 port.o
+ .debug_abbrev  0x0000181b      0x238 printf.o
+ .debug_abbrev  0x00001a53      0x15a queue.o
+ .debug_abbrev  0x00001bad       0xb4 startup_stm32f10x_hd.o
+ .debug_abbrev  0x00001c61      0x174 stm32f10x_adc.o
+ .debug_abbrev  0x00001dd5      0x14a stm32f10x_exti.o
+ .debug_abbrev  0x00001f1f      0x162 stm32f10x_flash.o
+ .debug_abbrev  0x00002081      0x1a4 stm32f10x_gpio.o
+ .debug_abbrev  0x00002225      0x191 stm32f10x_rcc.o
+ .debug_abbrev  0x000023b6      0x15d stm32f10x_spi.o
+ .debug_abbrev  0x00002513      0x15b stm32f10x_usart.o
+ .debug_abbrev  0x0000266e      0x15a syscalls.o
+ .debug_abbrev  0x000027c8      0x153 system_stm32f10x.o
+ .debug_abbrev  0x0000291b      0x1f5 tasks.o
+ .debug_abbrev  0x00002b10       0x28 timers.o
+ .debug_abbrev  0x00002b38       0xde websrv_help_functions.o
 
-.debug_info     0x00000000     0xaadb
+.debug_info     0x00000000    0x1021f
  .debug_info    0x00000000      0x548 core_cm3.o
- .debug_info    0x00000548      0x4e0 croutine.o
- .debug_info    0x00000a28      0x69e event_groups.o
- .debug_info    0x000010c6      0x2b5 list.o
- .debug_info    0x0000137b     0x2ced main.o
- .debug_info    0x00004068      0x546 misc.o
- .debug_info    0x000045ae      0x263 port.o
- .debug_info    0x00004811     0x1001 printf.o
- .debug_info    0x00005812      0xa1f queue.o
- .debug_info    0x00006231      0x143 startup_stm32f10x_hd.o
- .debug_info    0x00006374      0xc0e stm32f10x_adc.o
- .debug_info    0x00006f82      0x361 stm32f10x_exti.o
- .debug_info    0x000072e3      0x723 stm32f10x_gpio.o
- .debug_info    0x00007a06      0x901 stm32f10x_rcc.o
- .debug_info    0x00008307      0xa6c stm32f10x_usart.o
- .debug_info    0x00008d73      0x5a5 syscalls.o
- .debug_info    0x00009318      0x4a0 system_stm32f10x.o
- .debug_info    0x000097b8     0x12b4 tasks.o
- .debug_info    0x0000aa6c       0x6f timers.o
+ .debug_info    0x00000548      0x4eb croutine.o
+ .debug_info    0x00000a33      0x185 Delay.o
+ .debug_info    0x00000bb8      0x617 dhcp.o
+ .debug_info    0x000011cf      0x2a3 dnslkup.o
+ .debug_info    0x00001472      0x8ad enc28j60.o
+ .debug_info    0x00001d1f     0x118c EtherShield.o
+ .debug_info    0x00002eab      0x693 event_groups.o
+ .debug_info    0x0000353e      0x2fb heap_4.o
+ .debug_info    0x00003839      0xae5 hi_ethernet.o
+ .debug_info    0x0000431e     0x29fb hi_lib.o
+ .debug_info    0x00006d19     0x112b ip_arp_udp_tcp.o
+ .debug_info    0x00007e44      0x2b5 list.o
+ .debug_info    0x000080f9      0x337 main.o
+ .debug_info    0x00008430      0x594 misc.o
+ .debug_info    0x000089c4      0x258 port.o
+ .debug_info    0x00008c1c     0x1001 printf.o
+ .debug_info    0x00009c1d      0x9e2 queue.o
+ .debug_info    0x0000a5ff      0x156 startup_stm32f10x_hd.o
+ .debug_info    0x0000a755      0xc19 stm32f10x_adc.o
+ .debug_info    0x0000b36e      0x36c stm32f10x_exti.o
+ .debug_info    0x0000b6da      0x824 stm32f10x_flash.o
+ .debug_info    0x0000befe      0x72e stm32f10x_gpio.o
+ .debug_info    0x0000c62c      0x90c stm32f10x_rcc.o
+ .debug_info    0x0000cf38      0x97c stm32f10x_spi.o
+ .debug_info    0x0000d8b4      0xa77 stm32f10x_usart.o
+ .debug_info    0x0000e32b      0x5b0 syscalls.o
+ .debug_info    0x0000e8db      0x4df system_stm32f10x.o
+ .debug_info    0x0000edba     0x10ec tasks.o
+ .debug_info    0x0000fea6       0x6f timers.o
+ .debug_info    0x0000ff15      0x30a websrv_help_functions.o
 
-.debug_line     0x00000000     0x4ea5
+.debug_line     0x00000000     0x7aea
  .debug_line    0x00000000      0x28a core_cm3.o
  .debug_line    0x0000028a      0x289 croutine.o
- .debug_line    0x00000513      0x2ac event_groups.o
- .debug_line    0x000007bf      0x1be list.o
- .debug_line    0x0000097d     0x14fd main.o
- .debug_line    0x00001e7a      0x231 misc.o
- .debug_line    0x000020ab      0x260 port.o
- .debug_line    0x0000230b      0x41c printf.o
- .debug_line    0x00002727      0x4b7 queue.o
- .debug_line    0x00002bde       0xb4 startup_stm32f10x_hd.o
- .debug_line    0x00002c92      0x510 stm32f10x_adc.o
- .debug_line    0x000031a2      0x291 stm32f10x_exti.o
- .debug_line    0x00003433      0x39b stm32f10x_gpio.o
- .debug_line    0x000037ce      0x4b1 stm32f10x_rcc.o
- .debug_line    0x00003c7f      0x487 stm32f10x_usart.o
- .debug_line    0x00004106      0x2d1 syscalls.o
- .debug_line    0x000043d7      0x241 system_stm32f10x.o
- .debug_line    0x00004618      0x870 tasks.o
- .debug_line    0x00004e88       0x1d timers.o
+ .debug_line    0x00000513      0x1da Delay.o
+ .debug_line    0x000006ed      0x2fd dhcp.o
+ .debug_line    0x000009ea      0x25b dnslkup.o
+ .debug_line    0x00000c45      0x4b1 enc28j60.o
+ .debug_line    0x000010f6      0x6d1 EtherShield.o
+ .debug_line    0x000017c7      0x2ac event_groups.o
+ .debug_line    0x00001a73      0x22c heap_4.o
+ .debug_line    0x00001c9f      0x3a6 hi_ethernet.o
+ .debug_line    0x00002045     0x145a hi_lib.o
+ .debug_line    0x0000349f      0x7e5 ip_arp_udp_tcp.o
+ .debug_line    0x00003c84      0x1be list.o
+ .debug_line    0x00003e42      0x230 main.o
+ .debug_line    0x00004072      0x231 misc.o
+ .debug_line    0x000042a3      0x260 port.o
+ .debug_line    0x00004503      0x41c printf.o
+ .debug_line    0x0000491f      0x48b queue.o
+ .debug_line    0x00004daa       0xb4 startup_stm32f10x_hd.o
+ .debug_line    0x00004e5e      0x510 stm32f10x_adc.o
+ .debug_line    0x0000536e      0x291 stm32f10x_exti.o
+ .debug_line    0x000055ff      0x4c6 stm32f10x_flash.o
+ .debug_line    0x00005ac5      0x39b stm32f10x_gpio.o
+ .debug_line    0x00005e60      0x4b1 stm32f10x_rcc.o
+ .debug_line    0x00006311      0x40f stm32f10x_spi.o
+ .debug_line    0x00006720      0x487 stm32f10x_usart.o
+ .debug_line    0x00006ba7      0x2d1 syscalls.o
+ .debug_line    0x00006e78      0x241 system_stm32f10x.o
+ .debug_line    0x000070b9      0x751 tasks.o
+ .debug_line    0x0000780a       0x1d timers.o
+ .debug_line    0x00007827      0x2c3 websrv_help_functions.o
 
-.debug_loc      0x00000000     0x576b
+.debug_loc      0x00000000     0x876d
  .debug_loc     0x00000000      0x3f0 core_cm3.o
  .debug_loc     0x000003f0      0x188 croutine.o
- .debug_loc     0x00000578      0x268 event_groups.o
- .debug_loc     0x000007e0      0x118 list.o
- .debug_loc     0x000008f8     0x1b45 main.o
- .debug_loc     0x0000243d      0x118 misc.o
- .debug_loc     0x00002555      0x198 port.o
- .debug_loc     0x000026ed      0x492 printf.o
- .debug_loc     0x00002b7f      0x4d0 queue.o
- .debug_loc     0x0000304f       0x64 startup_stm32f10x_hd.o
- .debug_loc     0x000030b3      0x7d4 stm32f10x_adc.o
- .debug_loc     0x00003887      0x1b4 stm32f10x_exti.o
- .debug_loc     0x00003a3b      0x3e4 stm32f10x_gpio.o
- .debug_loc     0x00003e1f      0x6dc stm32f10x_rcc.o
- .debug_loc     0x000044fb      0x658 stm32f10x_usart.o
- .debug_loc     0x00004b53      0x1ec syscalls.o
- .debug_loc     0x00004d3f       0xc8 system_stm32f10x.o
- .debug_loc     0x00004e07      0x964 tasks.o
+ .debug_loc     0x00000578       0xf4 Delay.o
+ .debug_loc     0x0000066c      0x1b4 dhcp.o
+ .debug_loc     0x00000820      0x12c dnslkup.o
+ .debug_loc     0x0000094c      0x55c enc28j60.o
+ .debug_loc     0x00000ea8      0xe21 EtherShield.o
+ .debug_loc     0x00001cc9      0x268 event_groups.o
+ .debug_loc     0x00001f31      0x164 heap_4.o
+ .debug_loc     0x00002095      0x289 hi_ethernet.o
+ .debug_loc     0x0000231e     0x1a0d hi_lib.o
+ .debug_loc     0x00003d2b      0x9f8 ip_arp_udp_tcp.o
+ .debug_loc     0x00004723      0x118 list.o
+ .debug_loc     0x0000483b      0x118 main.o
+ .debug_loc     0x00004953      0x118 misc.o
+ .debug_loc     0x00004a6b      0x198 port.o
+ .debug_loc     0x00004c03      0x492 printf.o
+ .debug_loc     0x00005095      0x498 queue.o
+ .debug_loc     0x0000552d       0x64 startup_stm32f10x_hd.o
+ .debug_loc     0x00005591      0x7d4 stm32f10x_adc.o
+ .debug_loc     0x00005d65      0x1b4 stm32f10x_exti.o
+ .debug_loc     0x00005f19      0x5d8 stm32f10x_flash.o
+ .debug_loc     0x000064f1      0x3e4 stm32f10x_gpio.o
+ .debug_loc     0x000068d5      0x6dc stm32f10x_rcc.o
+ .debug_loc     0x00006fb1      0x508 stm32f10x_spi.o
+ .debug_loc     0x000074b9      0x658 stm32f10x_usart.o
+ .debug_loc     0x00007b11      0x1ec syscalls.o
+ .debug_loc     0x00007cfd       0xc8 system_stm32f10x.o
+ .debug_loc     0x00007dc5      0x820 tasks.o
+ .debug_loc     0x000085e5      0x188 websrv_help_functions.o
 
 .debug_pubnames
-                0x00000000     0x2428
+                0x00000000     0x37ae
  .debug_pubnames
                 0x00000000      0x159 core_cm3.o
  .debug_pubnames
                 0x00000159       0x96 croutine.o
  .debug_pubnames
-                0x000001ef      0x112 event_groups.o
+                0x000001ef       0x86 Delay.o
  .debug_pubnames
-                0x00000301       0x72 list.o
+                0x00000275       0xfb dhcp.o
  .debug_pubnames
-                0x00000373      0xc15 main.o
+                0x00000370       0xae dnslkup.o
  .debug_pubnames
-                0x00000f88       0x89 misc.o
+                0x0000041e      0x24c enc28j60.o
  .debug_pubnames
-                0x00001011      0x121 port.o
+                0x0000066a      0x6ba EtherShield.o
  .debug_pubnames
-                0x00001132      0x124 printf.o
+                0x00000d24      0x112 event_groups.o
  .debug_pubnames
-                0x00001256      0x1c1 queue.o
+                0x00000e36       0x88 heap_4.o
  .debug_pubnames
-                0x00001417       0x4a startup_stm32f10x_hd.o
+                0x00000ebe       0xc9 hi_ethernet.o
  .debug_pubnames
-                0x00001461      0x401 stm32f10x_adc.o
+                0x00000f87      0x95c hi_lib.o
  .debug_pubnames
-                0x00001862       0xbb stm32f10x_exti.o
+                0x000018e3      0x467 ip_arp_udp_tcp.o
  .debug_pubnames
-                0x0000191d      0x19d stm32f10x_gpio.o
+                0x00001d4a       0x72 list.o
  .debug_pubnames
-                0x00001aba      0x2c4 stm32f10x_rcc.o
+                0x00001dbc       0x99 main.o
  .debug_pubnames
-                0x00001d7e      0x294 stm32f10x_usart.o
+                0x00001e55       0x89 misc.o
  .debug_pubnames
-                0x00002012       0x72 syscalls.o
+                0x00001ede      0x121 port.o
  .debug_pubnames
-                0x00002084       0x61 system_stm32f10x.o
+                0x00001fff      0x124 printf.o
  .debug_pubnames
-                0x000020e5      0x343 tasks.o
+                0x00002123      0x1ab queue.o
+ .debug_pubnames
+                0x000022ce       0x56 startup_stm32f10x_hd.o
+ .debug_pubnames
+                0x00002324      0x401 stm32f10x_adc.o
+ .debug_pubnames
+                0x00002725       0xbb stm32f10x_exti.o
+ .debug_pubnames
+                0x000027e0      0x2f2 stm32f10x_flash.o
+ .debug_pubnames
+                0x00002ad2      0x19d stm32f10x_gpio.o
+ .debug_pubnames
+                0x00002c6f      0x2c4 stm32f10x_rcc.o
+ .debug_pubnames
+                0x00002f33      0x1f6 stm32f10x_spi.o
+ .debug_pubnames
+                0x00003129      0x294 stm32f10x_usart.o
+ .debug_pubnames
+                0x000033bd       0x72 syscalls.o
+ .debug_pubnames
+                0x0000342f       0x61 system_stm32f10x.o
+ .debug_pubnames
+                0x00003490      0x2af tasks.o
+ .debug_pubnames
+                0x0000373f       0x6f websrv_help_functions.o
 
 .debug_pubtypes
-                0x00000000      0xe74
+                0x00000000     0x13d6
  .debug_pubtypes
                 0x00000000       0x50 core_cm3.o
  .debug_pubtypes
-                0x00000050       0xfa croutine.o
+                0x00000050      0x107 croutine.o
  .debug_pubtypes
-                0x0000014a      0x106 event_groups.o
+                0x00000157       0x2b Delay.o
  .debug_pubtypes
-                0x00000250       0x98 list.o
+                0x00000182       0x5e dhcp.o
  .debug_pubtypes
-                0x000002e8      0x1e2 main.o
+                0x000001e0       0x3e dnslkup.o
  .debug_pubtypes
-                0x000004ca       0x80 misc.o
+                0x0000021e       0xc1 enc28j60.o
  .debug_pubtypes
-                0x0000054a       0x7d port.o
+                0x000002df       0x43 EtherShield.o
  .debug_pubtypes
-                0x000005c7      0x139 printf.o
+                0x00000322       0xf9 event_groups.o
  .debug_pubtypes
-                0x00000700      0x122 queue.o
+                0x0000041b       0x57 heap_4.o
  .debug_pubtypes
-                0x00000822       0x8c stm32f10x_adc.o
+                0x00000472       0xcd hi_ethernet.o
  .debug_pubtypes
-                0x000008ae       0xa2 stm32f10x_exti.o
+                0x0000053f      0x1c2 hi_lib.o
  .debug_pubtypes
-                0x00000950       0xc3 stm32f10x_gpio.o
+                0x00000701       0x57 ip_arp_udp_tcp.o
  .debug_pubtypes
-                0x00000a13       0x9e stm32f10x_rcc.o
+                0x00000758       0x98 list.o
  .debug_pubtypes
-                0x00000ab1       0xc9 stm32f10x_usart.o
+                0x000007f0       0x64 main.o
  .debug_pubtypes
-                0x00000b7a       0xe2 syscalls.o
+                0x00000854       0x8c misc.o
  .debug_pubtypes
-                0x00000c5c       0x67 system_stm32f10x.o
+                0x000008e0       0x70 port.o
  .debug_pubtypes
-                0x00000cc3      0x19f tasks.o
+                0x00000950      0x139 printf.o
  .debug_pubtypes
-                0x00000e62       0x12 timers.o
+                0x00000a89      0x122 queue.o
+ .debug_pubtypes
+                0x00000bab       0x98 stm32f10x_adc.o
+ .debug_pubtypes
+                0x00000c43       0xae stm32f10x_exti.o
+ .debug_pubtypes
+                0x00000cf1       0x99 stm32f10x_flash.o
+ .debug_pubtypes
+                0x00000d8a       0xcf stm32f10x_gpio.o
+ .debug_pubtypes
+                0x00000e59       0xaa stm32f10x_rcc.o
+ .debug_pubtypes
+                0x00000f03       0xc2 stm32f10x_spi.o
+ .debug_pubtypes
+                0x00000fc5       0xd5 stm32f10x_usart.o
+ .debug_pubtypes
+                0x0000109a       0xee syscalls.o
+ .debug_pubtypes
+                0x00001188       0x73 system_stm32f10x.o
+ .debug_pubtypes
+                0x000011fb      0x19f tasks.o
+ .debug_pubtypes
+                0x0000139a       0x12 timers.o
+ .debug_pubtypes
+                0x000013ac       0x2a websrv_help_functions.o
 
-.debug_aranges  0x00000000      0xeb0
+.debug_aranges  0x00000000     0x16f0
  .debug_aranges
                 0x00000000       0xc8 core_cm3.o
  .debug_aranges
                 0x000000c8       0x50 croutine.o
  .debug_aranges
-                0x00000118       0x70 event_groups.o
+                0x00000118       0x40 Delay.o
  .debug_aranges
-                0x00000188       0x40 list.o
+                0x00000158       0x58 dhcp.o
  .debug_aranges
-                0x000001c8      0x418 main.o
+                0x000001b0       0x48 dnslkup.o
  .debug_aranges
-                0x000005e0       0x40 misc.o
+                0x000001f8       0xe8 enc28j60.o
  .debug_aranges
-                0x00000620       0x88 port.o
+                0x000002e0      0x238 EtherShield.o
  .debug_aranges
-                0x000006a8       0xb8 printf.o
+                0x00000518       0x70 event_groups.o
  .debug_aranges
-                0x00000760       0xc8 queue.o
+                0x00000588       0x50 heap_4.o
  .debug_aranges
-                0x00000828       0x28 startup_stm32f10x_hd.o
+                0x000005d8       0x78 hi_ethernet.o
  .debug_aranges
-                0x00000850      0x138 stm32f10x_adc.o
+                0x00000650      0x3e8 hi_lib.o
  .debug_aranges
-                0x00000988       0x58 stm32f10x_exti.o
+                0x00000a38      0x188 ip_arp_udp_tcp.o
  .debug_aranges
-                0x000009e0       0xa8 stm32f10x_gpio.o
+                0x00000bc0       0x40 list.o
  .debug_aranges
-                0x00000a88      0x118 stm32f10x_rcc.o
+                0x00000c00       0x40 main.o
  .debug_aranges
-                0x00000ba0      0x100 stm32f10x_usart.o
+                0x00000c40       0x40 misc.o
  .debug_aranges
-                0x00000ca0       0x60 syscalls.o
+                0x00000c80       0x88 port.o
  .debug_aranges
-                0x00000d00       0x38 system_stm32f10x.o
+                0x00000d08       0xb8 printf.o
  .debug_aranges
-                0x00000d38      0x178 tasks.o
+                0x00000dc0       0xc0 queue.o
+ .debug_aranges
+                0x00000e80       0x28 startup_stm32f10x_hd.o
+ .debug_aranges
+                0x00000ea8      0x138 stm32f10x_adc.o
+ .debug_aranges
+                0x00000fe0       0x58 stm32f10x_exti.o
+ .debug_aranges
+                0x00001038       0xf8 stm32f10x_flash.o
+ .debug_aranges
+                0x00001130       0xa8 stm32f10x_gpio.o
+ .debug_aranges
+                0x000011d8      0x118 stm32f10x_rcc.o
+ .debug_aranges
+                0x000012f0       0xd0 stm32f10x_spi.o
+ .debug_aranges
+                0x000013c0      0x100 stm32f10x_usart.o
+ .debug_aranges
+                0x000014c0       0x60 syscalls.o
+ .debug_aranges
+                0x00001520       0x38 system_stm32f10x.o
+ .debug_aranges
+                0x00001558      0x148 tasks.o
+ .debug_aranges
+                0x000016a0       0x50 websrv_help_functions.o
 
-.debug_ranges   0x00000000      0xd90
+.debug_ranges   0x00000000     0x1510
  .debug_ranges  0x00000000       0xb8 core_cm3.o
  .debug_ranges  0x000000b8       0x40 croutine.o
- .debug_ranges  0x000000f8       0x60 event_groups.o
- .debug_ranges  0x00000158       0x30 list.o
- .debug_ranges  0x00000188      0x408 main.o
- .debug_ranges  0x00000590       0x30 misc.o
- .debug_ranges  0x000005c0       0x78 port.o
- .debug_ranges  0x00000638       0xa8 printf.o
- .debug_ranges  0x000006e0       0xb8 queue.o
- .debug_ranges  0x00000798       0x18 startup_stm32f10x_hd.o
- .debug_ranges  0x000007b0      0x128 stm32f10x_adc.o
- .debug_ranges  0x000008d8       0x48 stm32f10x_exti.o
- .debug_ranges  0x00000920       0x98 stm32f10x_gpio.o
- .debug_ranges  0x000009b8      0x108 stm32f10x_rcc.o
- .debug_ranges  0x00000ac0       0xf0 stm32f10x_usart.o
- .debug_ranges  0x00000bb0       0x50 syscalls.o
- .debug_ranges  0x00000c00       0x28 system_stm32f10x.o
- .debug_ranges  0x00000c28      0x168 tasks.o
+ .debug_ranges  0x000000f8       0x30 Delay.o
+ .debug_ranges  0x00000128       0x48 dhcp.o
+ .debug_ranges  0x00000170       0x38 dnslkup.o
+ .debug_ranges  0x000001a8       0xd8 enc28j60.o
+ .debug_ranges  0x00000280      0x228 EtherShield.o
+ .debug_ranges  0x000004a8       0x60 event_groups.o
+ .debug_ranges  0x00000508       0x40 heap_4.o
+ .debug_ranges  0x00000548       0x68 hi_ethernet.o
+ .debug_ranges  0x000005b0      0x3d8 hi_lib.o
+ .debug_ranges  0x00000988      0x178 ip_arp_udp_tcp.o
+ .debug_ranges  0x00000b00       0x30 list.o
+ .debug_ranges  0x00000b30       0x30 main.o
+ .debug_ranges  0x00000b60       0x30 misc.o
+ .debug_ranges  0x00000b90       0x78 port.o
+ .debug_ranges  0x00000c08       0xa8 printf.o
+ .debug_ranges  0x00000cb0       0xb0 queue.o
+ .debug_ranges  0x00000d60       0x18 startup_stm32f10x_hd.o
+ .debug_ranges  0x00000d78      0x128 stm32f10x_adc.o
+ .debug_ranges  0x00000ea0       0x48 stm32f10x_exti.o
+ .debug_ranges  0x00000ee8       0xe8 stm32f10x_flash.o
+ .debug_ranges  0x00000fd0       0x98 stm32f10x_gpio.o
+ .debug_ranges  0x00001068      0x108 stm32f10x_rcc.o
+ .debug_ranges  0x00001170       0xc0 stm32f10x_spi.o
+ .debug_ranges  0x00001230       0xf0 stm32f10x_usart.o
+ .debug_ranges  0x00001320       0x50 syscalls.o
+ .debug_ranges  0x00001370       0x28 system_stm32f10x.o
+ .debug_ranges  0x00001398      0x138 tasks.o
+ .debug_ranges  0x000014d0       0x40 websrv_help_functions.o
 
-.debug_str      0x00000000     0x4359
- .debug_str     0x00000000      0x1ea core_cm3.o
+.debug_str      0x00000000     0x602f
+ .debug_str     0x00000000      0x1e5 core_cm3.o
                                 0x23b (size before relaxing)
- .debug_str     0x000001ea      0x36b croutine.o
-                                0x43f (size before relaxing)
- .debug_str     0x00000555      0x2f8 event_groups.o
-                                0x47f (size before relaxing)
- .debug_str     0x0000084d       0xd4 list.o
+ .debug_str     0x000001e5      0x36b croutine.o
+                                0x448 (size before relaxing)
+ .debug_str     0x00000550       0xa6 Delay.o
+                                0x154 (size before relaxing)
+ .debug_str     0x000005f6      0x20b dhcp.o
+                                0x30e (size before relaxing)
+ .debug_str     0x00000801       0x9b dnslkup.o
+                                0x213 (size before relaxing)
+ .debug_str     0x0000089c      0x3ea enc28j60.o
+                                0x5c0 (size before relaxing)
+ .debug_str     0x00000c86      0x747 EtherShield.o
+                                0x954 (size before relaxing)
+ .debug_str     0x000013cd      0x2f8 event_groups.o
+                                0x476 (size before relaxing)
+ .debug_str     0x000016c5      0x216 heap_4.o
+                                0x2bc (size before relaxing)
+ .debug_str     0x000018db      0x5ed hi_ethernet.o
+                                0x7d5 (size before relaxing)
+ .debug_str     0x00001ec8      0xe00 hi_lib.o
+                               0x1161 (size before relaxing)
+ .debug_str     0x00002cc8      0x407 ip_arp_udp_tcp.o
+                                0x7c9 (size before relaxing)
+ .debug_str     0x000030cf       0xc9 list.o
                                 0x224 (size before relaxing)
- .debug_str     0x00000921     0x1191 main.o
-                               0x1311 (size before relaxing)
- .debug_str     0x00001ab2      0x22c misc.o
-                                0x332 (size before relaxing)
- .debug_str     0x00001cde      0x1aa port.o
-                                0x273 (size before relaxing)
- .debug_str     0x00001e88      0x4bf printf.o
+ .debug_str     0x00003198       0xc5 main.o
+                                0x213 (size before relaxing)
+ .debug_str     0x0000325d      0x190 misc.o
+                                0x340 (size before relaxing)
+ .debug_str     0x000033ed      0x1aa port.o
+                                0x26a (size before relaxing)
+ .debug_str     0x00003597      0x4ad printf.o
                                 0x61b (size before relaxing)
- .debug_str     0x00002347      0x3cb queue.o
-                                0x592 (size before relaxing)
- .debug_str     0x00002712       0xc2 startup_stm32f10x_hd.o
-                                 0xed (size before relaxing)
- .debug_str     0x000027d4      0x47c stm32f10x_adc.o
-                                0x66a (size before relaxing)
- .debug_str     0x00002c50      0x1d7 stm32f10x_exti.o
-                                0x2cd (size before relaxing)
- .debug_str     0x00002e27      0x232 stm32f10x_gpio.o
-                                0x488 (size before relaxing)
- .debug_str     0x00003059      0x464 stm32f10x_rcc.o
-                                0x589 (size before relaxing)
- .debug_str     0x000034bd      0x3a3 stm32f10x_usart.o
-                                0x5ff (size before relaxing)
- .debug_str     0x00003860      0x15f syscalls.o
-                                0x2bb (size before relaxing)
- .debug_str     0x000039bf       0xa2 system_stm32f10x.o
-                                0x24e (size before relaxing)
- .debug_str     0x00003a61      0x8af tasks.o
-                                0xb5c (size before relaxing)
- .debug_str     0x00004310       0x49 timers.o
+ .debug_str     0x00003a44      0x3b9 queue.o
+                                0x580 (size before relaxing)
+ .debug_str     0x00003dfd       0xca startup_stm32f10x_hd.o
+                                 0xf5 (size before relaxing)
+ .debug_str     0x00003ec7      0x47c stm32f10x_adc.o
+                                0x672 (size before relaxing)
+ .debug_str     0x00004343      0x1d7 stm32f10x_exti.o
+                                0x2d5 (size before relaxing)
+ .debug_str     0x0000451a      0x419 stm32f10x_flash.o
+                                0x55f (size before relaxing)
+ .debug_str     0x00004933      0x232 stm32f10x_gpio.o
+                                0x490 (size before relaxing)
+ .debug_str     0x00004b65      0x3d7 stm32f10x_rcc.o
+                                0x591 (size before relaxing)
+ .debug_str     0x00004f3c      0x2ca stm32f10x_spi.o
+                                0x574 (size before relaxing)
+ .debug_str     0x00005206      0x3a3 stm32f10x_usart.o
+                                0x607 (size before relaxing)
+ .debug_str     0x000055a9      0x15f syscalls.o
+                                0x2c3 (size before relaxing)
+ .debug_str     0x00005708       0xa2 system_stm32f10x.o
+                                0x266 (size before relaxing)
+ .debug_str     0x000057aa      0x7bc tasks.o
+                                0xa69 (size before relaxing)
+ .debug_str     0x00005f66       0x49 timers.o
                                  0xde (size before relaxing)
+ .debug_str     0x00005faf       0x80 websrv_help_functions.o
+                                0x1c4 (size before relaxing)
 
 .comment        0x00000000       0x11
  .comment       0x00000000       0x11 core_cm3.o
                                  0x12 (size before relaxing)
  .comment       0x00000000       0x12 croutine.o
+ .comment       0x00000000       0x12 Delay.o
+ .comment       0x00000000       0x12 dhcp.o
+ .comment       0x00000000       0x12 dnslkup.o
+ .comment       0x00000000       0x12 enc28j60.o
+ .comment       0x00000000       0x12 EtherShield.o
  .comment       0x00000000       0x12 event_groups.o
+ .comment       0x00000000       0x12 heap_4.o
+ .comment       0x00000000       0x12 hi_ethernet.o
+ .comment       0x00000000       0x12 hi_lib.o
+ .comment       0x00000000       0x12 ip_arp_udp_tcp.o
  .comment       0x00000000       0x12 list.o
  .comment       0x00000000       0x12 main.o
  .comment       0x00000000       0x12 misc.o
@@ -1606,13 +2501,16 @@ OUTPUT(STM32F103RC.elf elf32-littlearm)
  .comment       0x00000000       0x12 startup_stm32f10x_hd.o
  .comment       0x00000000       0x12 stm32f10x_adc.o
  .comment       0x00000000       0x12 stm32f10x_exti.o
+ .comment       0x00000000       0x12 stm32f10x_flash.o
  .comment       0x00000000       0x12 stm32f10x_gpio.o
  .comment       0x00000000       0x12 stm32f10x_rcc.o
+ .comment       0x00000000       0x12 stm32f10x_spi.o
  .comment       0x00000000       0x12 stm32f10x_usart.o
  .comment       0x00000000       0x12 syscalls.o
  .comment       0x00000000       0x12 system_stm32f10x.o
  .comment       0x00000000       0x12 tasks.o
  .comment       0x00000000       0x12 timers.o
+ .comment       0x00000000       0x12 websrv_help_functions.o
 
 .ARM.attributes
                 0x00000000       0x31
@@ -1621,185 +2519,224 @@ OUTPUT(STM32F103RC.elf elf32-littlearm)
  .ARM.attributes
                 0x00000031       0x31 croutine.o
  .ARM.attributes
-                0x00000062       0x31 event_groups.o
+                0x00000062       0x31 Delay.o
  .ARM.attributes
-                0x00000093       0x31 list.o
+                0x00000093       0x31 dhcp.o
  .ARM.attributes
-                0x000000c4       0x31 main.o
+                0x000000c4       0x31 dnslkup.o
  .ARM.attributes
-                0x000000f5       0x31 misc.o
+                0x000000f5       0x31 enc28j60.o
  .ARM.attributes
-                0x00000126       0x31 port.o
+                0x00000126       0x31 EtherShield.o
  .ARM.attributes
-                0x00000157       0x31 printf.o
+                0x00000157       0x31 event_groups.o
  .ARM.attributes
-                0x00000188       0x31 queue.o
+                0x00000188       0x31 heap_4.o
  .ARM.attributes
-                0x000001b9       0x31 startup_stm32f10x_hd.o
+                0x000001b9       0x31 hi_ethernet.o
  .ARM.attributes
-                0x000001ea       0x31 stm32f10x_adc.o
+                0x000001ea       0x31 hi_lib.o
  .ARM.attributes
-                0x0000021b       0x31 stm32f10x_exti.o
+                0x0000021b       0x31 ip_arp_udp_tcp.o
  .ARM.attributes
-                0x0000024c       0x31 stm32f10x_gpio.o
+                0x0000024c       0x31 list.o
  .ARM.attributes
-                0x0000027d       0x31 stm32f10x_rcc.o
+                0x0000027d       0x31 main.o
  .ARM.attributes
-                0x000002ae       0x31 stm32f10x_usart.o
+                0x000002ae       0x31 misc.o
  .ARM.attributes
-                0x000002df       0x31 syscalls.o
+                0x000002df       0x31 port.o
  .ARM.attributes
-                0x00000310       0x31 system_stm32f10x.o
+                0x00000310       0x31 printf.o
  .ARM.attributes
-                0x00000341       0x31 tasks.o
+                0x00000341       0x31 queue.o
  .ARM.attributes
-                0x00000372       0x31 timers.o
+                0x00000372       0x31 startup_stm32f10x_hd.o
  .ARM.attributes
-                0x000003a3       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o)
+                0x000003a3       0x31 stm32f10x_adc.o
  .ARM.attributes
-                0x000003cc       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o)
+                0x000003d4       0x31 stm32f10x_exti.o
  .ARM.attributes
-                0x000003f5       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_sqrt.o)
+                0x00000405       0x31 stm32f10x_flash.o
  .ARM.attributes
-                0x0000041e       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fabs.o)
+                0x00000436       0x31 stm32f10x_gpio.o
  .ARM.attributes
-                0x00000447       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_finite.o)
+                0x00000467       0x31 stm32f10x_rcc.o
  .ARM.attributes
-                0x00000470       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fpclassify.o)
+                0x00000498       0x31 stm32f10x_spi.o
  .ARM.attributes
-                0x00000499       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_lib_ver.o)
+                0x000004c9       0x31 stm32f10x_usart.o
  .ARM.attributes
-                0x000004c2       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_matherr.o)
+                0x000004fa       0x31 syscalls.o
  .ARM.attributes
-                0x000004eb       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_nan.o)
+                0x0000052b       0x31 system_stm32f10x.o
  .ARM.attributes
-                0x00000514       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_rint.o)
+                0x0000055c       0x31 tasks.o
  .ARM.attributes
-                0x0000053d       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_scalbn.o)
+                0x0000058d       0x31 timers.o
  .ARM.attributes
-                0x00000566       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_copysign.o)
+                0x000005be       0x31 websrv_help_functions.o
  .ARM.attributes
-                0x0000058f       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_addsubdf3.o)
+                0x000005ef       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o)
  .ARM.attributes
-                0x000005aa       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_muldivdf3.o)
+                0x00000618       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o)
  .ARM.attributes
-                0x000005c5       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_cmpdf2.o)
+                0x00000641       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_sqrt.o)
  .ARM.attributes
-                0x000005e0       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_truncdfsf2.o)
+                0x0000066a       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fabs.o)
  .ARM.attributes
-                0x000005fb       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_addsubsf3.o)
+                0x00000693       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_finite.o)
  .ARM.attributes
-                0x00000616       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_fixsfsi.o)
+                0x000006bc       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fpclassify.o)
  .ARM.attributes
-                0x00000631       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atof.o)
+                0x000006e5       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_lib_ver.o)
  .ARM.attributes
-                0x0000065a       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atoff.o)
+                0x0000070e       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_matherr.o)
  .ARM.attributes
-                0x00000683       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atoi.o)
+                0x00000737       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_nan.o)
  .ARM.attributes
-                0x000006ac       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atol.o)
+                0x00000760       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_rint.o)
  .ARM.attributes
-                0x000006d5       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
+                0x00000789       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_scalbn.o)
  .ARM.attributes
-                0x000006fe       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+                0x000007b2       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_copysign.o)
  .ARM.attributes
-                0x00000727       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+                0x000007db       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
-                0x00000750       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-reent.o)
+                0x000007f6       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_muldivdf3.o)
  .ARM.attributes
-                0x00000779       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcmp.o)
+                0x00000811       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_cmpdf2.o)
  .ARM.attributes
-                0x000007a2       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+                0x0000082c       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_truncdfsf2.o)
  .ARM.attributes
-                0x000007cb       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtod.o)
+                0x00000847       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_addsubsf3.o)
  .ARM.attributes
-                0x000007f4       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtol.o)
+                0x00000862       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_fixsfsi.o)
  .ARM.attributes
-                0x0000081d       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+                0x0000087d       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atof.o)
  .ARM.attributes
-                0x00000846       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-freer.o)
+                0x000008a6       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atoff.o)
  .ARM.attributes
-                0x0000086f       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-gdtoa-gethex.o)
+                0x000008cf       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atoi.o)
  .ARM.attributes
-                0x00000898       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-gdtoa-hexnan.o)
+                0x000008f8       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atol.o)
  .ARM.attributes
-                0x000008c1       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-locale.o)
+                0x00000921       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
  .ARM.attributes
-                0x000008ea       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mallocr.o)
+                0x0000094a       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
  .ARM.attributes
-                0x00000913       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mlock.o)
+                0x00000973       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
  .ARM.attributes
-                0x0000093c       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mprec.o)
+                0x0000099c       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
  .ARM.attributes
-                0x00000965       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-sbrkr.o)
+                0x000009c5       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-rand.o)
  .ARM.attributes
-                0x0000098e       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncmp.o)
+                0x000009ee       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-reent.o)
  .ARM.attributes
-                0x000009b7       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-callocr.o)
+                0x00000a17       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcmp.o)
  .ARM.attributes
-                0x000009e0       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-malloc.o)
+                0x00000a40       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
  .ARM.attributes
-                0x00000a09       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_udivsi3.o)
+                0x00000a69       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncmp.o)
  .ARM.attributes
-                0x00000a24       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_dvmd_tls.o)
+                0x00000a92       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtod.o)
  .ARM.attributes
-                0x00000a3f       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_fixdfsi.o)
+                0x00000abb       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtol.o)
  .ARM.attributes
-                0x00000a5a       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_fixunsdfsi.o)
+                0x00000ae4       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-freer.o)
  .ARM.attributes
-                0x00000a75       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_cmpsf2.o)
+                0x00000b0d       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-gdtoa-gethex.o)
+ .ARM.attributes
+                0x00000b36       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-gdtoa-hexnan.o)
+ .ARM.attributes
+                0x00000b5f       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-locale.o)
+ .ARM.attributes
+                0x00000b88       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-malloc.o)
+ .ARM.attributes
+                0x00000bb1       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mallocr.o)
+ .ARM.attributes
+                0x00000bda       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mlock.o)
+ .ARM.attributes
+                0x00000c03       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mprec.o)
+ .ARM.attributes
+                0x00000c2c       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-sbrkr.o)
+ .ARM.attributes
+                0x00000c55       0x29 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-callocr.o)
+ .ARM.attributes
+                0x00000c7e       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000c99       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000cb4       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_fixdfsi.o)
+ .ARM.attributes
+                0x00000ccf       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_fixunsdfsi.o)
+ .ARM.attributes
+                0x00000cea       0x1b d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_arm_cmpsf2.o)
 
-.debug_frame    0x00000000     0x3a80
+.debug_frame    0x00000000     0x5640
  .debug_frame   0x00000000      0x280 core_cm3.o
  .debug_frame   0x00000280       0xf0 croutine.o
- .debug_frame   0x00000370      0x168 event_groups.o
- .debug_frame   0x000004d8       0x9c list.o
- .debug_frame   0x00000574      0xf3c main.o
- .debug_frame   0x000014b0       0x9c misc.o
- .debug_frame   0x0000154c      0x150 port.o
- .debug_frame   0x0000169c      0x2a4 printf.o
- .debug_frame   0x00001940      0x2b8 queue.o
- .debug_frame   0x00001bf8       0x48 startup_stm32f10x_hd.o
- .debug_frame   0x00001c40      0x400 stm32f10x_adc.o
- .debug_frame   0x00002040       0xec stm32f10x_exti.o
- .debug_frame   0x0000212c      0x210 stm32f10x_gpio.o
- .debug_frame   0x0000233c      0x388 stm32f10x_rcc.o
- .debug_frame   0x000026c4      0x344 stm32f10x_usart.o
- .debug_frame   0x00002a08      0x10c syscalls.o
- .debug_frame   0x00002b14       0x80 system_stm32f10x.o
- .debug_frame   0x00002b94      0x54c tasks.o
- .debug_frame   0x000030e0       0x3c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o)
- .debug_frame   0x0000311c       0x3c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o)
- .debug_frame   0x00003158       0x34 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_sqrt.o)
- .debug_frame   0x0000318c       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fabs.o)
- .debug_frame   0x000031ac       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_finite.o)
- .debug_frame   0x000031cc       0x28 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fpclassify.o)
- .debug_frame   0x000031f4       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_matherr.o)
- .debug_frame   0x00003214       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_nan.o)
- .debug_frame   0x00003234       0x34 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_rint.o)
- .debug_frame   0x00003268       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_scalbn.o)
- .debug_frame   0x00003298       0x28 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_copysign.o)
- .debug_frame   0x000032c0       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atof.o)
- .debug_frame   0x000032e0       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atoff.o)
- .debug_frame   0x00003300       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atoi.o)
- .debug_frame   0x00003330       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atol.o)
- .debug_frame   0x00003360       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
- .debug_frame   0x00003380       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
- .debug_frame   0x000033b0       0x2c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
- .debug_frame   0x000033dc       0x68 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-reent.o)
- .debug_frame   0x00003444       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcmp.o)
- .debug_frame   0x00003474       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
- .debug_frame   0x00003494       0x84 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtod.o)
- .debug_frame   0x00003518       0x54 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtol.o)
- .debug_frame   0x0000356c       0x50 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-freer.o)
- .debug_frame   0x000035bc       0x6c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-gdtoa-gethex.o)
- .debug_frame   0x00003628       0x3c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-gdtoa-hexnan.o)
- .debug_frame   0x00003664       0x98 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-locale.o)
- .debug_frame   0x000036fc       0x3c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mallocr.o)
- .debug_frame   0x00003738       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mlock.o)
- .debug_frame   0x00003768      0x244 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mprec.o)
- .debug_frame   0x000039ac       0x2c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-sbrkr.o)
- .debug_frame   0x000039d8       0x2c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncmp.o)
- .debug_frame   0x00003a04       0x2c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-callocr.o)
- .debug_frame   0x00003a30       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-malloc.o)
- .debug_frame   0x00003a60       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000370       0x90 Delay.o
+ .debug_frame   0x00000400      0x10c dhcp.o
+ .debug_frame   0x0000050c       0xb0 dnslkup.o
+ .debug_frame   0x000005bc      0x334 enc28j60.o
+ .debug_frame   0x000008f0      0x84c EtherShield.o
+ .debug_frame   0x0000113c      0x168 event_groups.o
+ .debug_frame   0x000012a4       0xd0 heap_4.o
+ .debug_frame   0x00001374      0x184 hi_ethernet.o
+ .debug_frame   0x000014f8      0xe90 hi_lib.o
+ .debug_frame   0x00002388      0x574 ip_arp_udp_tcp.o
+ .debug_frame   0x000028fc       0x9c list.o
+ .debug_frame   0x00002998       0xac main.o
+ .debug_frame   0x00002a44       0x9c misc.o
+ .debug_frame   0x00002ae0      0x150 port.o
+ .debug_frame   0x00002c30      0x2a4 printf.o
+ .debug_frame   0x00002ed4      0x298 queue.o
+ .debug_frame   0x0000316c       0x48 startup_stm32f10x_hd.o
+ .debug_frame   0x000031b4      0x400 stm32f10x_adc.o
+ .debug_frame   0x000035b4       0xec stm32f10x_exti.o
+ .debug_frame   0x000036a0      0x338 stm32f10x_flash.o
+ .debug_frame   0x000039d8      0x210 stm32f10x_gpio.o
+ .debug_frame   0x00003be8      0x388 stm32f10x_rcc.o
+ .debug_frame   0x00003f70      0x29c stm32f10x_spi.o
+ .debug_frame   0x0000420c      0x344 stm32f10x_usart.o
+ .debug_frame   0x00004550      0x10c syscalls.o
+ .debug_frame   0x0000465c       0x80 system_stm32f10x.o
+ .debug_frame   0x000046dc      0x498 tasks.o
+ .debug_frame   0x00004b74       0xe4 websrv_help_functions.o
+ .debug_frame   0x00004c58       0x3c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-w_pow.o)
+ .debug_frame   0x00004c94       0x3c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_pow.o)
+ .debug_frame   0x00004cd0       0x34 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-e_sqrt.o)
+ .debug_frame   0x00004d04       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fabs.o)
+ .debug_frame   0x00004d24       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_finite.o)
+ .debug_frame   0x00004d44       0x28 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_fpclassify.o)
+ .debug_frame   0x00004d6c       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_matherr.o)
+ .debug_frame   0x00004d8c       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_nan.o)
+ .debug_frame   0x00004dac       0x34 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_rint.o)
+ .debug_frame   0x00004de0       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_scalbn.o)
+ .debug_frame   0x00004e10       0x28 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libm.a(lib_a-s_copysign.o)
+ .debug_frame   0x00004e38       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atof.o)
+ .debug_frame   0x00004e58       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atoff.o)
+ .debug_frame   0x00004e78       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atoi.o)
+ .debug_frame   0x00004ea8       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-atol.o)
+ .debug_frame   0x00004ed8       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
+ .debug_frame   0x00004ef8       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+ .debug_frame   0x00004f28       0x2c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+ .debug_frame   0x00004f54       0x48 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-rand.o)
+ .debug_frame   0x00004f9c       0x68 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-reent.o)
+ .debug_frame   0x00005004       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcmp.o)
+ .debug_frame   0x00005034       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+ .debug_frame   0x00005054       0x2c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncmp.o)
+ .debug_frame   0x00005080       0x84 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtod.o)
+ .debug_frame   0x00005104       0x54 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strtol.o)
+ .debug_frame   0x00005158       0x50 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-freer.o)
+ .debug_frame   0x000051a8       0x6c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-gdtoa-gethex.o)
+ .debug_frame   0x00005214       0x3c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-gdtoa-hexnan.o)
+ .debug_frame   0x00005250       0x98 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-locale.o)
+ .debug_frame   0x000052e8       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-malloc.o)
+ .debug_frame   0x00005318       0x3c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mallocr.o)
+ .debug_frame   0x00005354       0x30 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mlock.o)
+ .debug_frame   0x00005384      0x244 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-mprec.o)
+ .debug_frame   0x000055c8       0x2c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-sbrkr.o)
+ .debug_frame   0x000055f4       0x2c d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-callocr.o)
+ .debug_frame   0x00005620       0x20 d:/hiasm/compiler/neuro-compiler/bin/../lib/gcc/arm-none-eabi/4.5.2/thumb2\libgcc.a(_udivsi3.o)
