@@ -71,6 +71,7 @@ Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\inc\stm32f10x_adc.h
 Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\inc\stm32f10x_exti.h
 Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\inc\stm32f10x_flash.h
 Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\inc\stm32f10x_gpio.h
+Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\inc\stm32f10x_iwdg.h
 Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\inc\stm32f10x_rcc.h
 Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\inc\stm32f10x_spi.h
 Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\inc\stm32f10x_usart.h
@@ -79,6 +80,7 @@ Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\src\stm32f10x_adc.c
 Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\src\stm32f10x_exti.c
 Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\src\stm32f10x_flash.c
 Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\src\stm32f10x_gpio.c
+Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\src\stm32f10x_iwdg.c
 Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\src\stm32f10x_rcc.c
 Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\src\stm32f10x_spi.c
 Elements\Neuro-Ethernet\code\result\stm32f103\stm_lib\src\stm32f10x_usart.c

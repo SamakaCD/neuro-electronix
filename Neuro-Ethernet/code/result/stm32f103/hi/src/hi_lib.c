@@ -974,3 +974,98 @@ void Hi_Logger_Notify(uint16_t address, uint32_t marker) {
 	}
 	vPortFree(pack);
 }
+
+static u16 Hi_IWDG_WathTime;
+
+static void vHi_IWDG_Task(VP) {
+	while(1) {
+		IWDG_ReloadCounter();
+		vTaskDelay(Hi_IWDG_WathTime/2);
+	}
+}
+
+void Hi_IWDG_Enable(u16 watchTimeMillis) {
+	Hi_IWDG_WathTime = watchTimeMillis;
+	IWDG_WriteAccessCmd(IWDG_WriteAccess_Enable);
+	IWDG_SetPrescaler(IWDG_Prescaler_32);
+	IWDG_SetReload(watchTimeMillis);
+	IWDG_ReloadCounter();
+	IWDG_Enable();
+	IWDG_ReloadCounter();
+	CreateTask2(vHi_IWDG_Task);
+}
+
+static void Hi_Reset_Func(u8 status) {
+	if(status) NVIC_SystemReset();
+}
+
+Hi_QGPIO_In(Hi_ResetListener, Hi_Reset_Func, Hi_ResetListener_Toggle, SYSBTN_PORT, SYSBTN_PIN);
+
+void Hi_ResetInit() {
+	Hi_GPIO_InitIn(SYSBTN_PORT, SYSBTN_PIN);
+	CreateTask2(Hi_ResetListener);
+}
+
+static void Hi_Led1() {
+	Hi_GPIO_On(SYSLED_PORT, SYSLED_PIN);
+	vTaskDelay(1000);
+}
+
+static void Hi_Led2() {
+	Hi_GPIO_On(SYSLED_PORT, SYSLED_PIN);
+	vTaskDelay(800);
+	Hi_GPIO_Off(SYSLED_PORT, SYSLED_PIN);
+	vTaskDelay(150);
+}
+
+static void Hi_Led3() {
+	Hi_GPIO_On(SYSLED_PORT, SYSLED_PIN);
+	vTaskDelay(800);
+	Hi_GPIO_Off(SYSLED_PORT, SYSLED_PIN);
+	vTaskDelay(800);
+}
+
+static void Hi_Led4() {
+	Hi_GPIO_Off(SYSLED_PORT, SYSLED_PIN);
+	vTaskDelay(800);
+	Hi_GPIO_On(SYSLED_PORT, SYSLED_PIN);
+	vTaskDelay(150);
+}
+
+static void Hi_Led5() {
+	Hi_GPIO_Off(SYSLED_PORT, SYSLED_PIN);
+	vTaskDelay(1000);
+}
+
+static u8 Hi_LED_Mode = Hi_LED_Mode_1;
+
+static void Hi_Led_Task(VP) {
+	while(1) {
+		switch(Hi_LED_Mode) {
+			case Hi_LED_Mode_1:
+				Hi_Led1();
+				break;
+			case Hi_LED_Mode_2:
+				Hi_Led2();
+				break;
+			case Hi_LED_Mode_3:
+				Hi_Led3();
+				break;
+			case Hi_LED_Mode_4:
+				Hi_Led4();
+				break;
+			case Hi_LED_Mode_5:
+				Hi_Led5();
+				break;
+		}
+	}
+}
+
+void Hi_LED_Init() {
+	Hi_GPIO_InitOut(SYSLED_PORT, SYSLED_PIN, GPIO_Speed_2MHz);
+	CreateTask2(Hi_Led_Task);
+}
+
+void Hi_LED_SetMode(u8 mode) {
+	Hi_LED_Mode = mode;
+}

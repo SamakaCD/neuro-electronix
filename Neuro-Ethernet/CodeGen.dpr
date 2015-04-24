@@ -2017,7 +2017,7 @@ var i:integer;
 begin
   Result := '';
   for i := 1 to level do
-    Result := Result + ' ';
+    Result := Result + '	';
 end;
 
 function TParser.findProperty(const name:string):integer;
@@ -2284,7 +2284,7 @@ constructor TCodeBlock.Create;
 begin
    inherited;
    FItems := NewStrListEx;
-   lsize := 2;
+   lsize := 1;
 end;
 
 destructor TCodeBlock.Destroy;

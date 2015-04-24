@@ -33,7 +33,7 @@ func init()
   move_block_to(BLK_LOC)
   
   block.select(BLK_INIT)
-    println('xTaskCreate(vTimer',_id(),'Task, (signed char*) "vTimer',_id(),'Task", 2*configMINIMAL_STACK_SIZE, NULL, 1, NULL);')
+    println('CreateTask2(vTimer',_id(),'Task);')
   block.select(old)
 end
 

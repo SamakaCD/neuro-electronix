@@ -22,12 +22,12 @@ static uint8_t* dhcpsvrip;
 static uint8_t mymac[6] = { 0x54, 0x55, 0x58, 0x10, 0x00, 0x25 };
 
 // New input data callback
-static u8 Hi_Eth_BufInitialised = 0;
+static u8	 Hi_Eth_BufInitialised = 0;
 static void (**Hi_Eth_InputDataCallback) (uint8_t*, uint16_t);
-static u8 Hi_Eth_CallbacksCount = 0;
+static u8	 Hi_Eth_CallbacksCount = 0;
 
 static void (**Hi_Eth_DHCPIPCallbacks) (uint8_t*);
-static u8 Hi_Eth_DHCPIPCallbacksCount = 0;
+static u8	 Hi_Eth_DHCPIPCallbacksCount = 0;
 
 static void Hi_Eth_InitialiseBuffers() {
 	if(!Hi_Eth_BufInitialised) {
@@ -126,6 +126,42 @@ static void RCC_Configuration(void)
     }
 }
 
+static void Hi_Eth_InitTask(VP) {
+	Hi_Eth_InitialiseBuffers();
+	Hi_QGPIO_Out2(GPIOA, GPIO_Pin_8);
+	RCC_ClocksTypeDef RCC_Clocks;
+	RCC_Configuration();
+	RCC_GetClocksFreq(&RCC_Clocks);
+	SysTick_Config(RCC_Clocks.SYSCLK_Frequency / 1000);
+
+	ES_enc28j60SpiInit();
+	ES_enc28j60Init(mymac);
+
+	_Bool connectionEstablished = false;
+	for(u8 i = 0; i < 10; i++) {
+		if(ES_enc28j60Revision() > 0) {
+			connectionEstablished = true;
+			break;
+		}
+	}
+	if(!connectionEstablished) {
+		taskENTER_CRITICAL(); {
+			while (1);
+		} taskEXIT_CRITICAL();
+	}
+
+	if (allocateIPAddress(buf, BUFFER_SIZE, mymac, MYWWWPORT, myip, mynetmask, gwip,
+			dhcpsvrip, dnsip) > 0) {
+
+	} else {
+		taskENTER_CRITICAL(); {
+			while (1);
+		} taskEXIT_CRITICAL();
+	}
+	CreateTask2(vHi_Eth_LoopTask);
+	vTaskDelete(NULL);
+}
+
 void Hi_Eth_Init(uint8_t* _myip, uint8_t* _netmask, uint8_t*_gwip, uint8_t* _dnsip, uint8_t port) {
 	websrvip = myip	 = pvPortMalloc(4);
 	mynetmask 		 = pvPortMalloc(4);
@@ -138,35 +174,10 @@ void Hi_Eth_Init(uint8_t* _myip, uint8_t* _netmask, uint8_t*_gwip, uint8_t* _dns
 	memcpy(gwip, 	  _gwip, 4);
 	memcpy(dnsip, 	  _dnsip, 4);
 
-	taskENTER_CRITICAL(); {
-		Hi_Eth_InitialiseBuffers();
-		Hi_QGPIO_Out2(GPIOA, GPIO_Pin_8);
-		RCC_ClocksTypeDef RCC_Clocks;
-		RCC_Configuration();
-		RCC_GetClocksFreq(&RCC_Clocks);
-		SysTick_Config(RCC_Clocks.SYSCLK_Frequency / 1000);
-
-		ES_enc28j60SpiInit();
-		ES_enc28j60Init(mymac);
-
-		bool connectionEstablished = false;
-		for(u8 i = 0; i < 10; i++) {
-			if(ES_enc28j60Revision() > 0) {
-				connectionEstablished = true;
-				break;
-			}
-		}
-		if(!connectionEstablished) while(1);
-
-		//set_srv_port(MYWWWPORT);
-		if (allocateIPAddress(buf, BUFFER_SIZE, mymac, MYWWWPORT, myip, mynetmask, gwip,
-				dhcpsvrip, dnsip) > 0) {
-
-		} else {
-			while (1);
-		}
-	} taskEXIT_CRITICAL();
-	CreateTask2(vHi_Eth_LoopTask);
+	/* —оздаЄм таск инициализации, так как инициализаци€ затормаживает RTOS
+	 * и занимает несколько секунд. «а это врем€, если не создать таск,
+	 * сторожевой таймер может сделать перезагрузку устройства */
+	CreateTask2(Hi_Eth_InitTask);
 }
 
 void ES_PingCallback() {}

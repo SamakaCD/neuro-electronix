@@ -1,15 +1,27 @@
 include("EntryPoint")
 include("General")
 
-// Build: AlNSB
+// Build: AlHPC
 func doStart()
    entry_point_init('Neuro-Ethernet')
    include_library('Neuro-Ethernet')
    include_file('hi_lib.h')
    sys.initall()
+   
+   if(WatchDogEnabled)
+      fvar(old)
+      old = block.select(BLK_INIT)
+         println('Hi_IWDG_Enable(',WatchDogTime,');')
+      block.select(old)
+   end
+   
    entry_point_post_init('-mcpu=cortex-m3 -mthumb -w -ffunction-sections -g -O0 -std=c99 -c -DSTM32F103RC -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__', '-mcpu=cortex-m3', 'STM32F103RC')
 end
 
 func doReset(_data)
-  println('NVIC_SystemReset();')
+   println('NVIC_SystemReset();')
+end
+
+func doWatchDogTime(_data)
+   println('Hi_IWDG_Enable(',read_int(_data),');')
 end

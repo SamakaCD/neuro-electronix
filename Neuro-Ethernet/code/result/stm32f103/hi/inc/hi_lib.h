@@ -4,6 +4,7 @@
 #include "stm32f10x_exti.h"
 #include "stm32f10x_adc.h"
 #include "stm32f10x_usart.h"
+#include "stm32f10x_iwdg.h"
 
 #include "FreeRTOS.h"
 #include "semphr.h"
@@ -67,13 +68,18 @@
 
 #define SYSLED_PORT GPIOC
 #define SYSLED_PIN  GPIO_Pin_0
-#define SYSLED GPIOC, GPIO_Pin_0
+#define SYSLED      GPIOC, GPIO_Pin_0
+
+#define SYSBTN_PORT GPIOC
+#define SYSBTN_PIN  GPIO_Pin_13
+#define SYSBTN		GPIOC, GPIO_Pin_13
 
 #define WEAK __attribute__ ((weak))
 #define MAX(A, B) ((A > B)?A:B)
 #define MIN(A, B) ((A < B)?A:B)
 #define _FPTR(RET, NAME, PARAM) RET (*NAME) (PARAM)
 
+#define bool	_Bool
 #define false	0
 #define true	1
 
@@ -84,6 +90,12 @@
 #define FLASH_PAGE_SIZE  2048
 #define FLASH_FIRST_ADDR 0x8014000 // Page 40
 #define FLASH_PARTITION_PAGE 0x807D000 // Page 250
+
+#define Hi_LED_Mode_1 1
+#define Hi_LED_Mode_2 2
+#define Hi_LED_Mode_3 3
+#define Hi_LED_Mode_4 4
+#define Hi_LED_Mode_5 5
 
 #define DBG_UART USART1
 #define Hi_UART_BufferSize 256
@@ -147,6 +159,28 @@
 #define Hi_CM_GSM   3
 #define Hi_CM_UART_Timeout 100
 #define Hi_CM_ResponseOK 200
+		
+typedef struct {
+	_FPTR(void, *CharListeners, uint8_t);
+	_FPTR(void, *EntListeners, uint8_t*);
+	uint8_t CharListenersCount;
+	uint8_t EntListenersCount;
+	uint8_t  Initialised;
+	uint8_t* Buffer;
+	uint16_t BufferSize;
+	uint16_t BufferCounter;
+	uint8_t  Char;
+	uint8_t Echo;
+	USART_TypeDef* Def;
+} Hi_UART_Struct;
+
+typedef struct {
+	uint8_t  PacketType;
+	uint8_t  MarkerSize;
+	uint8_t  DataSize;
+	uint32_t Marker;
+	char*    Data;
+} CM_Result;
 
 void	__println(char* pFormat, ...);
 double	iitod(int a, int b);
@@ -257,27 +291,7 @@ void	Hi_CM_SendData(char* data, uint8_t len);
 uint8_t Hi_CM_IsUARTActive();
 void	Hi_CM_SendDataByConnection(char* data, uint8_t connection, uint8_t len);
 
-#ifndef HI_LIB_H
-#define HI_LIB_H
-typedef struct {
-	_FPTR(void, *CharListeners, uint8_t);
-	_FPTR(void, *EntListeners, uint8_t*);
-	uint8_t CharListenersCount;
-	uint8_t EntListenersCount;
-	uint8_t  Initialised;
-	uint8_t* Buffer;
-	uint16_t BufferSize;
-	uint16_t BufferCounter;
-	uint8_t  Char;
-	uint8_t Echo;
-	USART_TypeDef* Def;
-} Hi_UART_Struct;
-
-typedef struct {
-	uint8_t  PacketType;
-	uint8_t  MarkerSize;
-	uint8_t  DataSize;
-	uint32_t Marker;
-	char*    Data;
-} CM_Result;
-#endif
+void Hi_IWDG_Enable(u16 watchTimeMillis);
+void Hi_ResetInit();
+void Hi_LED_Init();
+void Hi_LED_SetMode(u8 mode);

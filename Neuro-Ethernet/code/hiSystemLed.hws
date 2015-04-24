@@ -1,0 +1,28 @@
+include("General")
+
+func init()
+   fvar(old)
+   old = block.select(BLK_INIT)
+      println('Hi_LED_Init();')
+   block.select(old)
+end
+
+func doMode1(_data)
+   println('Hi_LED_SetMode(Hi_LED_Mode_1);')
+end
+
+func doMode2(_data)
+   println('Hi_LED_SetMode(Hi_LED_Mode_2);')
+end
+
+func doMode3(_data)
+   println('Hi_LED_SetMode(Hi_LED_Mode_3);')
+end
+
+func doMode4(_data)
+   println('Hi_LED_SetMode(Hi_LED_Mode_4);')
+end
+
+func doMode5(_data)
+   println('Hi_LED_SetMode(Hi_LED_Mode_5);')
+end

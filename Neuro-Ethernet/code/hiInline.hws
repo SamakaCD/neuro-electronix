@@ -1,0 +1,8 @@
+include("General")
+
+func doCall(_data)
+  fvar(i)
+  for(i = 0; i < array_count(Inline); i++)
+    println(code(replace(Inline[i], '__input', code(_data))))
+  end
+end

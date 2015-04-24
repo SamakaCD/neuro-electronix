@@ -1,10 +1,6 @@
 char** Hi_DB_Keys;
 int*   Hi_DB_ID;
 
-#ifndef DB_CNT
-	#define DB_CNT 0
-#endif
-
 void Hi_DB_Init(char** db_keys, int* ids) {
 	Hi_DB_Keys = db_keys;
 	Hi_DB_ID = ids;
