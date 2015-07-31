@@ -372,59 +372,59 @@ uint8_t ES_udp_client_check_for_dns_answer(uint8_t *buf,uint16_t plen){
 
 // Perform all processing to resolve a hostname to IP address.
 // Returns 1 for successful Name resolution, 0 otherwise
-uint8_t resolveHostname(uint8_t *buf, uint16_t buffer_size, uint8_t *hostname ) {
-  uint16_t dat_p;
-  int plen = 0;
-  long lastDnsRequest = Millis();
-  uint8_t dns_state = DNS_STATE_INIT;
-  bool gotAddress = FALSE;
-  uint8_t dnsTries = 3;	// After 10 attempts fail gracefully so other action can be carried out
+uint8_t resolveHostname(uint8_t *buf, uint16_t buffer_size, uint8_t *hostname) {
+	uint16_t dat_p;
+	int plen = 0;
+	long lastDnsRequest = Millis();
+	uint8_t dns_state = DNS_STATE_INIT;
+	bool gotAddress = FALSE;
+	uint8_t dnsTries = 3; // After 10 attempts fail gracefully so other action can be carried out
 
-  while( !gotAddress ) {
-    // handle ping and wait for a tcp packet
-    plen = enc28j60PacketReceive(buffer_size, buf);
-    dat_p=packetloop_icmp_tcp(buf,plen);
+	while (!gotAddress) {
+		// handle ping and wait for a tcp packet
+		plen = enc28j60PacketReceive(buffer_size, buf);
+		dat_p = packetloop_icmp_tcp(buf, plen);
 
-    // We have a packet
-    // Check if IP data
-    if (dat_p == 0) {
-      if (client_waiting_gw() ) {
-        // No ARP received for gateway
-        continue;
-      }
-      // It has IP data
-      if (dns_state==DNS_STATE_INIT) {
-        dns_state=DNS_STATE_REQUESTED;
-        lastDnsRequest = Millis();
-        dnslkup_request(buf,hostname);
-        continue;
-      }
-      if (dns_state!=DNS_STATE_ANSWER){
-        // retry every minute if dns-lookup failed:
-        if (Millis() > (lastDnsRequest + 60000L) ){
-	  if( --dnsTries <= 0 ) 
-	    return 0;		// Failed to allocate address
+		// We have a packet
+		// Check if IP data
+		if (dat_p == 0) {
+			if (client_waiting_gw()) {
+				// No ARP received for gateway
+				continue;
+			}
+			// It has IP data
+			if (dns_state == DNS_STATE_INIT) {
+				dns_state = DNS_STATE_REQUESTED;
+				lastDnsRequest = Millis();
+				dnslkup_request(buf, hostname);
+				continue;
+			}
+			if (dns_state != DNS_STATE_ANSWER) {
+				// retry every minute if dns-lookup failed:
+				//if (Millis() > (lastDnsRequest + 60000L) ){
+				if (--dnsTries <= 0)
+					return 0; // Failed to allocate address
 
-          dns_state=DNS_STATE_INIT;
-          lastDnsRequest = Millis();
-        }
-        // don't try to use client before
-        // we have a result of dns-lookup
+				dns_state = DNS_STATE_INIT;
+				lastDnsRequest = Millis();
+				//}
+				// don't try to use client before
+				// we have a result of dns-lookup
 
-        continue;
-      }
-    } 
-    else {
-      if (dns_state==DNS_STATE_REQUESTED && udp_client_check_for_dns_answer( buf, plen ) ){
-        dns_state=DNS_STATE_ANSWER;
-        //client_set_wwwip(dnslkup_getip());
-        client_tcp_set_serverip(dnslkup_getip());
-	gotAddress = TRUE;
-      }
-    }
-  }
-  
-  return 1;
+				continue;
+			}
+		} else {
+			if (dns_state == DNS_STATE_REQUESTED
+					&& udp_client_check_for_dns_answer(buf, plen)) {
+				dns_state = DNS_STATE_ANSWER;
+				//client_set_wwwip(dnslkup_getip());
+				client_tcp_set_serverip(dnslkup_getip());
+				gotAddress = TRUE;
+			}
+		}
+	}
+
+	return 1;
 }
 
 #endif		// DNS_client

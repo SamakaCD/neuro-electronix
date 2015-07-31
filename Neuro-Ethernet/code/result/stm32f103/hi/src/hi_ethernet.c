@@ -12,6 +12,7 @@ u8 MYWWWPORT;
 
 static uint8_t buf[BUFFER_SIZE + 1];
 static uint16_t plen, dat_p;
+static u8 Hi_Eth__IsActive = 1;
 
 static uint8_t* myip;
 static uint8_t* mynetmask;
@@ -61,8 +62,11 @@ void Hi_Eth_Loop() {
 }
 
 void Hi_Eth_Send(char* str) {
-	u16 len = ES_fill_tcp_data(buf, 0, str);
-	www_server_reply(buf, len);
+	www_server_reply(buf, ES_fill_tcp_data_len(buf, 0, str, strlen(str)));
+}
+
+void Hi_Eth_Send_Len(char* str, u16 len) {
+	www_server_reply(buf, ES_fill_tcp_data_len(buf, 0, str, len));
 }
 
 void vHi_Eth_LoopTask(VP) {
@@ -145,18 +149,13 @@ static void Hi_Eth_InitTask(VP) {
 		}
 	}
 	if(!connectionEstablished) {
-		taskENTER_CRITICAL(); {
-			while (1);
-		} taskEXIT_CRITICAL();
+		Hi_Eth__IsActive = 0;
 	}
 
 	if (allocateIPAddress(buf, BUFFER_SIZE, mymac, MYWWWPORT, myip, mynetmask, gwip,
 			dhcpsvrip, dnsip) > 0) {
-
 	} else {
-		taskENTER_CRITICAL(); {
-			while (1);
-		} taskEXIT_CRITICAL();
+		Hi_Eth__IsActive = 0;
 	}
 	CreateTask2(vHi_Eth_LoopTask);
 	vTaskDelete(NULL);
@@ -178,6 +177,10 @@ void Hi_Eth_Init(uint8_t* _myip, uint8_t* _netmask, uint8_t*_gwip, uint8_t* _dns
 	 * и занимает несколько секунд. За это время, если не создать таск,
 	 * сторожевой таймер может сделать перезагрузку устройства */
 	CreateTask2(Hi_Eth_InitTask);
+}
+
+u8 Hi_Eth_IsActive() {
+	return Hi_Eth__IsActive;
 }
 
 void ES_PingCallback() {}

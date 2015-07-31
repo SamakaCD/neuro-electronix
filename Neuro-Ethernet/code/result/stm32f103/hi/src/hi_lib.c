@@ -2,6 +2,10 @@
 #include "onewire_stm32f103.c"
 #include "ds18b20_stm32f103.c"
 
+#ifdef NEURO_ETHERNET
+	#include "hi_ethernet.h"
+#endif
+
 static void Hi_UART_Send1(uint8_t data) {
 	while(!(DBG_UART -> SR & USART_SR_TC));
 	DBG_UART -> DR = data;
@@ -825,6 +829,26 @@ char* Hi_Proto_CreatePack(uint8_t packetType, uint32_t markerInt, char* data, ui
 	return packetBuf;
 }
 
+char* Hi_Proto_CreatePack_WO_CRC(uint8_t packetType, uint32_t markerInt, char* data, uint8_t dataSize, uint8_t* sz) {
+	uint8_t i, markerSize = Hi_Proto_MarkerSize(markerInt);
+	char* packetBuf = (char*) pvPortMalloc(markerSize + dataSize + 1);
+	uint8_t* marker = Hi_Proto_CreateMarkerArr(markerInt);
+	*(packetBuf) = Hi_Proto_CreateDesriptior(packetType, markerSize, dataSize);
+
+	for(i = 0; i < markerSize; i++) {
+		*(packetBuf + i + 1) = *(marker + i);
+	}
+
+	for(i = 0; i < dataSize; i++) {
+		*(packetBuf + markerSize + i + 1) = *(data + i);
+	}
+
+	if(sz != 0) {
+		*sz = markerSize + dataSize + 1;
+	}
+	return packetBuf;
+}
+
 static char* Hi_Proto_Buffer;
 static uint8_t Hi_Proto_BufferPos = 0;
 
@@ -918,7 +942,17 @@ uint8_t Hi_CM_IsUARTActive() {
 }
 
 uint8_t Hi_CM_GetConnection() {
-	return Hi_CM_UART;
+	u8 result = Hi_CM_NONE;
+
+	#ifdef NEURO_ETHERNET
+		if(Hi_Eth_IsActive())
+			result = Hi_CM_ETHERNET;
+	#endif
+
+	if(result == Hi_CM_NONE)
+		result = Hi_CM_UART;
+
+	return result;
 }
 
 void Hi_CM_SendDataByConnection(char* data, uint8_t connection, uint8_t len) {
@@ -927,6 +961,13 @@ void Hi_CM_SendDataByConnection(char* data, uint8_t connection, uint8_t len) {
 			uint8_t i;
 			for(i = 0; i < len; i++)
 				Hi_UART_Send1(data[i]);
+			break;
+		}
+
+		case Hi_CM_ETHERNET: {
+			#ifdef NEURO_ETHERNET
+				Hi_Eth_Send_Len(data, len);
+			#endif
 			break;
 		}
 	}

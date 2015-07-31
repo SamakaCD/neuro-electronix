@@ -1,4 +1,5 @@
-﻿#include "stm32f10x.h"
+﻿#define NEURO_ETHERNET
+#include "stm32f10x.h"
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_rcc.h"
 #include "stm32f10x_exti.h"
@@ -157,8 +158,9 @@
 #define Hi_CM_HID   1
 #define Hi_CM_CAN   2
 #define Hi_CM_GSM   3
-#define Hi_CM_UART_Timeout 100
-#define Hi_CM_ResponseOK 200
+#define Hi_CM_ETHERNET 4
+#define Hi_CM_UART_Timeout 	100
+#define Hi_CM_ResponseOK	200
 		
 typedef struct {
 	_FPTR(void, *CharListeners, uint8_t);
@@ -279,6 +281,7 @@ uint8_t Hi_Proto_GetDescriptorDataSize(uint8_t descriptor);
 uint8_t Hi_Proto_MarkerSize(uint32_t marker);
 u8* 	Hi_Proto_CreateMarkerArr(uint32_t marker);
 char* 	Hi_Proto_CreatePack(uint8_t packetType, uint32_t markerInt, char* data, uint8_t dataSize, uint8_t* sz);
+char* 	Hi_Proto_CreatePack_WO_CRC(uint8_t packetType, uint32_t markerInt, char* data, uint8_t dataSize, uint8_t* sz);
 void	Hi_Proto_AllocateBuffer();
 void	Hi_Proto_WriteBuffer(char c);
 void	Hi_Proto_ClearBuffer();
@@ -291,7 +294,7 @@ void	Hi_CM_SendData(char* data, uint8_t len);
 uint8_t Hi_CM_IsUARTActive();
 void	Hi_CM_SendDataByConnection(char* data, uint8_t connection, uint8_t len);
 
-void Hi_IWDG_Enable(u16 watchTimeMillis);
-void Hi_ResetInit();
-void Hi_LED_Init();
-void Hi_LED_SetMode(u8 mode);
+void	Hi_IWDG_Enable(u16 watchTimeMillis);
+void	Hi_ResetInit();
+void	Hi_LED_Init();
+void	Hi_LED_SetMode(u8 mode);

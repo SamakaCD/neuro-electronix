@@ -95,6 +95,7 @@ static volatile uint8_t waitgwmac=WGW_INITIAL_ARP;
 uint8_t macaddr[6];
 static uint8_t ipaddr[4];
 static uint16_t info_data_len=0;
+static uint16_t info_data_len_stored=0;
 static uint8_t seqnum=0xa; // my initial tcp sequence number
 
 #define CLIENTMSS 550
@@ -546,37 +547,6 @@ uint16_t get_tcp_data_len(uint8_t *buf)
         return((uint16_t)i);
 }
 
-// get a pointer to the start of tcp data in buf
-// Returns 0 if there is no data
-// You must call init_len_info once before calling this function
-// Not used?
-/*
- uint16_t get_tcp_data_pointer(void)
-{
-        if (info_data_len){
-                return((uint16_t)TCP_SRC_PORT_H_P+info_hdr_len);
-        }else{
-                return(0);
-        }
-}
-*/
-
-
-// do some basic length calculations and store the result in static varibales
-// Not used?
-/*
-void init_len_info(uint8_t *buf)
-{
-        info_data_len=(((int16_t)buf[IP_TOTLEN_H_P])<<8)|(buf[IP_TOTLEN_L_P]&0xff);
-        info_data_len-=IP_HEADER_LEN;
-        info_hdr_len=(buf[TCP_HEADER_LEN_P]>>4)*4; // generate len in bytes;
-        info_data_len-=info_hdr_len;
-        if (info_data_len<=0){
-                info_data_len=0;
-        }
-}
-*/
-
 // fill a binary string of len data into the tcp packet
 uint16_t fill_tcp_data_len(uint8_t *buf,uint16_t pos, const char *s, uint16_t len)
 {
@@ -704,12 +674,12 @@ void make_tcp_ack_with_data(uint8_t *buf,uint16_t dlen)
 // length and checksum
 void www_server_reply(uint8_t *buf,uint16_t dlen)
 {
-        make_tcp_ack_from_any(buf,info_data_len,0); // send ack for http get
+        make_tcp_ack_from_any(buf,info_data_len_stored,0); // send ack for http get
         // fill the header:
         // This code requires that we send only one data packet
         // because we keep no state information. We must therefore set
         // the fin here:
-        buf[TCP_FLAGS_P]=TCP_FLAGS_ACK_V|TCP_FLAGS_PUSH_V;
+        //buf[TCP_FLAGS_P]=TCP_FLAGS_ACK_V|TCP_FLAGS_PUSH_V;
         make_tcp_ack_with_data_noflags(buf,dlen); // send data
 }
 
@@ -1687,6 +1657,9 @@ uint16_t packetloop_icmp_tcp(uint8_t *buf, uint16_t plen) {
 		}
 		if (buf[TCP_FLAGS_P] & TCP_FLAGS_ACK_V) {
 			info_data_len = get_tcp_data_len(buf);
+			if(info_data_len != 0)
+				info_data_len_stored = info_data_len;
+
 			// we can possibly have no data, just ack:
 			// Here we misuse plen for something else to save a variable.
 			// plen is now the position of start of the tcp user data.
